@@ -14,3 +14,6 @@ medium_clapped_urls.json
 # Python
 __pycache__/
 *.pyc
+
+# MacOS fripperies
+.DS_Store
