@@ -1,0 +1,16 @@
+# OAuth credentials and tokens
+gmail_credentials.json
+gmail_token.json
+medium_gmail_token.json
+
+# Playwright browser profiles (contain session cookies)
+playwright_profile/
+medium_playwright_profile/
+
+# Runtime state
+medium_clapped_urls.json
+*.log
+
+# Python
+__pycache__/
+*.pyc
