@@ -32,6 +32,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 CREDENTIALS_FILE = os.path.join(SCRIPT_DIR, "gmail_credentials.json")
 TOKEN_FILE = os.path.join(SCRIPT_DIR, "gmail_token.json")
 PLAYWRIGHT_PROFILE = os.path.join(SCRIPT_DIR, "playwright_profile")
+RETRY_DELAY_SECS = 60  # wait before retrying failed likes (clears Substack 429 limits)
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
@@ -120,11 +121,21 @@ def find_post_url(html: str) -> str | None:
 
 
 def mark_as_read(service, msg_id: str) -> None:
-    service.users().messages().modify(
-        userId="me",
-        id=msg_id,
-        body={"removeLabelIds": ["UNREAD"]},
-    ).execute()
+    # Retry once with a fresh service if the SSL/TCP connection went stale
+    # during a long Playwright session (httplib2 doesn't recover on its own).
+    try:
+        service.users().messages().modify(
+            userId="me",
+            id=msg_id,
+            body={"removeLabelIds": ["UNREAD"]},
+        ).execute()
+    except (TimeoutError, OSError) as e:
+        log.warning(f"Gmail connection dropped, retrying with fresh service: {e}")
+        get_gmail_service().users().messages().modify(
+            userId="me",
+            id=msg_id,
+            body={"removeLabelIds": ["UNREAD"]},
+        ).execute()
 
 
 def iter_messages(service, query: str):
@@ -201,8 +212,9 @@ def like_post(page, post_url: str) -> bool:
     # Wait for the Like button to appear in the DOM.
     # Use state='attached' rather than default 'visible' — some Substack pages render
     # the button but Playwright's visibility check fails (overlay, CSS transform, etc.)
+    # 20s timeout: video-first and other non-standard page formats hydrate React slower.
     try:
-        page.wait_for_selector('button[aria-label^="Like"]', state='attached', timeout=10000)
+        page.wait_for_selector('button[aria-label^="Like"]', state='attached', timeout=20000)
     except Exception:
         log.warning(f"  Like button not found on {page.url}")
         return False
@@ -255,17 +267,19 @@ def heart_all(
     exe: str | None,
     items: list[tuple[str, str, str]],
     gmail,
-) -> tuple[int, int]:
+) -> tuple[int, int, list[tuple[str, str, str]]]:
     """
     Click Like on each post and mark the email read immediately on success.
 
     items is a list of (msg_id, post_url, label) triples.
-    Returns (hearted_count, failed_count).
+    Returns (hearted_count, failed_count, failed_items) where failed_items
+    is the subset of items that failed and are eligible for retry.
 
     A fresh page is created per post to prevent browser state accumulation
     from causing JS rendering failures across a long session.
     """
     hearted = failed = 0
+    failed_items: list[tuple[str, str, str]] = []
     ctx = _launch(p, exe, headless=True)
     try:
         for msg_id, post_url, label in items:
@@ -282,10 +296,11 @@ def heart_all(
             else:
                 log.warning(f"  Heart failed, leaving unread: {label!r}")
                 failed += 1
+                failed_items.append((msg_id, post_url, label))
             time.sleep(5)
     finally:
         ctx.close()
-    return hearted, failed
+    return hearted, failed, failed_items
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -354,7 +369,19 @@ def main():
                 return
 
         items = [(msg_id, post_url, subject) for msg_id, subject, post_url in to_heart]
-        hearted, failed = heart_all(p, exe, items, gmail)
+        hearted, failed, failed_items = heart_all(p, exe, items, gmail)
+
+        if failed_items:
+            log.info(
+                f"{len(failed_items)} failed — waiting {RETRY_DELAY_SECS}s before retry "
+                f"(clears rate limits)..."
+            )
+            time.sleep(RETRY_DELAY_SECS)
+            log.info("Retrying failed posts...")
+            retry_hearted, failed, _ = heart_all(p, exe, failed_items, gmail)
+            hearted += retry_hearted
+            if retry_hearted:
+                log.info(f"  Retry recovered {retry_hearted} post(s).")
 
     log.info(f"Done. Hearted: {hearted}, Failed: {failed}, Skipped: {skipped}")
 

@@ -111,11 +111,21 @@ def find_post_url(html: str) -> str | None:
 
 
 def mark_as_read(service, msg_id: str) -> None:
-    service.users().messages().modify(
-        userId="me",
-        id=msg_id,
-        body={"removeLabelIds": ["UNREAD"]},
-    ).execute()
+    # Retry once with a fresh service if the SSL/TCP connection went stale
+    # during a long Playwright session (httplib2 doesn't recover on its own).
+    try:
+        service.users().messages().modify(
+            userId="me",
+            id=msg_id,
+            body={"removeLabelIds": ["UNREAD"]},
+        ).execute()
+    except (TimeoutError, OSError) as e:
+        log.warning(f"Gmail connection dropped, retrying with fresh service: {e}")
+        get_gmail_service().users().messages().modify(
+            userId="me",
+            id=msg_id,
+            body={"removeLabelIds": ["UNREAD"]},
+        ).execute()
 
 
 def iter_messages(service, query: str):

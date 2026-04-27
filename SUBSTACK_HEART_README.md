@@ -4,7 +4,7 @@ Automatically hearts (Likes) Substack subscriber notification emails received in
 
 ## What it does
 
-1. Connects to Gmail via the Gmail API and searches for unread emails from `*@substack.com` received in the last 24 hours.
+1. Connects to Gmail via the Gmail API (as epicschnozz@gmail.com) and searches for unread emails from `*@substack.com` received in the last 24 hours.
 2. Filters to subscriber notification emails only — skips `no-reply@substack.com`, `reaction@mg1.substack.com`, `forum@mg1.substack.com`, thread notifications, welcome emails, and anything without a Like link.
 3. Extracts the post URL from each email (constructs `https://{pub}.substack.com/p/{slug}` directly to avoid redirect issues).
 4. Opens a headless Playwright browser with a saved Substack session, visits each post in a fresh browser tab, and clicks the Like button.
