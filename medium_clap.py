@@ -19,6 +19,7 @@ import base64
 import time
 import random
 import logging
+import traceback
 from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse, urlunparse, parse_qs, urlencode
 
@@ -28,6 +29,8 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
+
+from monitor_client import RunLogger, report_run
 
 SCOPES = ["https://www.googleapis.com/auth/gmail.modify"]
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -316,6 +319,21 @@ def clap_all(
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
+    run_log = RunLogger()
+    log.addHandler(run_log)
+    clapped = failed = 0
+
+    try:
+        _main(run_log)
+    except Exception:
+        report_run("medium_clap", "crashed", clapped, failed, 0,
+                   run_log.messages + [traceback.format_exc()])
+        raise
+    finally:
+        log.removeHandler(run_log)
+
+
+def _main(run_log):
     gmail = get_gmail_service()
 
     cutoff = datetime.now(timezone.utc) - timedelta(days=1)
@@ -359,6 +377,7 @@ def main():
 
     if not to_clap:
         log.info(f"No Medium emails to clap (skipped {skipped}).")
+        report_run("medium_clap", "success", 0, 0, skipped, run_log.messages)
         return
 
     log.info(f"{len(to_clap)} email(s) to clap, {skipped} skipped. Opening Playwright...")
@@ -372,12 +391,14 @@ def main():
             interactive_login(p, exe)
             if not check_medium_login(p, exe):
                 log.error("Still not logged in after interactive login. Aborting.")
+                report_run("medium_clap", "crashed", 0, 0, skipped, run_log.messages)
                 return
 
         items = [(msg_id, post_url, subject) for msg_id, subject, post_url in to_clap]
         clapped, failed = clap_all(p, exe, items, gmail)
 
     log.info(f"Done. Clapped: {clapped}, Failed: {failed}, Skipped: {skipped}")
+    report_run("medium_clap", "success", clapped, failed, skipped, run_log.messages)
 
 
 if __name__ == "__main__":
