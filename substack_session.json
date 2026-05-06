@@ -1,0 +1,2907 @@
+{
+  "cookies": [
+    {
+      "name": "_GRECAPTCHA",
+      "value": "09AKhCRwiqy6-uD3xYma8tbSjDCDe5XKfrWFqt9DOj_5rc05uT6gdTZYPReQEQB92VeMs6rMyd_dKU956zGrQ7bjo",
+      "domain": "www.google.com",
+      "path": "/recaptcha",
+      "expires": 1791246007.003543,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1807229974.034526,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%223c5cd8d3-4c9e-478d-8501-1e36d93c7574%22",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1809564588.197228,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cookie_storage_key",
+      "value": "858d69ce-3ad4-4e8d-910e-6d301def7516",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1783469974.035242,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "substack.sid",
+      "value": "s%3ADvA34KlaDGRb1RjJXQU2jmbDCi07gQlr.XVm1zX13MoZMrkUCNkm9QOxftAYKYEnEb9CEOYSIZmE",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1785804593.857707,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "barometric[cuid]",
+      "value": "cuid_69d6f0c3-cbb2-4dc1-a785-a6927eca45e4",
+      "domain": ".trkn.us",
+      "path": "/",
+      "expires": 1807231653.888708,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.geezerwise.com",
+      "path": "/",
+      "expires": 1807230201.840698,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%22d1867269-3ffa-4361-b64f-92feed61a7fa%22",
+      "domain": ".www.geezerwise.com",
+      "path": "/",
+      "expires": 1809129766.939609,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cookie_storage_key",
+      "value": "bf4ab24f-587a-45d6-96ed-31c4368b3c5c",
+      "domain": ".www.geezerwise.com",
+      "path": "/",
+      "expires": 1783470201.840936,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.2006585366.1775694204",
+      "domain": ".geezerwise.com",
+      "path": "/",
+      "expires": 1783470204,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.smartersubstack.com",
+      "path": "/",
+      "expires": 1807230250.544549,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%228e6bc601-c470-4bff-869f-4bbdbc942d78%22",
+      "domain": ".www.smartersubstack.com",
+      "path": "/",
+      "expires": 1809224716.978248,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cookie_storage_key",
+      "value": "0451e318-587b-4f6e-91d8-94159ed02b35",
+      "domain": ".www.smartersubstack.com",
+      "path": "/",
+      "expires": 1783470250.544776,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%227d01f571-0585-436e-8487-e20148f82d32%22",
+      "domain": ".www.smartersubstack.com",
+      "path": "/",
+      "expires": 1809224716.978201,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.authorjohnwatson.com",
+      "path": "/",
+      "expires": 1807230269.962386,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%22cb1d85f3-babe-4bae-bfae-429780eab259%22",
+      "domain": ".www.authorjohnwatson.com",
+      "path": "/",
+      "expires": 1808991826.045786,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.thefp.com",
+      "path": "/",
+      "expires": 1807230275.91303,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%229676c342-dd96-47f0-a591-27ae866de05c%22",
+      "domain": ".www.thefp.com",
+      "path": "/",
+      "expires": 1807230275.913066,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%221a240777-e9b8-4a0d-bc9b-aeeaac6a2e47%22",
+      "domain": ".www.geezerwise.com",
+      "path": "/",
+      "expires": 1809129766.939409,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "_twpid",
+      "value": "tw.1775696670342.607339988850779357",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1809392670.343126,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "guest_id_marketing",
+      "value": "v1%3A177569667047967149",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1810256670.516157,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "guest_id_ads",
+      "value": "v1%3A177569667047967149",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1810256670.516199,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "personalization_id",
+      "value": "\"v1_smJMFw4tIGG3v/Oe5B78PA==\"",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1810256670.516209,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "guest_id",
+      "value": "v1%3A177569667047967149",
+      "domain": ".twitter.com",
+      "path": "/",
+      "expires": 1810256670.516221,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "muc_ads",
+      "value": "806f2453-4910-4e26-88fb-26c9d45ebbb5",
+      "domain": ".t.co",
+      "path": "/",
+      "expires": 1810256670.541424,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%226325afd2-5336-48d4-81b3-56ef4d6a5dda%22",
+      "domain": "www.authorjohnwatson.com",
+      "path": "/",
+      "expires": 1807232722,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".contentwritingjobs.com",
+      "path": "/",
+      "expires": 1807232795.929556,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%22a8bceafd-53d8-45a3-b953-c2b3f96ef720%22",
+      "domain": ".contentwritingjobs.com",
+      "path": "/",
+      "expires": 1807248231.328256,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "sp_t",
+      "value": "a44f0432606bf9662200e183f497151e",
+      "domain": ".spotify.com",
+      "path": "/",
+      "expires": 1809563829.956417,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.commonreader.co.uk",
+      "path": "/",
+      "expires": 1807233811.364469,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%228216e8fa-357f-4f41-9554-ac2594d4a2b3%22",
+      "domain": ".www.commonreader.co.uk",
+      "path": "/",
+      "expires": 1809564594.284497,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%2271af72a9-d13a-4462-8662-cb1790582123%22",
+      "domain": "www.commonreader.co.uk",
+      "path": "/",
+      "expires": 1807233811,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1250694747.1775697812",
+      "domain": ".commonreader.co.uk",
+      "path": "/",
+      "expires": 1810257811.972087,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cookie_storage_key",
+      "value": "17619348-b549-49dd-b7be-67d93c950da7",
+      "domain": ".www.commonreader.co.uk",
+      "path": "/",
+      "expires": 1783473812.095289,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "connect.sid",
+      "value": "s%3AaWIBCH5mougALNa4iFYIsq80vY_sgxOb.WvxLutJlxODj2icLzbDk7weHL%2FbiUaccnFAyo%2BTCeE4",
+      "domain": "www.commonreader.co.uk",
+      "path": "/",
+      "expires": 1785804594.284544,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22845aa1c394cab5a363d33e22894f60ea%22",
+      "domain": ".www.commonreader.co.uk",
+      "path": "/",
+      "expires": 1809564594.284399,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.1470102043.1775697814",
+      "domain": ".commonreader.co.uk",
+      "path": "/",
+      "expires": 1783473814,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.316868352.1775697897",
+      "domain": ".smartersubstack.com",
+      "path": "/",
+      "expires": 1783473897,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.2056611490.1775697934",
+      "domain": ".authorjohnwatson.com",
+      "path": "/",
+      "expires": 1783473934,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%227bcb2ac6-7527-48a5-b0f7-84dd8049cf83%22",
+      "domain": "contentwritingjobs.com",
+      "path": "/",
+      "expires": 1807234041,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.809787812.1775698043",
+      "domain": ".contentwritingjobs.com",
+      "path": "/",
+      "expires": 1783474043,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cookie_storage_key",
+      "value": "53be4008-110c-4401-9390-59d5ca0936bd",
+      "domain": ".www.authorjohnwatson.com",
+      "path": "/",
+      "expires": 1783475014.705724,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%226325afd2-5336-48d4-81b3-56ef4d6a5dda%22",
+      "domain": ".www.authorjohnwatson.com",
+      "path": "/",
+      "expires": 1808991826.045747,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "cf_clearance",
+      "value": "st3MCYxZwdtO2fgLyv3K7hEYhOXpBBg7aZUBa8d4kys-1775703111-1.2.1.1-ZHoCTaDSZs_jgL.YH1aAL66q80lDFdU8UGUXZLgyjDophJZTzeTW8HeylGizJ1.t5wbAVeXfEjwMaS7Yg5chejalPYcAcTK2XhHOuz470ul12O7EmdUgSqY1OWRyljQaG1rpMBFhjKWHRVa85kPCOStwFH1d8h0MqIWswMVTQvIKO3Z_fXC_6DyQsjbqKjK4.FO1OMKkCqTxmkQpP1EYHvuINbMDFFSbcjY3OwdoUgVc2LEaQgCJ_MoS2ish3h2ybRv1UNsGl8i0weUrjWF2tfprYtjpwl2z4uODIuSsm_G86PxMltVM9A1_YhCB7xzLl6XBK7jM9KP_.TT1nm7UQQ",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1807239111.847831,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None",
+      "partitionKey": "https://commonreader.co.uk",
+      "_crHasCrossSiteAncestor": true
+    },
+    {
+      "name": "cookie_storage_key",
+      "value": "509b8c04-98fc-4486-91ec-27080cb1abff",
+      "domain": ".contentwritingjobs.com",
+      "path": "/",
+      "expires": 1783488231.328208,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%227bcb2ac6-7527-48a5-b0f7-84dd8049cf83%22",
+      "domain": ".contentwritingjobs.com",
+      "path": "/",
+      "expires": 1807248231.328228,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "cf_clearance",
+      "value": "XLm.5jkzIzNC5cnbjnhmsZTrrd9Hua6a.eI54gC67Oc-1775712980-1.2.1.1-akXNC497iNW2EJGRvlECfvZWknDeuPB5FymVvqD3l7M5nqKov2GzS8uZKM1gxqcim8Puq4hHsF.JuZ1Di0XODnSv7Rrak2JUvh20U1mbe7bnCFLgy0Rgu7Nw.tCS5jY5FtZYzWAy4FnaTKXAntvCcvT44req6.eUVntt0aXcgtKvXEAzuyFCdz1aDYa6JN0B_ps3E5_5W4bHD4UMKg78O3Yp4HuyMRcBs6qujYtYjXCxYeesrSawJHh__VLOcQ8mS2O9Ql9Kh.4cB4aX6YzVV7a2.s53PWsQTbmAxq_FeCoothKTVJZjSSEVP5K7xGYPh.8SWPxqax02ZCNCcMXMPg",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1807248980.437322,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None",
+      "partitionKey": "https://geezerwise.com",
+      "_crHasCrossSiteAncestor": true
+    },
+    {
+      "name": "cf_clearance",
+      "value": "adTZBSHIKtx4YQ9jYUCURzc8KpnVMJ3WNeULfTF7D24-1775713162-1.2.1.1-am6Z4df6mfzHJ7XPGqxmXyUdHR8QO4RdgOE5HoL_RNjBlThc4Yxb9KSdInuxKqprGty3810TDA99UGSWCGu.gEkiE8lUaV2bb5xV8oGhVdaa8rfROPUsCz0SuiDDKqm3apal86Fq4BLyH6nYqU2LELdHDTVg9P8F0PLMcWVyjebFwRuLLhnMoTkiW5wstMAlRicFjhbkGAbXY2aK8IEDO2aox2xYjSCFN_m1rx8ir9E.jRVLCjt2B9tyuHbWxLDbICbdMXIKQa0OtcPnF1qLEQANejPOIihrAMkOsX2wA_y4XH7MSIhdW8pKk6xbV7ccHaHRvlRuLOZduem00d01cw",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1807249162.865564,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None",
+      "partitionKey": "https://smartersubstack.com",
+      "_crHasCrossSiteAncestor": true
+    },
+    {
+      "name": "cf_clearance",
+      "value": "YNaLnNxwNikrnnIT20qyum_M_ssxBjYigRkt6EpbYWY-1775713223-1.2.1.1-m2aJkF1cYB8Y.Ng397UYx0XWbsUrtloXH53D8629koORdEC2UusDhFjHtAbvVdE3ibU_NaBAEwU66xbQ5LLlwKemJvHwJpivAl7uKnJHdh7uGgOKVK_NgLnymBYQ29JxnvVJqD9YINcaLZyYxj2.zel8JF_GD15502yfk_2ahrnWUu6NqlQUyhyrkpVoWEWepQwda6mBgq9bChxDiRRbWTVYrvOgL04wjVhUVgA9GemM2NKC.Awk0GpiqIUuLJbCzDafwOvqkLwKVXnnkRQ3uW_un9FmCQVcRr5foe6EdgKbRTFgZti1gdWweKTMWDODgcWonT9hd8FMZ6Nvu15OlA",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1807249223.269504,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None",
+      "partitionKey": "https://authorjohnwatson.com",
+      "_crHasCrossSiteAncestor": true
+    },
+    {
+      "name": "cf_clearance",
+      "value": "xT3mJalNY4AOhb.uz1qQBizKWB8p10MLHwCuVC.Hzlk-1775713371-1.2.1.1-Bs27irSPfnWAB_8Egjl3q14YJWJKd1IDx3Ovh71YDZRK0vbOsrzXMvzOIGNOQs_B_xWH5SQQhMADzbR08N1g4eZdZG5wwfHA7qqksdIJWRB4YtZTS4GkE.as4k1IaK9Gnh50zmLv7k1QsDGuxV0PyvGeBfjds5Ubrw42xsySnLp1NMNBefdiy.NdlA7jwi1GBHaQLez0BkfwpjnyxB8U0DQU8WyCs_DBgf4BuVP2xzHP3sk8Bc4bPJEbFOlILX5FTBm9VgkV5F2befgU.uDyHFLwITNZUbs9sLkeURlHCmwE7vXTkCJU6gFP3AjZNchnhiB9tD_qKag8OYsZupZXiw",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1807249370.951578,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None",
+      "partitionKey": "https://contentwritingjobs.com",
+      "_crHasCrossSiteAncestor": true
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.aiwithsuny.com",
+      "path": "/",
+      "expires": 1807315834.823107,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%2297425f88-22a0-41f0-bb85-06fed2004c9a%22",
+      "domain": ".www.aiwithsuny.com",
+      "path": "/",
+      "expires": 1807516726.120141,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22702c3cfb-0ece-472e-b955-2500f6e947c5%22",
+      "domain": "www.aiwithsuny.com",
+      "path": "/",
+      "expires": 1807315835,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cookie_storage_key",
+      "value": "066f29cf-fb1f-4562-8487-d5cafa883881",
+      "domain": ".www.aiwithsuny.com",
+      "path": "/",
+      "expires": 1783555836.092916,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22702c3cfb-0ece-472e-b955-2500f6e947c5%22",
+      "domain": ".www.aiwithsuny.com",
+      "path": "/",
+      "expires": 1807516726.120108,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.theslowphilosophy.com",
+      "path": "/",
+      "expires": 1807402246.46366,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%222452f0a3-e6d0-44ca-80bb-648e0de7ca06%22",
+      "domain": ".www.theslowphilosophy.com",
+      "path": "/",
+      "expires": 1807402246.463757,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%2237b08c8a-2897-404b-b42c-c9a2268d7db4%22",
+      "domain": "www.theslowphilosophy.com",
+      "path": "/",
+      "expires": 1807402246,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.thehomebaristasquill.com",
+      "path": "/",
+      "expires": 1807402720.546929,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%2228515ef0-8a74-47f0-b234-223be1f7eb48%22",
+      "domain": ".www.thehomebaristasquill.com",
+      "path": "/",
+      "expires": 1807402721.657208,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22360686b5-2d18-4b2d-9b36-b3d3220473c6%22",
+      "domain": "www.thehomebaristasquill.com",
+      "path": "/",
+      "expires": 1807402721,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22360686b5-2d18-4b2d-9b36-b3d3220473c6%22",
+      "domain": ".www.thehomebaristasquill.com",
+      "path": "/",
+      "expires": 1807402721.657165,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "cookie_storage_key",
+      "value": "008a3e97-6640-4843-b7a7-e8bee2f18de7",
+      "domain": ".www.thehomebaristasquill.com",
+      "path": "/",
+      "expires": 1783642721.657142,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.historicmysteries.net",
+      "path": "/",
+      "expires": 1807403605.284841,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%22ec4a8842-4eaa-4610-8ca8-09fc4ff0cdcf%22",
+      "domain": ".www.historicmysteries.net",
+      "path": "/",
+      "expires": 1809494689.922384,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22373a02a7-5615-480c-a60b-1a90eec0cec6%22",
+      "domain": "www.historicmysteries.net",
+      "path": "/",
+      "expires": 1807403605,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.taylorforeman.com",
+      "path": "/",
+      "expires": 1807517443.586224,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%22dbf6a0f0-77be-4dbb-b56c-7dc0eb235cf5%22",
+      "domain": ".www.taylorforeman.com",
+      "path": "/",
+      "expires": 1807517443.586369,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22b05a037e-8c9b-410c-bc64-06b5f42912ea%22",
+      "domain": "www.taylorforeman.com",
+      "path": "/",
+      "expires": 1807517443,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".club.drawtogether.studio",
+      "path": "/",
+      "expires": 1807575121.617876,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%22df491d73-9629-4c6d-871a-ddd55b9c974f%22",
+      "domain": ".club.drawtogether.studio",
+      "path": "/",
+      "expires": 1807575121.617995,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%2266c8cd26-9c9d-4de1-afda-71678ed10488%22",
+      "domain": "club.drawtogether.studio",
+      "path": "/",
+      "expires": 1807575122,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.lennysnewsletter.com",
+      "path": "/",
+      "expires": 1807575197.486467,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%221034ebd8-e966-4995-a477-59c2842af428%22",
+      "domain": ".www.lennysnewsletter.com",
+      "path": "/",
+      "expires": 1809391481.677054,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%220545d38e-a0d9-417f-96a7-a15650e201e2%22",
+      "domain": "www.lennysnewsletter.com",
+      "path": "/",
+      "expires": 1807575197,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%220545d38e-a0d9-417f-96a7-a15650e201e2%22",
+      "domain": ".www.lennysnewsletter.com",
+      "path": "/",
+      "expires": 1809391481.676996,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "cookie_storage_key",
+      "value": "dc8b2572-dc50-470c-8106-0a2e5c6dbb43",
+      "domain": ".www.lennysnewsletter.com",
+      "path": "/",
+      "expires": 1783815198.590736,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_twpid",
+      "value": "tw.1776039198724.441697066333453000",
+      "domain": ".lennysnewsletter.com",
+      "path": "/",
+      "expires": 1809735198.824619,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "ttwid",
+      "value": "1%7CdPDm15jTVeEhjgT3ybWYg-gabjfJVFnZRigN6OszFm4%7C1776039264%7C035c11da9538c9ff13590f4b067826b7e5a040a91dae6fcbc0951067f425de7b",
+      "domain": ".tiktok.com",
+      "path": "/",
+      "expires": 1807144163.344438,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.560095121.1776040148",
+      "domain": ".lennysnewsletter.com",
+      "path": "/",
+      "expires": 1812518669.689598,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.desri-decodes.com",
+      "path": "/",
+      "expires": 1807661561.615484,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%226acfcfdc-fea9-4d17-bcc6-7eb7ea750a56%22",
+      "domain": ".www.desri-decodes.com",
+      "path": "/",
+      "expires": 1807661561.615669,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22012fd1c1-5c2e-457b-acb7-90013f3db66c%22",
+      "domain": "www.desri-decodes.com",
+      "path": "/",
+      "expires": 1807661561,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.allsoulsbetweenthestacks.com",
+      "path": "/",
+      "expires": 1807662741.450629,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%2221ec1867-dd10-4fc5-9404-05a11e5041ad%22",
+      "domain": ".www.allsoulsbetweenthestacks.com",
+      "path": "/",
+      "expires": 1807662741.450869,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22d602cd0e-3e49-4df6-a637-57b35683198f%22",
+      "domain": "www.allsoulsbetweenthestacks.com",
+      "path": "/",
+      "expires": 1807662741,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.selftaughtmarketer.com",
+      "path": "/",
+      "expires": 1807747655.406116,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%226d16adb6-d614-425a-97d2-6fcd942dc6c8%22",
+      "domain": ".www.selftaughtmarketer.com",
+      "path": "/",
+      "expires": 1807747655.406288,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%227451cb6a-acb5-41ac-9e69-029a9f7e1c1a%22",
+      "domain": "www.selftaughtmarketer.com",
+      "path": "/",
+      "expires": 1807747656,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.henrikkarlsson.xyz",
+      "path": "/",
+      "expires": 1807748917.103637,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%2220a2aac2-a61b-4ab3-b039-cedfcb42303d%22",
+      "domain": ".www.henrikkarlsson.xyz",
+      "path": "/",
+      "expires": 1807748917.103741,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%223fb0b23b-5e5d-433e-ac6b-a277240f655c%22",
+      "domain": "www.henrikkarlsson.xyz",
+      "path": "/",
+      "expires": 1807748917,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.unstucktopublished.com",
+      "path": "/",
+      "expires": 1808037160.468947,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%2221bebd40-36c4-4495-909b-2f1e21bd689a%22",
+      "domain": ".www.unstucktopublished.com",
+      "path": "/",
+      "expires": 1808038215.082918,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cookie_storage_key",
+      "value": "db7cfebb-7e6f-453e-8e61-8c2eb0266d4d",
+      "domain": ".www.unstucktopublished.com",
+      "path": "/",
+      "expires": 1784277160.764713,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%2246b46f5f-0f10-42cf-82e8-8eda7813c3d9%22",
+      "domain": ".www.unstucktopublished.com",
+      "path": "/",
+      "expires": 1808038215.082866,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "mid",
+      "value": "aegQCwAEAAHjjjLTGbijw-lHlv6f",
+      "domain": ".instagram.com",
+      "path": "/",
+      "expires": 1811376139.235349,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "cookie_storage_key",
+      "value": "2369b0f7-1478-452c-900e-2d5c69681467",
+      "domain": ".www.historicmysteries.net",
+      "path": "/",
+      "expires": 1784767516.946363,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22373a02a7-5615-480c-a60b-1a90eec0cec6%22",
+      "domain": ".www.historicmysteries.net",
+      "path": "/",
+      "expires": 1809494689.922334,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "IDE",
+      "value": "AHWqTUn2QFeYhIhstZq4SO7HJvkbfaZyivh27pke3rQMoRzU_O8Pbm3x1pQhjgqx",
+      "domain": ".doubleclick.net",
+      "path": "/",
+      "expires": 1812014759.989605,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "s04YgdrUuQA+RbE9wH7VDgM/60JuyiR+u5u8oV+E6v5SE5h+BA14LJ2LjdVaSauVuj8feT4fCp2W2syW821YhssQR4MDkiiTD4yTpRPKoo/jw9hTRDXScvsFu9pyoZviPvI7uE5j8bOoiv7wgZcRNM7NIC6/I4Ng1SY1zTENGBnF",
+      "domain": "www.authorjohnwatson.com",
+      "path": "/",
+      "expires": 1778060626.045651,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "s04YgdrUuQA+RbE9wH7VDgM/60JuyiR+u5u8oV+E6v5SE5h+BA14LJ2LjdVaSauVuj8feT4fCp2W2syW821YhssQR4MDkiiTD4yTpRPKoo/jw9hTRDXScvsFu9pyoZviPvI7uE5j8bOoiv7wgZcRNM7NIC6/I4Ng1SY1zTENGBnF",
+      "domain": "www.authorjohnwatson.com",
+      "path": "/",
+      "expires": 1778060626.045724,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "ngXMHoqN3m50Wpb3U2R1tLqNeL3sKWT28Cs+Bb+TxXJyYuLiS6FA5b/ZvsLUsL0X4epnVUQ4upYo2bMa1Np+r59KqrfG6Jvz8B4XrGUjUGYG6Qio1mImplMCemEMNc6vzMwVUDm8WuSXSuRH8dzvN1Co5wH0Jn4JPuznXHB6tmSo",
+      "domain": "www.geezerwise.com",
+      "path": "/",
+      "expires": 1778198566.939231,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "ngXMHoqN3m50Wpb3U2R1tLqNeL3sKWT28Cs+Bb+TxXJyYuLiS6FA5b/ZvsLUsL0X4epnVUQ4upYo2bMa1Np+r59KqrfG6Jvz8B4XrGUjUGYG6Qio1mImplMCemEMNc6vzMwVUDm8WuSXSuRH8dzvN1Co5wH0Jn4JPuznXHB6tmSo",
+      "domain": "www.geezerwise.com",
+      "path": "/",
+      "expires": 1778198566.939333,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.transformernews.ai",
+      "path": "/",
+      "expires": 1809130341.591638,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%222e489e19-37a7-4aad-b1de-eeedc8bda474%22",
+      "domain": ".www.transformernews.ai",
+      "path": "/",
+      "expires": 1809130341.592226,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22a4f21c25-b49a-4b17-97b9-fcd5e7c175f4%22",
+      "domain": "www.transformernews.ai",
+      "path": "/",
+      "expires": 1809130343,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".sources.news",
+      "path": "/",
+      "expires": 1809224378.158265,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%222411769c-9e68-4175-8f00-83d131252899%22",
+      "domain": ".sources.news",
+      "path": "/",
+      "expires": 1809224378.158344,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22c1d9e26b-4632-423e-99ac-17945016bf8e%22",
+      "domain": "sources.news",
+      "path": "/",
+      "expires": 1809224378,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "qCzNgUUj2N2bSUxt5SCmxfYqUoE4JGWOJXpqFwKFjhn1Yb00r8P1N6V+xtOcWLDzcOs6w26gA5WFyI2LdV2nD6fwLlsLWnjkWVY/e70k71U4yDQbEi14uNQsn292twbfp/XTLXDqlwGDnwWz/aaMG5Koqjqe2xJonSSRMDOJEcb0",
+      "domain": "www.smartersubstack.com",
+      "path": "/",
+      "expires": 1778293516.978086,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "qCzNgUUj2N2bSUxt5SCmxfYqUoE4JGWOJXpqFwKFjhn1Yb00r8P1N6V+xtOcWLDzcOs6w26gA5WFyI2LdV2nD6fwLlsLWnjkWVY/e70k71U4yDQbEi14uNQsn292twbfp/XTLXDqlwGDnwWz/aaMG5Koqjqe2xJonSSRMDOJEcb0",
+      "domain": "www.smartersubstack.com",
+      "path": "/",
+      "expires": 1778293516.978166,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".www.onlinewritingclub.com",
+      "path": "/",
+      "expires": 1809390236.49717,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%2277911990-c7c5-49b0-bae2-60e1ffeff2dd%22",
+      "domain": ".www.onlinewritingclub.com",
+      "path": "/",
+      "expires": 1809390237.542166,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22d5165c6e-021e-4567-8ae4-78de886e7d28%22",
+      "domain": "www.onlinewritingclub.com",
+      "path": "/",
+      "expires": 1809390237,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22d5165c6e-021e-4567-8ae4-78de886e7d28%22",
+      "domain": ".www.onlinewritingclub.com",
+      "path": "/",
+      "expires": 1809390237.542128,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "cookie_storage_key",
+      "value": "1ad9946e-bd15-46c0-9012-f4e9cc8500d2",
+      "domain": ".www.onlinewritingclub.com",
+      "path": "/",
+      "expires": 1785630237.542105,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ab_experiment_sampled",
+      "value": "%22false%22",
+      "domain": ".strategizeyourcareer.com",
+      "path": "/",
+      "expires": 1809390716.275365,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ab_testing_id",
+      "value": "%22fd92de52-db86-4b47-9379-527cb76545c8%22",
+      "domain": ".strategizeyourcareer.com",
+      "path": "/",
+      "expires": 1809390716.275506,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%228aa64b43-1bf3-45ca-8c01-3f3b879676d3%22",
+      "domain": "strategizeyourcareer.com",
+      "path": "/",
+      "expires": 1809390716,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "dfdRvPaOWKBCSCmqeTPI77FJxdbUvHxiYic0pGNDUbsRA+lWUzYiJjyTM7FTqQ5mWoaKCff0QzwmMNqBKrbrq9/Kp2bTT4OUApNukHgu6scbrdznfbiFIOHvyFLTQiU2Qz6Nx29beaPSyCQm9gJTiwObwQfIvGB59OFHYfoeKr/S",
+      "domain": "www.lennysnewsletter.com",
+      "path": "/",
+      "expires": 1778460281.676895,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "dfdRvPaOWKBCSCmqeTPI77FJxdbUvHxiYic0pGNDUbsRA+lWUzYiJjyTM7FTqQ5mWoaKCff0QzwmMNqBKrbrq9/Kp2bTT4OUApNukHgu6scbrdznfbiFIOHvyFLTQiU2Qz6Nx29beaPSyCQm9gJTiwObwQfIvGB59OFHYfoeKr/S",
+      "domain": "www.lennysnewsletter.com",
+      "path": "/",
+      "expires": 1778460281.676962,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "p3kdgCVdUkKmobXiBPXq8fiCX8STTH6g9EDEOqm1LUvYsntHI/TGiv2FtCe+AMdHRSRt8NZ3o1O2Yc2wjPZ8zYyF11yp777FomBzRHnmAVkfVEGNQ/RiprpEKkOhVm3RnH1tgm7cKUmPJSDc0Vmsm0eX6YK1Ct1IJtA2nFk7IRqz",
+      "domain": "www.onlinewritingclub.com",
+      "path": "/",
+      "expires": 1778460410.284561,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "p3kdgCVdUkKmobXiBPXq8fiCX8STTH6g9EDEOqm1LUvYsntHI/TGiv2FtCe+AMdHRSRt8NZ3o1O2Yc2wjPZ8zYyF11yp777FomBzRHnmAVkfVEGNQ/RiprpEKkOhVm3RnH1tgm7cKUmPJSDc0Vmsm0eX6YK1Ct1IJtA2nFk7IRqz",
+      "domain": "www.onlinewritingclub.com",
+      "path": "/",
+      "expires": 1778460410.284636,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga_R5J0QYC0LQ",
+      "value": "GS2.1.s1777957177$o9$g0$t1777957177$j60$l0$h0",
+      "domain": ".commonreader.co.uk",
+      "path": "/",
+      "expires": 1812517177.060397,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "nL3zaH3cBCAmuHtajpjgV5/JwFnCfSXd6TIMk9IDwQDOlPmltnyMzCk0CpAzc3jvWue7MRy8V8wmtEEIVlrt8ztVpthvCiMJzx9CGrqlgbket3yJ7Y6ZE4LtB8d+39giTtrUhtFElQZ9ELCR09N4nuwPy/XQTUx1CH52xQWA6k+W",
+      "domain": "anazlysis.substack.com",
+      "path": "/",
+      "expires": 1778562695.624362,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "CHqr1KRUERT1k1pheitEDexjxRR0qHdbRn329tChYj19hPMEntv1k172QrCDl4WO5pHmL8AwSQn/FGtwySxZ9dn9MFBwmIV9Gir/WqhOut4EEwQDt0AurNtZGM9WCy/vIg+zfDBTbaOzkncmJBXn2xIZ/8nIXbpWUc9l2WfbJ3pc",
+      "domain": "centeryourwriting.substack.com",
+      "path": "/",
+      "expires": 1778562708.292749,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "3to1MPsBRSTvycRJijdkhapnyOFLu8aDKS98qOXKggQRamRhPEPHV1U5VufEsOkutsrARCAlTm5mjVEQwAZe1J8QqSf1JSCpE8Yj2TT0sBuGc56YiYLV75P7gdPOv7/7I204xOkXliqBcOuLqUp45DsTA/U4pKbBTvbVHer422VT",
+      "domain": "marjkupps.substack.com",
+      "path": "/",
+      "expires": 1778562714.760937,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "ISND1k5GREnCL5Ci7sDDt8emxwQhT5u0qxg7Coo5T2llrJlqblz9VIG+qQbjAM/Bc4NNNRj6BMtjPLlAaCFzaRh0AR3H85BTrYgGDWcEHG9rAEng0FbZQdYE0zLf0Dq6mw+9M5ymeoZUEw4jajUnRMbztG2zSXtXXO0WRwD6vj+8",
+      "domain": "filthinsidehermind.substack.com",
+      "path": "/",
+      "expires": 1778562721.299681,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "bm5SFjHwqswUZF7IMyImQf3fMXfgaE8dnad0yiWB6qfQ7eUych2EENafWs04o8/NIi2aUkUmYOHq9tNQUsv3Pj6RdVXilAYGEHKaCghr5WS+tKd4LKXPP/SHi6lJS1do8aVFA1EjC5BVul/l9SlLhSq20n9+EUKand5q6/gVIaEA",
+      "domain": "monicalundsadhd.substack.com",
+      "path": "/",
+      "expires": 1778562770.638293,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "qjenWxIM/Dp4A2gtgH52h6fjNr4/8WrDqp1fIGlJMJ7vjBs4qZt35TRoot9rdIjQRK25HkJ5HUNY9nTHWyp2PAhLUO9DImZZ4Tz+E3KCLSWtVY/qXc96lhzwqEZABC/AFnIDaZUHjNC72jCOWU9uDFCsFNyfD8BSrrwsO9lchtjI",
+      "domain": "theslowreturn.substack.com",
+      "path": "/",
+      "expires": 1778562783.529029,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "Gh10hjvjSmtJVCaVR0bNvh85zYemmN8NgUNAL7mNlU3G6PWouCVm70Ot1YaqlpRNHd9MD/unjj0O+JW8HNVBqc0ZRABUuxSMzJfgCLKOubq4XKxMHr/72yfgoTrUKfPJqVKrjbd6wIt0kIPvFCeX74yYmEncrJPv7J0J49D8Fgyo",
+      "domain": "desoajournal.substack.com",
+      "path": "/",
+      "expires": 1778562832.021708,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "rLtQUwhwSn6nzyDsJZHkz8dtbbZSPTfsv1NP+2tRWMK9thkfbGgeLQGQ9VxYDLk5umD1vNgdIZo9xt07WRfu375QlTDlB9mGcWe+VB06bJOdEjrXmdo/1p5JdwzacIrDh8U5KnTHLEJwimj7O7IBgAx0g2XgO81K96m7xGS0TZUl",
+      "domain": "thejunglechaosco.substack.com",
+      "path": "/",
+      "expires": 1778562839.464602,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "LhPfqdhM4VF7gwj2qGJSHS7p9caJXuTkqMYGjVwpD+dHUgt9/Aoh1OkjIu67ndVLX2fmUkhtQitS1kviombsW5NaXjY8xiC8SJLMgJB9wiJ9JNTpSQeYE/3tObfvct8tKriv59FPAemZZOWyDyWQewWwhdORmNVLSWSdIhaiZ6Kk",
+      "domain": "estellagracie.substack.com",
+      "path": "/",
+      "expires": 1778562852.909649,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "SdLyfnSXC3/dsWn4QavW2RyTNU1CYsMf0eqoofdwGb2MIua0QaqiRKFCULMQn6Tm9ZpfrnRVodQt1NWUJ7lZeUT6krOynxjL+foMsSH6gXhlgme/Twe7j4IZqS2eWFBusYIA2IswYV1nNPBJ9DG7zy8W6ucJt+Bx5j9jqVN7MYsB",
+      "domain": "chrisbwrites.substack.com",
+      "path": "/",
+      "expires": 1778562902.241293,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "DB9ilAhOSBMSoo7kr0Nt3GusvSnpdWhIAuzb3jmO7I90gcvGp00BxjeU1VIe28jXvBpkDTBfpPDL898eI2pM2Ttzr8ad2oTWAh3LQoZ++R5mv/M++jX4ZhLjvIA8JRz7V8O7qO8tzp/EFPYI67R3cG+kqiEqBRhvlowjGQNJ13nx",
+      "domain": "lettersleftunfinished.substack.com",
+      "path": "/",
+      "expires": 1778562908.726323,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "QpKDVc8qc1gceiskI7nsEO4nOOMCYD1SiHmWCfwY6cRagmO5Da7btg1kJxoP6MdeHKBzSi8ryKIMIKXfOYYniZXSsTbZOZvK159FDIbcCdG+QRmhqxG+BaT8thZ0jEi98pbl2WwfWfHnQvMrscjBQeUm5ls1Mp2GI8ms43zN7LK6",
+      "domain": "heycreator.substack.com",
+      "path": "/",
+      "expires": 1778562921.639142,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "L5angymLKaS+5Ih/xUr6vk8L8sLLY8LM+cSUjwMd0u+gOu5i/xlDptuh0OElXFnWpBU0ec90vwPoHe+uSDJXojj54DHXlRb+su8U31KcvVc4d3dmu7EwPmZDZlwq/ESyEO/bfIDhMbnMCtFH2zl+9YMM1KoM6gN1ldKZXpgBddEn",
+      "domain": "blindfool.substack.com",
+      "path": "/",
+      "expires": 1778562927.145609,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "CZ0iUW3J5HSVVIWWq9O4S+/UaveUY/1ojdm6riGFb9by05IHTouNcgvt0mEjbKOjhEiBiyWWiV7zIu9tyRd7uLVOu8SSxxskQXarBECGJCG0bkVNBTPDcmvh88pCPGo535fscY2gRD91+1LrV0xqiQIkkaS6QlGzu1OajyKsRUTN",
+      "domain": "samuelstroud.substack.com",
+      "path": "/",
+      "expires": 1778562991.432477,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "EHOueoHJ4so+zSPyFFXkNOlxr330EmyizvufmGovCnZuSbrA7GfmePxRtxOEMdhZXaXnoL5GAeandggd8STKWs2ujLV5RT+SCJ5mC91q3ilZNHVf2+IyXcObn5Y71J+1ZcdGQop71kfZ+wlpDmJbzbV+j8QzwLGSrJAupy8SPUvt",
+      "domain": "aaliyakhatri.substack.com",
+      "path": "/",
+      "expires": 1778563110.618152,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "H6mG5nGAu9RzStB0wVmCy5jn3Jhs/Pk6taGhk49a0294+3l5817VyjshJdRSoJQi0zJ4b8oHACJpLzhAFmvMYk6EbiU9/dFjd1b44wNwar6EMAealKvgN002t/R0V+TjzETe30Exi7hSxJpViDoLrr0m+MOyMcnhV8pmt0oScIcc",
+      "domain": "thelasttimeweplayed.substack.com",
+      "path": "/",
+      "expires": 1778563129.078426,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "lXz0rSES5iUbsrwQRGFrK5uTup+yOoXrP6um+q/gtKDNYH29QBFQ8UNnxsO8LvfJUsG2mj71YNs6orSxjJBKKFZRowZh8Pn4qZLn3fYElpvUzCF0ebx7dK+4tE52hhmK2hYg5HCjBIiKdbfcCTokSMjkiWX1H0ozb9jFl81cMgdZsLDhndD+jPqfyJpm8ZnBvEKcGlZ3IyeeLBLFSsR5qLyZmd7BDR9tBifWMEO6ZJm2tr2gKN9iIiMB8BOzbwGx",
+      "domain": "ericnlardauthor.substack.com",
+      "path": "/",
+      "expires": 1778563343.683391,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "nX2MTNYo/ZxgOolMsFBsfrBl7NwA2RgRLQ391DUZ32Y9pk4aq1OPiH6egTUNCDctlM98g+Y0DBEzYCYwHtnhBjOlNlGptVtKEybwjYTFmR04KnG1lp+NKghmW0nspunSZ3mTBvnGQS74ojuxiAJrGfro6CbYrGU+Hw+XwVZ6ogh9EOZWG0R8CXCtERgrr+anXYX2kOUEBNKZGqxkXszqlqajLYFZTQKVSCnABQcubsySzbf0zpMLiNNXq1Cip2ij",
+      "domain": "liviathewriter.substack.com",
+      "path": "/",
+      "expires": 1778563363.299856,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "/J4h1OFF5z0Bfq4mvFqyShgLCHa8SudF0z+QVFksaDp8c4U68FbH77gFGeXUzaDsIFIt3QoU7DQdiw3jbwt+S7UUUG/k+dgf8rft5kfsCPuDusiLoa5qysw364ncdqNi4yKIOyXW2K1knZPC5FNpEbJsAW39Qlnio+f+qJZ/sJDUCMMIX/DDSmHAqx0S5JPzhZLEhRa05QLM1g/DZR8KrE1HMnyzUrpYhAoL8PxhVBX/TopXAmom+KOqc0S98fhH",
+      "domain": "ellielouisepoetryandprose.substack.com",
+      "path": "/",
+      "expires": 1778563407.176821,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "IdIRXoQTx/sd/QjX6RSI3ZUFfDXfYo67EEyhogN18vX4IT9daM+XQxmECFNrDfV2VWf/YZYWNpttsMHVX6Rz/aq2gv5+LB/gfgP9IrYXv73O2mSRkPmX1kHD0MWQlGkGxY0sKQKq1WP6JX+qW9s8fvDbV2g5S4ncDFcXCcO6F/1PKiMSEyn1jh+5zMjWIESzQXI+mLMhTQwxkshs86NkR5KMOLveUbtqmi8hMvthXmcvzTAsbBKOfJoYFGt8uR4R",
+      "domain": "mrpotato.substack.com",
+      "path": "/",
+      "expires": 1778563413.86601,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "H9k7Pttv+6TMK1crBwjvJtm/6U61DO4MwQO6l4U991M0NbR6UnolLa18KPn0uCld2H6aqsbtLogFX2V0357NJsH2f4L2hGN/0ZiVXozM9qG6zrS2Io/mkITT6hJcRlSN6uR/qyZUlaJUs4fuKz/364qpNqzcQPQifyY3qX2LfNtF5XpFLatCy3PoJ6d5yO0H5J6ne+/bn+MCLmPeIOd4fJVC7Dhh44SUPGSHaNUgUxqWm/tTvZaixIlY2vaXYC2E",
+      "domain": "paretoquant.substack.com",
+      "path": "/",
+      "expires": 1778563463.604893,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga_0V8B24EKGY",
+      "value": "GS2.1.s1777957699$o5$g1$t1777958669$j60$l0$h0",
+      "domain": ".lennysnewsletter.com",
+      "path": "/",
+      "expires": 1812518669.689289,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "7Cej53fqPWSr7RiphJAL5VQhmf8J60HhF2loeZrzwKBoWIxtT1VN4M4oWhySfyonfjJE9gr2AYVWxDD6HP8bymhfRpvshaMkEAbkzKz4JniycOZ+jPun9dAnvBf9iQtR38Hg+5IuIoGrVrW8zfOlrloXFTWDOD+01XXoqrqQ+2PcKZ+kygmsgSfyOUd05tcndrk9pqJt2r/SWY8Y/Sb4pC/9dHLxMdgMD7rBjibiw0kEPKlFB0LxE4TWT8fIbjzN",
+      "domain": "consciouscoop.substack.com",
+      "path": "/",
+      "expires": 1778563483.257467,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "I0qkifdIMMVhQazBYWhyQVTSYruB1EXA5MQu2KncAirf/YstFDEzZDU9K+puu59xNzsZj8ddhcXX9x9eFdxfu4LEBVivgwQ2WSRqfJu8v6stE4EyIyGSCCJm9O7mp9YETYJ9OZbzcZ6e917BTHb1HMm90d90LtJxr2YlqA80pAbp",
+      "domain": "historicmysteries.substack.com",
+      "path": "/",
+      "expires": 1778563488.828136,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "kgDq8qiefTAzb526z0PoPqesySG69IGj8xuAoFGdHVuyMla4KOxkul5dxd9GO4W14ysvxls5WWvW5PVbwEMBaCw6DXHWYuBXr30ui5l2G32qsIBPGGOOP9Vg1/KTr5g87rQdTdwS2c6F03YW0x85RLiA/tFWr1cazNE6AKXWvRQo",
+      "domain": "www.historicmysteries.net",
+      "path": "/",
+      "expires": 1778563489.922106,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "kgDq8qiefTAzb526z0PoPqesySG69IGj8xuAoFGdHVuyMla4KOxkul5dxd9GO4W14ysvxls5WWvW5PVbwEMBaCw6DXHWYuBXr30ui5l2G32qsIBPGGOOP9Vg1/KTr5g87rQdTdwS2c6F03YW0x85RLiA/tFWr1cazNE6AKXWvRQo",
+      "domain": "www.historicmysteries.net",
+      "path": "/",
+      "expires": 1778563489.922274,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "LJhDUz4BElSlwlV32mSuPjRkQ82QrKHExOXWrXYQMj5p0VbMye6rx5upYMD6TWzdMkEWGR/wawyoJl6RjytpX+IACHFvSNd+K4O4LRG4s+ZlXHSubMiMLFiAsmPKpdvIU94cRGwPN8xHdOq7L11OBUZpex6uYfVwHwBhMGCN0SHjLDu/cG2JQsuRZiOffuzMt60IzEEGFCLXiHMoCgCL/aAXxvK0Enpn86KI5/n3yqLsO/w8+7PPTH8u1sfy1Dh7",
+      "domain": "amongwords.substack.com",
+      "path": "/",
+      "expires": 1778563533.090874,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "8FoM+fkqxYsc2yyMuIP4ldNLRwJH90ZKeBghDlYY91rVcWkWeZyH13dri9CcnIBhjgUabqfoDSIhE/k25ePpAzTTaLVQghCh9o2qqBnD70awMW0TLlKdHZCsOiFML37cpare7eATG2AeQZ2TMD0QTnFXfWvhKUmj1F+n9H3hFg4yiF4+rjU9PLRT9zBr689c9MFP04a1gwLvhgRB+RHhCSpvMqUOQ+RLpXrrLpwkyc30CL19cBeru+j0WjFSJTfH",
+      "domain": "celebdiaries.substack.com",
+      "path": "/",
+      "expires": 1778563576.682259,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "fMu5nqaVPpPQJkmOxu+POs1e9ss67GxYs2WiVu2zms2GOt3sldiiX/NS0GfiRqX/mWRgTNEh8fcge+6/m83Oaez+If3M00mW6wgwnVpJF1kB6POVkc4lbdm6ZQP2T4QC9Hn+ttG54GoeDNFnf5eWgQRyLsrDFQsR8tyBZ2pIYBz2Lw8HbwfLRqqeGyY5dQXCnXJmyyJaEYd0yaoeca+igKFn+gUCGg//XAZoj9r9Q85/VsEu+YMKw89Qjm+4WddR",
+      "domain": "kassieboo.substack.com",
+      "path": "/",
+      "expires": 1778563619.974661,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "YBJrdpI5m086rCHijbqu/XmuPtYOysvzGrPnV1jRPRyQ3yEpLKTzJ9r4cUYnYwW8MQD8mZQFDpnyswyvIqNgVA63C0pProT5qLB2uh/K30WIjzD+XPbip1Ndd14kvdiMOI9Z5KhCe2I6glorYZC5i6dC3u+i6i7+Pct/of1gWzoP",
+      "domain": "digitalcollectivepodcast.substack.com",
+      "path": "/",
+      "expires": 1778630468.930697,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "iZCTUEWRgdFB8uisce2i6gD7H6rXBUNl9FmBlLGPYG1Q7pV1Gic/TeXNwyWCKgidq8ZZMzXcNf3vayiuWnee1OwExJYYBWCGcA/G7BPfmDpIsaUVCXg4rgmwxCbF/pFLj33gDSARmoPhfPAzrW6OP0CgxuFGeRmdPKBSM07pbNY+",
+      "domain": "thwest.substack.com",
+      "path": "/",
+      "expires": 1778630482.666745,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "uFL+Cj1eur8eSPCHS6oxP3N1rx0bDZqQZNPy+fRGZ7dVfdSG5LX0GhaoiEP/wuLeqsMddYJPRSKDeZmkNLdEyb8ea9wXR/MqnLnnBQ1GSbSV8JsfVW5MKNo/oj2HhmK+rOvmq3EtUC3AMiN97YvNfnCkA1pIUcDaOBrbSiOG3Idy",
+      "domain": "busstopgirl.substack.com",
+      "path": "/",
+      "expires": 1778630562.56046,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "z4bG3MyROTtXxxAcVv+KSP3LH4T2H786nKgWqpZjtAsFIECxMKPIYkXcjWoiA66bGaeDcbimi+IxuEnNDcEdZPyLtbfxpBonce/I5yRSXHb9LB2nYituzIWGl/zFoVGZO/V7bMRzpwiCQ1dQPTN5kt5U4UpPV5KObt0u3vwpfMWY",
+      "domain": "deraunfiltered.substack.com",
+      "path": "/",
+      "expires": 1778630613.493734,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "sp_landing",
+      "value": "https%3A%2F%2Ftheorchidsmuse.substack.com%2F%3Fsp_cid%3Da44f0432606bf9662200e183f497151e%26device%3Ddesktop",
+      "domain": ".spotify.com",
+      "path": "/",
+      "expires": 1778112226.884769,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "RpRkC7kopXoFwZ2Fcf0rrCzmsbXcZ+f9R93Qqyeh8qRNkw27KEJPKvEwHae0T6smjqErGZeUKKTjy1mDWZjQngQ3NeS25YGAtdeLkdRNrGhg7iJ8/mK1jT/zoUGqtIXZRPGpk+sVu2dLofJGYfkX6Vaqevf6afA1g6KeKr733Xeo",
+      "domain": "rezhnamohammed.substack.com",
+      "path": "/",
+      "expires": 1778630734.712483,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "+GTIJ9DlW9MhMERTj0GS79yzcEUhrU3wGNzGQzbh8qFXd5F9zqX6e2DJ4wErY4rXbw5qhQ56eZKnSA2Yacrnx3LhWfC7XmAaW4Q9b3FBlm71TeTlQHGR8w/662a2uylUYJL+Xu86dF16VLzwH0iuZNas+3OOYIMpTaHWsCzrzwG+",
+      "domain": "sood30034.substack.com",
+      "path": "/",
+      "expires": 1778630740.300573,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "Qf4A0TLsbhN01RBvr0qHE5wTw1bwQ5oyrXQauJcT7teYBQ6NNu0Y86YzviOVH09BIU9VFvP5l2XtO5B62VlD1NPrfblaPV+GDFWGVRMGx8ehRx2pCXokySZQwoFTTaq7Q4sLK0HnPNrkXRx+k7f6tFk3auIjF2+xWXfZKKunOmmH",
+      "domain": "kcontain.substack.com",
+      "path": "/",
+      "expires": 1778630853.433962,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "yXpUETt2UidtkjYVu9mMn2GPBD45iUmfOPvkG2UYAF83Z3DE3Ax82OxXAXeRWsGpFHLXofpVeCC3oOHebxofpdSeuffo6GLnWqqC0Z3jXuT6loAXtG/EXYUWUuL/RHynQrLP3Wsr600/Y6M0iBcS2K4Z4jn3DZ4FfM88L8TQ7FYU",
+      "domain": "vertices47.substack.com",
+      "path": "/",
+      "expires": 1778630866.75969,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "76NwqheudAxxRtP/lx9ZfBDO0KHZx5vr+SgZPDG0lYecV8tM6Nt4CpOtkuw53aRIAx1VihjxTn/vOtaSCpBSwIys6tCY3CM3rNBkl1tGx4g1ThTPVJ4Fuz47/0rZX705wlA+Kgcc5GRESuWlrlrcT9Em9NvQAytQ944Uh1yKI3G0",
+      "domain": "chrisparry01.substack.com",
+      "path": "/",
+      "expires": 1778630881.54779,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "dO0SsZ5GaiHMeRgNNFRX2hFluriaowbrGkPQcTSxk8tiL4OeovZ9uG0iACaWm2LJDWazoE0OVfxeyuMLw6iM38ksihQHHTHoajV6sUYBS3xj9MWbIPW6LIlTr9APnDSBdoXIk0NCIn4tIrIYp1TnD3yFlY+ftvJTEtIytc3zioB/",
+      "domain": "coffeeletters.substack.com",
+      "path": "/",
+      "expires": 1778630886.386266,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "W7QuVM9BiyrhlWEGrBryiU3GSMG3VbLUlX7v2FuRgUkkQUzWo/NnWRbZyAcoVRgqRvg8usKt9oNnVQSWO2vG5qOf7JMpSqXy/ltOV15Xj+pPIFOBMDxZAqPt2538w1OWSZ9QUVbXD0EFEtP7OiXEYElJjdWhrNSglc9ijt6KyM6o",
+      "domain": "wearitforward.substack.com",
+      "path": "/",
+      "expires": 1778630932.165514,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "yIaRwnH3+TAtVWqTpT8N5WN24e18tcuAXaSv06nztj/tJuMQbBRwwLtiEMMSh7WGjrqLCBCBVikCh8APomICYzH93wszry22Wz9iYDWur5AzxJ0r8VJqc1/z2UGHXLjBa0bfPxDJV+9V3OHwsGTJ8uuGgS8bQ5wZMCGN0doa7xzi",
+      "domain": "digtalsez.substack.com",
+      "path": "/",
+      "expires": 1778630938.944416,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "3ji93bkifhcO6iJLG8tZxnPqDfJaKXEiHTeygFKJJU/hHEnjPFlHwhKljhUYZ2PBWHAMS+LX6ZPYQ2ZC4Jj1afzBg9FfmFtWjtbP86+OFK0yvKe2AwKKO0Qf5TdqIbCyAu4/eNI7bgrY41RgyOFOSoGdSmlaj9MeoSMlx2mc4MPQ",
+      "domain": "poetrybyjules.substack.com",
+      "path": "/",
+      "expires": 1778630981.033341,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "127Ylj2BO2UL0nJkb4Zi6T5Wbo3Io75UgrpydMbR+/Cvv/ImBJWnf4sbDRRE2qH7q+CK/WjcS/NpjnS8o4l+1wDhr1GxmZGSGKHEw/dJTXUdxk+rertwR8sSwtvk1k7Meg/lDWzDAS+gWUPEsnWCuDk5GFiU4RJFMUNkzpDHCPPb",
+      "domain": "thisisnotamemo.substack.com",
+      "path": "/",
+      "expires": 1778630989.330073,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "wySdaPIqeBRYNHLEeO+UDzuiMoNOlR02FxyQjyg3yk6m+iqoyfc+gvTbMRwA9849Ck1td5iAk7I9yvM9MSGwA39M0StgQpu3StmYID4z2jGIBWBF1OBsNfsksFgDq7PkYzXdahNHMwVklhcvkbPTQWu0DWqxFdtfndiLL+PR/zmM",
+      "domain": "addpsychology.substack.com",
+      "path": "/",
+      "expires": 1778630995.467679,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "SViHc8j2Wr+zppza+MiufB8lkq/lM0O6lW+pvL40Xx13HaGSolN0LAgrew+lBaa5a4s8b8tmC/zRhPMAwStNXP1XJz2WHBTcPRVJEQUDhm9YKYSLk7be2+e03iUGvzTrFc/TUmXlHkCfVTJUn/Q3UdGOY0jXFtitHMfQtCY7nLMD",
+      "domain": "wavesandpositions.substack.com",
+      "path": "/",
+      "expires": 1778631039.649723,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "Y6NJpUWugoJbf1CcR4U6Zp+8hQTu0CozSm1v9VVYpZaTPVbI/936QnO93aYa3kVe+KQz3zlXpv2TAwFIN1/GFN38iSODXGmNllTdS4Fa+DoqtRJ8yKUCG9W/jDpAdJkndvM/r9IKswDGcrLh3LVtUXt1JOl/vOm9pcnrm5T6yTjJ",
+      "domain": "writingbyraya.substack.com",
+      "path": "/",
+      "expires": 1778631046.825749,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "vsij0v4oKrOsrCuAeVoGnyIdzJNzN1nf3w7I+DhfYLJmpj5eLgBx1HTvJUM8URvMb/RrogOfUdNq6zq98VwBEwyy9xLosQ5RBxYByVr3bFBcmdPpi5dn8bzwDD0spxqQ3Z3HeU6xCepQlNMDaw/NNS/xyV+2Agt4kkNQ/QpDZrYC",
+      "domain": "betweencitiesandsentences.substack.com",
+      "path": "/",
+      "expires": 1778631090.27289,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "4YnZeeu2ZvsQ1KLUSintjZ6lgg+OB3F5yjFOVeFbIP/VoMhQE80V73cBxzXMj/jWk4W7Sqk5/+P0EwhKH86boANcx58D1ArO5eTWgmveiXqLNv/L7DIqhYvjaj4KQopNXmrQyGFuj7G+KkA9kN4i69bzluTh5hIoENlBNPP7utCu",
+      "domain": "javarevisited.substack.com",
+      "path": "/",
+      "expires": 1778631097.476293,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "Oa7T3jVu01j6cw41e2hQ9Oi1iDvvT+6x7XQYJkpwd267U8BSanMIZsgMAxTqA32+F8zM2D6b3qV1TN0SMMohadiT9gm6rshEk9AIBv9tMnWRle4rfuCG0v29bPfZX3VZiGJ96Ujb9ENSBdiNvufmAxP32gtUpi8tvI3p88Q/7+v7",
+      "domain": "juliathedesigner.substack.com",
+      "path": "/",
+      "expires": 1778631140.132886,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "IVRmJMwl+KSrWEMmDJQzpByhOv3VyLCM2kVfXVjHQVhAYv9aEyzNQa2vPrw/5zrQMxUZAGCa3+e2a53yOmRqfSAveKjyC69lIYLrpjDuLJUZtNEUJiqwMjDTVJRUQCnHJ7ffHW6K6gT7HnzUvvGjnUfMFO+bnV3xMulFWl4MO9Vkw/d/jb5MarkWG4KxO2NKuNSvSJmztordQ+0d+2k2BxiI+MmKugcnV/TtkCBLgWvoYdNb8PJKzdSman9QjVQQ",
+      "domain": "johnsplace.substack.com",
+      "path": "/",
+      "expires": 1778631184.521014,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "6Gs824hLAWVbqWWfx9e/NJRfif11K/bcN64uQ58ZM9loi8n8pvE1L9ddl/HsMTAQ2FFBPiASDvjwQT3nnAh+OBT5ZqOF8JDZRTaIrs5CMAJz8/Yy9ZM+j/BP9t/oh6j0lXe5juILSkN0rTNMNPcntqeLJfEgTYSQ08dJoVgWedjC",
+      "domain": "spinellispins.substack.com",
+      "path": "/",
+      "expires": 1778631233.38481,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "+mHJGxilQHx0jpf/bI6L3FBewrQGCC4GkDFs1FwB/orxQ92hgJulj9yFyOuhMky5ZsbWnqLUa0gur8cZkoSaDgrH1tkGGZjUZ/dwAeoBub5QhBW3wyMyqQY13SEERHq9QUZiVm2RuDAIswqQKOlmbhoLTwAjyDQfov1xOkmjQiLoGTSqrCs6OgI3iCxAM+38ZMxnbX/5Imthr14JOCZ0QdiypX1esis+m1xHQB+7ApvqoaFtzHQ20L41QopBztEE",
+      "domain": "vanity245466.substack.com",
+      "path": "/",
+      "expires": 1778631279.932878,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "wXvrtudis3kFQrcA4LoAZcNkhO/4KQge3TB1U0BSPzHLmyVjbBP9CmrdiyclFeTBdAPsKQMjByMWWmD7SUoK9LV5KNW4IbP140MfI0qpddzXmVsROM0sD6hZ64plIzlvdNBIV7Y+ssnaL6p8SygkiRHOqfHeTEkMNsWc4wUMe2Sk",
+      "domain": "framesthatlinger.substack.com",
+      "path": "/",
+      "expires": 1778631323.650172,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "jhiNnoIkeOzVv4AAMEGZ90J2HoarMPhl5ioBB4goMdu7Tdu/NB5IQ5rw95n8NbPcj9/gndefNjubg7MHHs1EL0IIQZLwaY4LHjGrlSVFS1aEN2bzJsRXqMuo+hG4DvVt8aVFHazj6p5/JuzgChSCNJOavb2UQOXz5Rm0ly/jSApA",
+      "domain": "sexpsychology.substack.com",
+      "path": "/",
+      "expires": 1778631366.115629,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "eQ+jhWMLSl/k6jpdN6kxPjvBbTkaEAdrWOOPOjMtC9RnpIHrhRu+yuA7RMyxzyJsfITofFDsf4cgcuYVUIO1TRG/oKyaQN3xvSSxuG40YCfurvfItmponnw9bhULLafcoWVqRmffaO69336EavdAZKD2foPypSwpd54iMT1s/VDZ",
+      "domain": "maitepreciousmohale.substack.com",
+      "path": "/",
+      "expires": 1778631416.695037,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "fksMcxai2QeliBQMSmmI4DH+J8BxkltopkKu/NYNr+f6ouZ1rGvdhKgwbz5D+RpV2KRCx1/rOj2TOjEC5RXP6FiBfTPlaqJONvTmJ0RmvRWuTb0Mz2+EpLQBPe+Msm3XbhMDrP5DrKmVL/YiaJB4jHTZOSx0NXD+pyP8KGEJmQL/oY36ML4ZRZN4HoYuU01tLRSszlN01b9HkgcyDyMp1kvg1MIZdb3eqMcYgszb/K21D7jij1ojDQ3KKbnurwgo",
+      "domain": "jaimewatson3.substack.com",
+      "path": "/",
+      "expires": 1778631460.393586,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "OWosUe8xeC6DGsIE622WwY5r4ByBtbgS2N+09tvyN8Iq4Ajx2ixso/NvQ6Alzz/xL1QKGFTEKa+GRw0F2jYH4NK1LU2LMng3iadWLLNVukVO2UP6Um9YjCAimAJLywUdl8isNxC6cw6JWc3Tdr3+xy56OgqwJ5xRKFtddPsJtknC",
+      "domain": "justmuzammil.substack.com",
+      "path": "/",
+      "expires": 1778631466.851303,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "U+KlX/imq+zi5ARqaPQKdquosJdu5zYxlS8GeQR/ei5H27p9wQbnj2rbLR1gMzaBynNRnj1bdrG9fO8GhOAPt+BQK4XeNV/iQwYMCh3aUY51oRnKD/D96EL5eWKkjUaLVkdXAZ192Zqws16mLE4zQiln6r02n/mB1712uROUQdXe",
+      "domain": "martabalcer.substack.com",
+      "path": "/",
+      "expires": 1778631510.393752,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "CLID",
+      "value": "c476ebc85ed945b38cab195ec894e300.20260413.20270506",
+      "domain": "www.clarity.ms",
+      "path": "/",
+      "expires": 1809562716.872203,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "CgyYkvu/n9LuSGuY+B15ZfSIgw16fm7csWTXcpPDlPzQ+T25ZbELHV2AtoeFbBBoQeYz2MfYZN5VAL1wWo2DCdWiPjDxOQpK8zDmk/BAbJzlTtn/FbZsi9ufk6GMSL7O0fQcwfm+rjZD8z7wzMW3JtegGDOSX0YatraX+BS6wny+0TP3FTY4DtIdw1l643rL86ALVkk9Ltzh6wVhFw1nB00pkPtp6W8wWlVUeyp7qelVCX8KOBGMtAfvmPc2Hzxp",
+      "domain": "softbutgrounded.substack.com",
+      "path": "/",
+      "expires": 1778631524.273079,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "KjhDwHtlbiPjLRe8ESEY1eRKXGC/lcKj2ohg0zoEf2rlDoioohOxYpj88YJDmR2hweR7U+iNQ9ifLVDomK2A5E1nnuQFVJJ49tM38HdRGyGvHQCZ+wYAp6wM3WlBYTf7t+09ILI0G3UlSJMlpvnFsyFySoMGdfldyfWk4jLbJkXP",
+      "domain": "evasolen.substack.com",
+      "path": "/",
+      "expires": 1778631567.538234,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "xJYzBKA5JIwnD5gL0vTpcOIfbFCnn3w5XN/RqBfPUnGkf3CuNR9CNIXotTOKZ02EjqMXVGTJkQGBQoaOrUp8NrduADXuJphzPTJ1IXeG+pzDHlVlIIJsW80kndcRMqFqUF1PKrqXPzMC9K/fTLSVa56r2gUPvSx6zVSjSbaIYMoI",
+      "domain": "clearview.substack.com",
+      "path": "/",
+      "expires": 1778631574.517886,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "Lf/ylIxH+UJNa2P0WNSTnMYR3xTexetcfILt6ZV4b7t898gYzQkadj3foTWTsv6IBTYb1mgitUAswBCn2ILBvy4W72QMCYpPqOJnYTN/so7Zj6A86oUswG08mHlODoD5EjhTpqYM/5Dd2RuR9Oc0O1ymsqtUrmlbQ0Lp45i7gu4m",
+      "domain": "sujithsudarsan.substack.com",
+      "path": "/",
+      "expires": 1778631617.966577,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "mVnqEbPa1DwgJr81mSBdMsB5wPCIy+ulG6Rw9q+JbgVBDyiOK8N1phVsMTFRANprEJW1UVeXkn/HQ7ZQ6Spy1SviMu6r4UHZdPc1Q3Z9fndA2rICTzgzGmUGIdAFS+iC3aaesNSv1UnU8arF63g4Mhth93H7BP/c5EypDws3ToZh",
+      "domain": "heythemnaji.substack.com",
+      "path": "/",
+      "expires": 1778631661.347388,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "g/2PO5UM62PYjHnF4Fux5gpkC7y108emtOh0cUUEcFdVOAkhFwdC3yQYYjGeL9CEOCI8LM+LlyyeyU/3KHcNaZFWiDsl/aitFAIsQGn+RyFwOL4nYah++AkTw8UUlFx6PRoEwd1vgEjp6rh2cn6nk43fTC3ueDOvRFsR8WdlQ3WG",
+      "domain": "afterghost.substack.com",
+      "path": "/",
+      "expires": 1778631705.248247,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "eU0yUWe9HL67ZCD4Croe5qKr278yXDzTaWWSn4Xe+XDBxxY/Onha/bBj7VMwvLfYpv4gcbKZauFeAevzsaeOLIrEHqLzYoei8onwEO6M2UU0INFQin3hB5AsRX6WOOfH3DoBf2F4KRlyl8pvHSLGZzFloTTxEAakyQiqCtjkhDaYr0UZR0pl8kXUJeSzkRToTr9ca1Skfr64po/yu7MQ5oY7ffGGjTbtAFerlLKFYflvirdjyaOnG+4S0vgowGCJ",
+      "domain": "adamniedbalski.substack.com",
+      "path": "/",
+      "expires": 1778631712.493387,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "O2O6NCjkM0bEVFx4X4iNdFlDb1zA1EBp/40prCMCbZplPl0OkcmkgHw19RCs0UdDkqUJY/Lf4IK9T4ds/C5+4BcNKAj6og29zQDD1P276t05McZoP+e/lL99zN3hYRKK3QKr4Rncx/u0Xg1dlukWRRky99KsoqTqbL/G6HVu7poC",
+      "domain": "vanessaschaefer.substack.com",
+      "path": "/",
+      "expires": 1778631754.990704,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "ue+v8wBWY9MP1EZq8kBX0P92ehCIzThBz3OEeC5caT47yXCOoH7p/cQ26DdgeX9dW97XpW5+ZtTkcEb6K/LAVqNpuAJZTOCRbFazZDew4vHEn2hTyRK7aD+myPgkiSDcZwAA76XicEP3ywPO0pRDL5iKKxSnCgdiOB/PWB5RvVP8",
+      "domain": "financefables.substack.com",
+      "path": "/",
+      "expires": 1778631762.741489,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "5iryFUav+tQf+yutHMSLJUrYZ8gczWrtpxp7yHEq51VZH1fKNgW+XA3DBfEud5X4jr4XdvpT+/0KDraEykaTk8VrkWNm3EzJ8vvqB1TTJGv63d68ZkyjOVkvDjBw9ehStKs48cS8h0pechFuIrHT9vSrLg86vvF+3qoIRrD9J9e2",
+      "domain": "larabouris.substack.com",
+      "path": "/",
+      "expires": 1778631769.471565,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "Bp3As2qJH1lpeVfaKDTpIvBn7uhUgJRN4P0j+DCT2hl4z8P54HjR73e59xljZ2gviQOvfmRRUwFheX3wL2tQ6jdWvXgixQ0u4Y9ihQG2ycTlAE00qdtc0hfGVg8Kal0mhoZXHTn8vxBJXTxoIT6nx4QDl3MjrrK+rEoqbEDWBWzzC+dmXQcwWA1ipyXP1tWyZATuftbc+5Q5117kG2sBDkjNeGTwgWQrHlvCodSwI23MZzR3idPFzPyZcw58zFaM",
+      "domain": "maximfarriereng.substack.com",
+      "path": "/",
+      "expires": 1778631913.886953,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "tGl7AdBQUiVe1cKksWhyKEarffA9VKIdP5u6lrONAOnxwln4WY3ecFkdTGlEM9lgUbx1uFPYJH+Zw0JoRnFwFp4LqRXD7dJvvAMnsLSjWMSuHCkPxQtIpggbHCwz6ztkEhKppR5FfD3UY8bA3gEsLy0U7g8gQMtk6LrelbE0FmLbFDrHLF84qkDY+aDmLn2bBuQ/flpwGxPTKASCKIJZMC6sbkQyoK/H6DNfNAbwk+YyR4TmS1WoYty60q2c8u6P",
+      "domain": "abigailfentoneditorial.substack.com",
+      "path": "/",
+      "expires": 1778631956.636526,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "OXlyFMBIsctS5JIyc8ZepPWM0LHZR5HocjFkbD6F+4+IjCS9lJ2bcOUUiAEhi/vmpGZ8Dv+rszOfVjYfL5ICz9C1lFwr2/jM3/dIt5orbfEXsd0ggsiHBupz8RDVbg0QPpZatm/d/ztYkEqbsmxdcEu8f77ip0hQ4ot6wQbl8mprasg0FU2RyifxPZELeebikJkDKMh5UtsRoiKW2DCJ2WuD7JryoT++zb1KdYmgOA23YqIdkjGkAzFS7+7vGk8P",
+      "domain": "smallwounds.substack.com",
+      "path": "/",
+      "expires": 1778632000.101657,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "26Jqbc8qqfhMPmykN/8bp6gDh5KuAwzrbDTEQwBJwZYSxYHknFWIr2yS2rKEBZEfSbtWtHE9MDpfPwU/APJyEcq7mTSGc8ON0BZ+d/PwffYPQwD9otOH/7SNh5jBArXB1JuH51T4P5AmhQnOAssizPkSvFekdMi1EYsGesPHLptV",
+      "domain": "adimitriiiii.substack.com",
+      "path": "/",
+      "expires": 1778632005.811048,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "4ssLSlXHXg+2tnOYB6iQ5Yn/e0o4SoTk6uD7Ng7JJHcy76erNb9UJ4s+6ANiX9BMZfGCfztGmIcvb6J7D2dXsc1DM3uFSLobR9AWKYiNBN4lPht6PPRvJQhbxLO6fThYlc8kI0jNW0mEZIgFgBjBKQ4UFyTsQyWrIjwz74e6gmbO",
+      "domain": "relocateme.substack.com",
+      "path": "/",
+      "expires": 1778632013.48451,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "015P4/GbCZ6GRN9sGAvTvLvn2bbbOFJtHDE1wwpyAOsXM9R+m3Mi/ua7E6WZYwP25qJllu6qZNJDd8PPc77ovB34gz8SHN03pTFdgpVAEzvPZwbObMflWOPDzt/Nzzt/Fo5Mjmc1+kAwl/27Hay+RS1pNbpKzt6rESgU+3D1F29YysR8d2uYpJWKSdhnGGjfyIpxzVVtr0oPaUCRiCtDuwYJVG8lOOSLZjrKCpUSEeQLm2ZOLDH1eRbzpfMLu99O",
+      "domain": "sophshistorycorner.substack.com",
+      "path": "/",
+      "expires": 1778632056.655303,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "okmRFlASr6I3dVuOGmz+c4tANtrhE8kTJ+maDFhzTqHiKexLFypqLyA/4WJXScAaZwBCQkYjLyKV55qO90pwy7HkfBMiUby9nh92xLExrubV/KS1i+/wN2xulZ7pNuiWXk+Z1h5S0T612IOH1Xm/1W2QjIEt1/VtoBrTxYpBCefz",
+      "domain": "fictionmode.substack.com",
+      "path": "/",
+      "expires": 1778632063.48132,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "wW8epMWPqk2ixLy4wBlky7Wssqh7gWAz42+NoDfVTcvBdwVXtcehdqC9OarlLNz6b2BX5j97VwFuISqyNji4WHDSS7Agcnr6wgXHU9We30MuDY6yR2kvfyJHpAtfCH+BfXokQ40mQ/mUX2pk8HSHw/MksNfqPZG2qOT1hzvnVNpM",
+      "domain": "renewedwithjenn.substack.com",
+      "path": "/",
+      "expires": 1778632150.807899,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "aj0lJugH0KcfHphp5XbAfGi+MJIAokqHbWwmRHh0BjcK1PMvlaTXQ4dGp7HcuF6J2+fI2n62q8l1Y3CzsmiG9LhK2PK9Tt2aMkHierhK8M+YkHnvB53aqSo8GWyB8GpsBIx0H9kPAvPChpchSihxoX6eH2mGe9a1ifkPLmyH9rMbgCdA9b754KkCdtQAx9uadsOKvfTBfcaiW/HIZnsghvV2tiXQW/J607e3tZbRrgzuyg3NR+G13lNxa0/8aSd/",
+      "domain": "brandonbedard.substack.com",
+      "path": "/",
+      "expires": 1778632194.171079,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "A8qKM53/LZHkSax8NP55+vreeS70u48A5JjXrBLlLEKU6+gK1NvxUdzAEtAUHmwohRBOUOjv5tM6gT762uPUORA0TH7hsJWT6yBLwpdRRXN8WThOm4H+O5bqQ4z/PY/dLCg7Lfjnv8y6vtJXLXeICinKKSw3I0Irh/Mtm+VzQOusJiUI+ssGFJiy9TMYplKGniiDLmXItMhTgN8vqszTfw95OrQ24wpYaoa00UeuivZEP8w03iKP4K12RsGLDaEo",
+      "domain": "rubenbaumgartnerekre.substack.com",
+      "path": "/",
+      "expires": 1778632237.548359,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "F43OCTnnYW+spsyVGE+z1qR37ube/0Yx19//CHRNuAWYMAO2uUWCmu150uLmnZ+DZpw1bhVa3IJ10q1xQaD8MOnl/chf6yNJYKfrW50G2Oq9dyUVqqKEjgOdbWEA/BravTXaXeRGBVHctcSRNVYrTtw1oT1F/Wumir4+QwBwquqW",
+      "domain": "moderatedacbe929e68b74ec0bd5a7fa.substack.com",
+      "path": "/",
+      "expires": 1778632244.338715,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "dnO62VWlJ/AajBOZzyHULeTAZAhxVjEdopWQOtlRBy/wAaRVk9JiWr+umKlsXNwY5Wk76Mc4T3tVe7Po5dJJjnYYGIjohscuJM0olIq429chuVVksoqTKL4pR7PR84R+73tRtxayU4dULKpOwORexoedL0nKokNy+3S13mJg8FkiOPxuH/Ui/Y1ueRbHD6jh8A3PM02QCVRGhMg9D3k9gYNdlbJNBAwLlfF0MUqSTeek6RsXB8WgijHaHGn9pXa2",
+      "domain": "thehartylife.substack.com",
+      "path": "/",
+      "expires": 1778632288.230884,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "B6WcKIe9LF98vaBEcWQGrlAPcBn0Wic6DHmmSBnTstGkB3UhSSV1DsObc9bM5m+8jhD8DYT4gecgGF6tUoH1NcuEn17jiD4DlxDYd7dlHxWWU8yHezZ8DIF0ZzKyRGuzQixtrpLDUoLYVTK3hfvXuQjuid2G4PqOnd7BwLwb8j33",
+      "domain": "3v3eve.substack.com",
+      "path": "/",
+      "expires": 1778632294.628701,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "NbZ8VH/T+SKiDZy7BmNvULd3zee6Mdd35izneJM8Assdr5dz1WwCVzCeyHYXfShx7ECf0qYF4zP8EF4HlUSnTv0VWmVMs4AXkrFA2R1+flM3hxR3jCeSRVeE/6MoHl6isqRz479BPRLNrWh4sNUW/xoUb9rPL/XJWx/sRqceHhez",
+      "domain": "eulogyforasterion.substack.com",
+      "path": "/",
+      "expires": 1778632344.84178,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "Nkrb6l0SOb86jhjpIENASsz5i58CL2gBS/Jbt5k/i8gtzJfK+sV2OPlwd8XAVUPX3xk5xLtrFybVSuw7aBZ0iFRJNbPI+QIwxw21B1njk8t9ZGwzRBgbZa49AlzlN+8tqoNeRSJj4eUAOS5Ofg8BpA8r7hFu8eYkHL2zZGP5yH6P",
+      "domain": "wealthnwisdom.substack.com",
+      "path": "/",
+      "expires": 1778632386.848868,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "PJzXulSS4odudMXOXijQZF32LDZaDXGInn/XBK2kdsgADRQzIqiqdT+NtOEd2OrVTzx+9ooLvtBzqb9TH1mPQ7hUVRiL30an8XewS1qBujPLP2DzeUhEHAmVhG/tnAAFWaKvN/MLUcfWVDAgYXZyVEbEm5wP7Gpg9UIJ+LzwrSjx",
+      "domain": "hellynandu.substack.com",
+      "path": "/",
+      "expires": 1778632393.449564,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "xz1EDzUlzj/0XMFVB0gS/GrWEVKrmymbSqCzxXAuNokl2sto83ihqg5ML2CpgPeZ9BBxe4g7ZJOMOl0VRlrKi86DAf34ODQQJRUxWDrEhtS/FdBnTj0DLQDgEWUO+wbf2N6rDJiX1uNA21nGI3gYkcapNt5dnBMEKLh6SaMfa/+c",
+      "domain": "authorarielbarbera.substack.com",
+      "path": "/",
+      "expires": 1778632399.851659,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "mUxMD+dMd5e62PK2fOpYQPowleGnRY9Zdx0+8uYZqMo9YUcxZDBbv5JeUI9g7Z8NeYyWKUfzfMYSX06Rg9ES/dTxdp7cjdHXUTlkhaPnkZO0NsvhhsNBSkURgd49Aukw4xHhLTDi0ceRs3uOtmjHNbkEIUVIHFD+tWjEk3vRl0+z",
+      "domain": "reubenlowe.substack.com",
+      "path": "/",
+      "expires": 1778632405.233444,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "XbGLtbUBu/IWwXOSVHN8Qb5SNCITTnCa1wXJzuUxVK5cCXDi03zIZ43jAjp04ZsyLDrikHn98KmjuPHrmb5aSNEbuP3L/MKHAUyueu/muBR7JOlyDt2w/kyysHgS+IuCg3NREL6JzvtqS0o/e8dIjg63rvBLQSuajVeQqaWiDgEe",
+      "domain": "21allisonk.substack.com",
+      "path": "/",
+      "expires": 1778632412.577826,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "C3ChFbUdoNPhyy5SfZdI098KEVTRSn/Adp894LVADJdYo0mW6/I2GYk+cmplypRL2kTfBR4FSV1jaegPctXT12T5OYKvrPCE+YyoYtxFllENiPx7quhmFoz1hLe8rpwW6jS28kN9iuQ4q6G/9zZ2Nk0fhNBdcmJExluZq6ELtwIm",
+      "domain": "kitteneyes.substack.com",
+      "path": "/",
+      "expires": 1778632418.975128,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "js+FLMHnK6YqQspGUpaV7F4/FYvywM4xlCbtSWsmAMpRi5TTzACxp+da4HvydAaMFLcKZuYJ2UYGv+NZoclAFdMUcROh5eMVv0bkWFlicWbn0DKQaJligPIy27miOoGh/cCxyEsVosLCU38IF9TyRw5rq4TpSx4I0JLwoA++ES/N",
+      "domain": "temporaresearch.substack.com",
+      "path": "/",
+      "expires": 1778632444.214062,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "fiFOOPNtxUUzVQFMmS1NLC6kCetkBbIwELPr9IrEo654zMXPK13QdDnunjt/m2AsRonbT5KGyhE9t5iKeIfRVBmNy2hwwLzwkSgE5Fe4u09cANlLR8nwE5zI4/r64SOfMBDypwFq1um5GHCZ4awdLAFEJ4sF6wk2A/uZwf6e9Nx9",
+      "domain": "marissaheady.substack.com",
+      "path": "/",
+      "expires": 1778632451.495133,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "ZMNPPceSY45+BKO+y3N/1zNnsQEcvHRdNtssvPMmymZ1AbW8ii51WiGQJTLRUnUahx9jpadrMDhPobMklywMTtQpxrcga62bNNLOuzNHcUy6vuqskLP4NxCjbGENsvG5y2H9ERQb+0Ur1kBtzpAhq1NfTevTYrxF+SxEw3pdnT2xjAdZ9qgS8G5ScDXGcC/oaJkC1FoXMCrv2s1rwm6lu43HOe6hYLENRmGA1CD3I9fzPnDNamCdqV0q0sExgCKS",
+      "domain": "melisms.substack.com",
+      "path": "/",
+      "expires": 1778632494.236363,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "XfAqma0ObjoHhTBR0v17TLsx193Jk7CbXcPugnab3i9lZ9ulGcQLgAymeLJ46uGserQ1wCiLFNaV+JtBge71EpjiZuUQJ//V74lmyTiXDepaBN0Kjk24cRreHCYesnHnkRQZ/NCTuXOOReIBi82MbQCmGi6mZQ+d73mntG6zmoQ0",
+      "domain": "living1111life.substack.com",
+      "path": "/",
+      "expires": 1778632500.85391,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "Ba4XApQbJE3DJdOd8GZ8LOegypofXxhkW625eUNC29OJ7iDnIanc9sRgIZZf+QlC6AMqVTRPu3LlQJqz6q3axHGJk+LP+V5DuGfMsRFF/rVTnrebad/1sMscfXbIYGtbrNn4dBfr7gsTErp3Y8f/iheoDI+cuz9LSlpECx959KgF",
+      "domain": "ashlynbhatt.substack.com",
+      "path": "/",
+      "expires": 1778632507.485846,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "uMzy10hfApKhlivPiicEAlbFLiVhdlZ7Xsimj22jM+ADogZ9i6BBralNOnJ1cFbkTNVKn1d2qGn9ebS531RFGrFwxkWAE7/A7PuheL+YqB6OiFJCXPjhHRyfdi4ynU4lQrgGMvQXOuNfQgVjG8xKJQiSWuAKmDepix5i07KrnI2l",
+      "domain": "gabrielletedesco.substack.com",
+      "path": "/",
+      "expires": 1778632513.898116,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "Mn1TzL8MM2Dvb321lG0HlrhZtuG57tws2yvtSn26ivGWEI1NTuwk5xZ1ntH5vyFW/sjgQHo1ckByItDAIzD8b6AJJ5EGd33kRkOwRMNhD7YuTvRvOMeGiI3ZGcHY2hdvnUeZgvTU4A/R+9lNULkgJJGTdun3pIFlChXisMl+UIpe",
+      "domain": "adhdguys.substack.com",
+      "path": "/",
+      "expires": 1778632519.231093,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "97tCwhRpYMBgh7LF0p6Y5Yud/L+NhGQFNmuN8YhkePmhnL13WD3Afo1YpYW+kftSZRUX8vveQdUzDvtRv/H37z1RAIfCHV5uDSZf7wTDKpm/8eyKyqlwX7TutrxcIgsDA176kvUYfjvdOQsv/7xHJwjV6bOHd9zKvC5kbrxLhW9M",
+      "domain": "heatherdelaneyreese.substack.com",
+      "path": "/",
+      "expires": 1778632532.830917,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "+Wc/B3UNC0n9L5RgyiJ1KEwzDP4Al1MTwAgDxZ03pE9l+rGBy+wm/pUSZ3xkn+RogjFh9y1VP1NoU4S803irsrB5mQU/uZJH5ZpZctawhtcJiTtiHRBskcQQacMsFN1dBy4yGRWNwDEiW8ZX64204OQpxlF+GqrufATfMehM5p1CxfsBgLSNvjlUFbfcvtfU3bAGhVHMJh5Kg32YZzij1oHzeREWu9RTkoX4M9MDBFSihHnmZ1w3ShVX4q/4V+1O",
+      "domain": "siedahwrites.substack.com",
+      "path": "/",
+      "expires": 1778632609.826201,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "bxuqFDDnW+AQa+fPA5QloZGHIR2EGNywmH5Thr2BsvKlApttHAXM1wQ108E7US/0SpaQjh5cAGI7TSTUZCQWLq181DQ8d8NdEC98kPfxnJOui1dCJtnDgENyxONu29h6nB/HPd6MfP36SJEm3fcYJLLr6BuI+dcw+PgFCjU1tTdY",
+      "domain": "rrhayman.substack.com",
+      "path": "/",
+      "expires": 1778632616.693936,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "in3XZ1WsVy75J0MHdvznhy3H7tE2J8+aeYWhuA93pFPcCW0OQZhOnN/aW6hP7hBeLInVOpJYyec+2zBvRrJa23Tk+Nkm1Xh61VUYCdb0+IiHxEnQKhIw0KDJ1FR27c/GIyqEKWmcSGNqf3vQRpnBNSh0/U+S/2Q8vrUsfujxW0ZGLodUgHHMpUPP7TOnMjOSU8qIdQFLo6MDITuFSXzVJHo2Ps+tBNp0rnrtd6Gl95c9bo26ejJ2SjFc0WA6PaKs",
+      "domain": "thinkbigpicture.substack.com",
+      "path": "/",
+      "expires": 1778632623.545523,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "0rd2tTRA3Q/gHyLkJrxz0tIW7qXLm3ozQmj/5kpDel/sgA5F7zXHa1oTN8neqnUaijjWozPfCSMtZy817OXaHWJirul/yqd+/HGlyfbBcY4QrMzKx2a/IoyLsVrxfjmI2Tti1nIicdvUDAouVaYj7QspuTGBFX3Fm3v79Xvp79HC+56ZPnSF85SRyF/ABHJSjlJI9Q7qt2bmZf6yckMb0AQXtu/LdBsFAJiUr1FJWL4xslsvMNiLQDFnjnmH35Pm",
+      "domain": "theorchidsmuse.substack.com",
+      "path": "/",
+      "expires": 1778632660.334766,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "bvsRS1dThOk39lzCqEOtM5mD5FC3k3oIZfXbTglu73PhgLtjcjGO4H+l4To21HLAV/1Gtv9BiNOOx1JwhqsZKZloCnYZK6SZjh4/V3qj9b+xTEZ/VhdD+s0MZ8xVVK1TxGC/0h1/6FPbKgQQ6ZPaEv/GFO+I1Z99vwjtfV5+QXSGEA+xeVGUAEltT95auU5WQ09FZMQP+VdvonQWV+QZvK20vBDH1Lz+DUe5VRkNEjK8DbJ5oZWi0SWJrObfAPNa",
+      "domain": "carlosnascimentolinguista.substack.com",
+      "path": "/",
+      "expires": 1778632686.286947,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "KODx+7CJGj0X9tMW4CstKlEE/P6IXeJ6I9/3ut/S+HFy+v+QQ3tu4dIFhbPzwljDRXP5EjpCy7AalI4WaaJX37AWTDCY/Rd7+IQsjcCi1n9y6lS1A41xyHtC9LR4sGcQNuV3AJJ+BNXvrpAY26lLEA6Ewv7O0PdJdzXDS1cvQOKM",
+      "domain": "waldenhudson.substack.com",
+      "path": "/",
+      "expires": 1778632692.798684,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "8vkoZP4Gyaj32d2K4aliA3p/xSOF4soAm+Y1PCOygfcU0cYN16H9M2hB7CcYY7BSLA05docFdgKa+lkZKTjBrBd2f8KjsRMRsD44LcfDseSeSoRS8t6qD5UBo36huIYY7NXQOJA0ks0K+lhLA+icM870xnHOZhl8jN5al3iuS1KUWHDbEXJIB30qpbOflbs7k4GAYWfblDQVN01bsn8vrfhOSgh5DqTy8ygzgOs32cJb5yIx7+PjR4sY4w821ROw",
+      "domain": "teartocheerlearning.substack.com",
+      "path": "/",
+      "expires": 1778632729.471877,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "K4/e/bAGHyHX8+cKOVngHd5EofXOAq+ODYaOy6b0OkFtxFJkW6RqkeDrZZndB9UMjZZ+WqZ8o/TzId5T/f2CFnglUHr2Bg6xJtEIyprlvuAY1RMtEUsZ69QQZ+jGy1t614Z7xs/1MP4isFuhSA6vQSwqc8nXe9t24+zkbfjtOEnA",
+      "domain": "johnwatsonhorrorauthor.substack.com",
+      "path": "/",
+      "expires": 1778632734.699963,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "hNJur05iYQ+SlEwOG4JVV/ScU5QDi5GSoWIwJWkAMNklaIWfGJ3FycXn6myrKdPnOT3OQtNuS3SZ4MEHAEQl0F6MHiL0DxcwhfkxpUdh7W2AO12R842Fnx4M+8ymyCilLNn416iYydovU5MFXsHVL7xt4uGViRWtUuhcK30GfV4x",
+      "domain": "thehomebaristasquill.substack.com",
+      "path": "/",
+      "expires": 1778632740.784112,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "Pdzn/UoWFma80+irqCYcBkPBYe4D3Gd+CprBixDrAFeQ0s7YIJn5P+3xMFya2ZDzMb417QrfK1W52rP2nk6ZlQ8E7H/uPP8dch0gRTctaa1JBYnTGKiyoTzvyfKgc/swshkJBGDngNkx0Tb0YBnC2UGkm1Qi49ak6fSKnnieuCyU",
+      "domain": "smarterstack.substack.com",
+      "path": "/",
+      "expires": 1778632746.886926,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "lu/HtFaYlKNNg8mYOAO12dylTe56AOYBI6m97N51+b6a3pIfM6rtzn6LXqxilcHmpbidDQ5ku7U1lKhaWXk8OgCooEOILQyNdBFj/qNF/u4O1pCCZodnznrXRdwDyxX3JJFucSalnj+Qp8McE0J+oNofet3gK5XPHxWdQZDo34c98h1eT5yfo5DPCg4y/uLuMeQKRhgweHrmRHn5IQdHW9suRCQoSFPI2SBD/D/lY/eyULJDD0KbAIGLlu8bOkYs",
+      "domain": "slaywithfinances.substack.com",
+      "path": "/",
+      "expires": 1778632754.411214,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "lVUg2no/7wAMcLF04KDtOJwiB5mQhvvi4J1Q5xj+jy2PbuxKv/trye/K0ZkM6W1hYn2PSF8Eq4CdEvjvur1bLZqnZAINg6NDQg6JJuW0EeuGlsAzv5CxX99o0Cv5wG5R98S5cqg2M45UcObVzehXAn9ZYOKL5QFiFA0EeWAeRqwr",
+      "domain": "betweenthestacks1.substack.com",
+      "path": "/",
+      "expires": 1778632758.987764,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "xSCZc7awgqqXKSL/q6U/N5jc1+/2abF2wqrrvYFoytX/5iBxn1Bqfqol4lXr6BO6j/Re+lxfCT66GMUlHI98UNFcXsS5ARuTUQznZc3Hu2LVBWZ9+TgS7UG4h0IAO2FqBBw73hOZ/3PyX5uRTF6CtO66mgJBtUXjJuzv0ZTdFsW6rmwmypWGSW4RKLd8jpUDWxijpoihcXBOJv6nLnyVOt0H3M/rURdgw0K47Qx8hCGgCFojKkCSckPbdKXtBn5I",
+      "domain": "themiddleclassdream.substack.com",
+      "path": "/",
+      "expires": 1778632797.27525,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "7MRozuXv1VcZUymSreyLju1IwdWSnLrUNWERwmd52KfXjSapcbIIomO4OFOkTu3RpXh4cq15yvnKc72tpF86eDaXqlkroa32C7tfsboTQ3hU6mtgU8WNLROBOktPcASapq80KVpWQEYj40IddyY21A347am1/pXpg/r00SYL8Mvkuttobfe6En70U0M6N0hLtCwUby7au3Mc+rMTrdGo5hQVKpcouPs4bUNXHxmk4cv6xkgceyAgyYS6cEUxEstZ",
+      "domain": "lewis830858.substack.com",
+      "path": "/",
+      "expires": 1778632803.60309,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "CnWk0bLP2S+C2phN3ohX8r7AVmgTzqU8daVeVtAJsfnB7DHkowbmUajxpkQD9y1MUunmoHcjyBY3WKwiDqBxVT89h0MC10m5ckQPY8aMWjs5RgX1PVI7DCE8waGg3qM5R20dJ1zYoYFlOwjPzZRZLjI0dexI44YPqgSl/wteNAZ8QLq/Njo03ucIhYdRh5s87tFvv6GizP5zedRXvdv9CUqOVuOG0KUEcvE7efvQ/6ACCBNmxQ0GYzWA7J6bZ4+n",
+      "domain": "godsandmonstersinfo.substack.com",
+      "path": "/",
+      "expires": 1778632840.278535,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "XkOmMCkNYzGXtVgsYdTc2jFVXsVcBs1pvrht/hyzRfcXdZ1l8W4CJuFfSWku4teIfYDQzpcAJDRQ5FQ5ZEln9qpXms5/YlrXvV+rGf578J8LoleMknlnNU46oSX67x3LzmSSr7RaS3p2w+D36b6wPYlFL02/pWiS2llR/mZHlO7AJmUp18cHtpvO5LJessFelhuOtf87P5Y/L4b4p9mSNYV4LbmBuuu0qgGGLNKOC6uEoTa5+5rwo8w+X0QxESJQ",
+      "domain": "untriggeredsapien.substack.com",
+      "path": "/",
+      "expires": 1778632846.688548,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "CAI5dhIiVKYbXnj/I4Su6/dCbo+OTlGv8j3kD1TlLVUtJyjL14G/OTENQT1w4pLcT/2V3Wp2Xvs5TezFiyl4Ce8efnqNMJd/UMs2m8mygNNlQBAdBtASj7hp+DnEVhdWa2Q/Laqik7rA2fzWetkynby3FYv9FEBk+PSQ8Ec2bSo6CAj7xJbNP/T7SrHFadCsUPVnz6r79ZqKOAZ3bv0R8zpo/via5ouyInvJ/saoahkWq+s5+pkbv1W+rXyn+sVf",
+      "domain": "tinytriage.substack.com",
+      "path": "/",
+      "expires": 1778632883.550264,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "XbPCmCjPR2/fMDn/yg5HPF0Q0Ki0jinAvRW3VRs6D7Dioql0dXu83I2gG3dikz3OZgPu8ROgxaBZW8JrKRXOd0kBNkMxfEKeg9oxsFy/rjYPupQT1M0OP4NZgZfOq4qMyAp9FYP8cjYMElUVsajm0WSYkZRIWv6qk1EDJzJbAKfuMS1qywIduiNILik7RFSR2tnQs6A5ITGyvp476TqerjolPBhOQe/NCOUXZsUGJLMFTkFqPb+i7JHcCWbJ1qDC",
+      "domain": "growlikecrazy.substack.com",
+      "path": "/",
+      "expires": 1778632890.126093,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "ywMa1TIUdY+JgJ37ot7uaHnMuFsmBaLI4mY3/3QMlMcEuA2X28rSDMcqJzlUKto8vV/zl159pVe4MPy1c2Xsk8+IppUz5erQtymfiia2TMy8THqM+eN0hm2uiknIxTsKTihEIWVVzhgUNzqtaMGUw/d/VGhA094rtdR4/PWvUKF6",
+      "domain": "sunychoudhary.substack.com",
+      "path": "/",
+      "expires": 1778632902.44568,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "YQGTve1vlmrwSumD+OTLtsIkknQa92eZ4WJpAcZ8GLCD00NW7sCTR6xqvmpu9WOqM2cDrzLBz4ODuzuqwZ2gv4l+cAdt09s9864sYkLnmk1YbVisAmEqZBB79UrDxu+e8+DHIfzvDLsP0dWH0fO4HRCfxIDFEunHRmOcp+40X2dBuqTIk99IQFU1sDVRQKna34FbDSsNzSu0D1v2kS9jYmdfb9AgxvetbWYan8VBrZRvDJ5NX9pCy3RVp3zdfCG2",
+      "domain": "knowingyourinnerverse.substack.com",
+      "path": "/",
+      "expires": 1778632939.726616,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "EXTYJ3jJ6tAhCNDcvX5wjokK0da2B6jAne9UK6bP1Fum68A7BctCMdjeohgIg1in416ZNjx8LiwThnY1b/xu00txoF9Sb6W2S3C1e8A9PwozHF1zFIl01SEfXPLAawDROHpTiC/IO5IxoNr/TS5XtHO4Je2hJO1MeMeY2VUTj3mi",
+      "domain": "livinus223.substack.com",
+      "path": "/",
+      "expires": 1778632946.561678,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "N7JMMWSqRV2v6mT9Jp1ClvEj1bMI4wXRrguR33H8JdOETdCry7Ew9ZInQ7BuzLQ+LL1bIe8eyT4GAJaT7IVmX1dVqUoCRr4pIuVOienUVyuVgTmQGR0gcJcWxVssea0c8btmqBL4LtRSkzMuEEMyYNl5o4ldW1lxFe+WulFrCV4y",
+      "domain": "ravenambrose.substack.com",
+      "path": "/",
+      "expires": 1778632953.430387,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "SRMP1+qecEeLiMOH+CV8ICKsbxxEotvbVev+l6Gyip9aKwdCaLX5Nle9MtVm+jalxPnW9bej8PiqDNzWQXCfV1hq/nIUlm+9eeB+cCCFrfJd2WQjFc/dxA5rV1OxKLUSOTVYmIlxovJZB7EZzE/lvVQZ9Eincq/YrcjeR8NnBuCK",
+      "domain": "contentjobs.substack.com",
+      "path": "/",
+      "expires": 1778632958.937886,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "ZDn3jZ5ply7sAn7/fIasEF4+a658Ct0VQA7eGeRxr7Bnr26CNfN20xCZ08XhpqlFZ3+eO1KUXWS+2MJ7klcggw8ClJ2/dn3uva56vWmTc8yx9A8yQz5g43aJ5XN6j7a4cm+B3WJE3VuleiZPX+XVJ+uOpGdc5YLdWXGOx/6jFTN230SK5rrMoBTeLe/sh4GrSRNQfmvSRrUwPIWNgZucLDz+KOe3NLJOPipF8oSnq3JfbbiUrTMGnyGxmI35RwYb",
+      "domain": "theshitaboutwriting.substack.com",
+      "path": "/",
+      "expires": 1778632995.890792,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "tOIfkNvEGqCbszO7CuoT2s+PokCw2qHyw4+RT1XhW1wjfnqHnmAjMaqWbWmTypU82iu21oKYJlCUq2fA6l+X6z1QSv8xJtv88mR1ap9vNgURolYKmtxQvqQOwhOlOgxWerpbc9dOSnGsBfMZmqPTNmTFTNEXvETssllKqP8Q0QgyuIsc8NGQ7e5xhPpNm2mlt3R860JHrC2wRqIOxKlosL+cX3LsMJidg7k7mRrp3FsjgI5Xk0KKg1/hbV8NeuN8",
+      "domain": "fathdetails.substack.com",
+      "path": "/",
+      "expires": 1778633002.232184,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "cJ9OOBOAt8ASftUbmaTO+Oc0U8F+ZzXqL5cWo+ctK9GD+czORJA3oCrUQ9e8X3qL96jTahtgNR09vUzRZlnmfrF8NehD8Z7x3coaIG8ZNOo/80Zz5PNU7in2AcJPmBK1yNhlW4YTnW0quz0AbTYwHt8bQ7+p2LwZ0jgXrEck6/vu2u8EQrAAVUaFx0m16Qo9Vdiru9Iwm0qITanvkdRrG/CNu0g0Q/Zc7ZT7WUi9UZXT7UoxW4preXoCwd+nYzkX",
+      "domain": "anantak.substack.com",
+      "path": "/",
+      "expires": 1778633037.994907,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "9bM4z5hOsG4+XrqFIaefHp274qZQmW6NiLHI2mVhVDWYitnWFBN4ngfLAvYRfy0NBU9S61DSB8/nrklGMKi6iZpSctpThZxiDVbE3YiEw39G8zSp0fhBbXuThr4LiUsyO4mcU83HmUaDQbh2apRToL/4DN2vP6L2xha+xHdU5yHq",
+      "domain": "lenny.substack.com",
+      "path": "/",
+      "expires": 1778633044.157194,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "diPbfBK9BKchy0xH1VmswRgehNKAjzrs7I33ODEIZwjmYrBha8HG1JEprwFwAELUMLbGOG10vb4pQrEIpsQtYw1gxikpk8bwZyU7new2EMnnr/lkjXkakqV7gv2XPQ3wHGy36nCPWn+HsPiRgdVvYqaknutywAXQdeBt8AjSu9kSwQ8Fl+SAu/wGud/gZ2ZJlo2iyoVBMl4FMEjfUagSGhg7rOBKYnh5KYvcoWfhl54iVeGFiTxc0jl3BG3ycWIL",
+      "domain": "adhdbreakdown.substack.com",
+      "path": "/",
+      "expires": 1778633051.548581,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "keoAQSVFW9hqXCdhAaCUu/CJiEX17G83fbm/upBD0Ok+yFViu0PJrJKsex37TjmTSV3EzpNpt9+vNiTdDY6D18aNIQ0nwJSCUIVlf/attAYfjSxWAjqhdcOq9k+YQ2GAUh/4tqIxAJIGikECjcWBHvrIg24Y5lteNM6V/oe04HYVcudMbKnwqb2KsBs0xK+azk6Qxct5XXF2MJSdZ/3iL0K1qxfKFhOxCwgsVx55A/iCgBkbm7vMjLUbIVef8L+C",
+      "domain": "javabulletin.substack.com",
+      "path": "/",
+      "expires": 1778633058.438654,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "wn4GlHZheG4mncP5Uua81dumo6bgZ1pCFbSjbRpofgjyGrgNfESKOIrGBRqWLDqr6lp5InZqnvQO70PRRVBhnMH6ez3XGlnqLkjWWBdS/SuGMDzbofmB13ufZk2/SbPj1zA38xr4/A6Wr1xe2+q+q456Mi3uk6WngBokgRl9Jkw56YI+hLJfl28KFVCt1L78xlKIg8Y35Vnsc5/hkfoski29WyDVIURYrM+J8bwhQN7hL388LKjFea5ux0mne+3x",
+      "domain": "varsha014.substack.com",
+      "path": "/",
+      "expires": 1778633095.14635,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "UVwMPS/HY9Nj/Tif0iYsouIPPpyBbqAmIPRoINQRnfv0fxZONgkG92FLglRwcsRE9AuPevjaEUEXZt4xE18hKjuC+74FytZHzxGrWJQjV0GsnCCt8rmyphpsIXrds+a9iqg+GUl0gHrr7JDHnuTW1U+qx3o81u4Msx0rOSLS78KV1VH0MZmplYEjPpESufMcIVcvxuh3RjTCiUIF+Zmls1vSX3FepJNq1vOavSWEk6C1Xf1CW66LH2pNElhpvwoi",
+      "domain": "taianzhou.substack.com",
+      "path": "/",
+      "expires": 1778633101.484222,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "qXsof4pFH/RPJUCpIQEhe0pTvMHZucpwsKy1PZSigLdPqhlXIjyOUNp+pTXRn1+KvoTJ4pl38WTYp1tyGvMTWz+vIeNvrQChQvCJj3YQWqEnCk7AgIlHTAHxPmN8no9Qfb5B951e+kxdCrYiFU1cwAnqjxx6/z2iPQQuAQlmm6ptumEstsJaqK9wMi7m2+tFZwjy9kOLa0e8BX+kjmSXStDf1FkV6e/DEqU2n11Ye6GWd29X7DAyzv0K8wT7Ns1w",
+      "domain": "subscribly.substack.com",
+      "path": "/",
+      "expires": 1778633138.387511,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "Fe+cJ4jquCRR/kEWOb69gIGDk94NjiBAQEhqFtaYz4LVsHmV36UCnGjfiPiiVXUOqAS6eLGOajeWuUBh7CJ3CsLTBnyeJGMS5UjN/MWCBr1WEdq0n31O8nmf8DRND/eMjUHWsC8/ZzKcNxX4QlcpMuhdpGfI8JzzpQGPjeXhu0cckJu+/a9VmdxbjfmiOTsW46mrduWw8pMQqnScOZ0QR44pZfz4YAh9mGz6jcy4NnAyIakQ5or9thV6Cy+iPFLD",
+      "domain": "simoneclementtarot.substack.com",
+      "path": "/",
+      "expires": 1778633145.515946,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "b1Y1rA+bQ23nLjwgjUoWl1T2C1bBMaS056DOVFXKfVjTbbv89LorlwT3tdcOE5c/XCUO6ASWQLDmyYdqPFPowUER5I9sdrH7utREXFzALzkoQapsAa7DqpjA0gQpfVhmxRxQOcichaiZ8wWy0zjimZbaVSWLwBY8127tjiGCPms4zuiSqHsz0T9xpygmXXoaIUvd9xNeSKSiTBn0YDiMWSjM//PAvgywApico3/FNhPax89DtuzcSxNCcy4vB/KJ",
+      "domain": "mondaybrainfood.substack.com",
+      "path": "/",
+      "expires": 1778633181.826065,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "eEDc5qhVY8QJsBgRHg4NiN6byLHWB/ZjVTmMPf4p5/cfc0uUUq6WOhk8may4uvkbkbq9VmdR0UfmkSmqyMVi/sT8k/fieiyxb3n2traYrU8bsNpb+oJgfP62fDepP24J9fbG+2Kddy8yb5d6ePZz1lMvW8cbnZ2LG0Kz+XQQMQ2lkw1Fxx3BpBxj/tbRdyMaoQzIhdfcYf1BjMa9FnQ6J6lTuFWEUMXuNEOn/KjPNILLVCBGYfvjkWXFgROBpsBs",
+      "domain": "bookfairy3309.substack.com",
+      "path": "/",
+      "expires": 1778633188.411567,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "Lezu9BWrCXJmetb4xV11u71mXWvk2poLsWshcwE7Rm6NBNfOoBAkvEiTZmpK6axJcGcttW59xdJhFsYcvr9G+nJ1QmNPe0s7AwwcBWbsIhyM3IZM4NM1MkyqJq/j8BHjSkOAiA3D/lYN8XpaodtLpyOYN0LacRtP2EmX8Ya19k/4VJCXMJdjTvNavtM9ZnpvLgZ6MDjdsvk83+VYJYUzSfPFG4q8XOuq+xBnx2ZwI7LZF0i8nlCD4oF7uOUVufJJ",
+      "domain": "thrivewithcarrie.substack.com",
+      "path": "/",
+      "expires": 1778633225.297122,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "aRxsdAVQiftdsQCXeq+YKES6BtqL4xvS0OosMKFvIRrlI8GHJZXgkZiHrKFHUl84gUvO1CSaRPspFuYc4Ij/rCD448bnsVqm5fZgvlRSzqKF7/HFklstsQmzjBmmb8MpoY52lOH2RaCxwlXVPiBD2pw8ciBcGNCcKlLrtAl8cYK4Fhzh7WRJb8GFg8QzEg89dj8DbCmy8FoBAdMpIf5IYIv+HazfjhKN+V/7A68HbB1r8ukg3Pg4isBpYGv2SGhe",
+      "domain": "abidemie.substack.com",
+      "path": "/",
+      "expires": 1778633231.669135,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "ucXd9oMZdb3bP2+0MkeLEGE/loRKgWT2vhmKwd0HrGMlozjjnJd/tJL+GVcyLDh/JqUDG9fCSUmka76NbZSN1jcRIUft4P2DZJG7uwYbwihKbCQoD9C2bk6k29BGznYl7u78QQ1dBwXhCSThkMs5/w5xHxcPWHTOrWj9ilOxTmQMvJguNB53UdNOxTWL5jdRa1QXIge8cWDagr5dAgRztXXVjZgZU1szhIsOrinffmvsSNo6eBIF2JrGBjVWLWd3",
+      "domain": "themindexplained.substack.com",
+      "path": "/",
+      "expires": 1778633268.492999,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "Wf5rIw+fmKMMfLZqUdtnPzaHkRjCjj/HjRc/HoECBozTogMcHfHG3eVVMW0WuLr/NsG9M/i5iRrC28PMzUdiZMCRsFP/wcOhEvz0DTyl+DpNfjXMDIRbJJIq+juQbwqgMT0lfy7RnFEihcKL42Q65nKM8gdsZJFCXDgwr0Rwnbd5lzLM0lfn8mK/qixFCWq+C/2vRpNuq8esRVK40UZIuq3Oawo15T7O9YXBA1jRxw8psbmwd8/uGK42u/vHizyr",
+      "domain": "iconicallynicole.substack.com",
+      "path": "/",
+      "expires": 1778633274.924643,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "BMJqShOD3gCPBO2CRzi7f6Vn7NE7W0EKz5FDZOnLDPad++UBclNK91Hd0GJAK4NGopLf6Tt+puB/jxVe/+YEvluDI1LhjCNNR7l+dKhKy9kdfU0GGNnH8iLrMy/HuF4mmQtQTyMaxJK2muWZE8I/n0NwStPYtxcRN/fABDFsYQzrQmDtrzkE43fhlvw+RHsLkmSFwL5jqDo9rDHKozaM9hnA3kiD3msljiDR2DqpoRPBq7QCT4zSV3VAA0lP8Eln",
+      "domain": "audiohubstudios.substack.com",
+      "path": "/",
+      "expires": 1778633311.853012,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "8/rIXyParvEHn5u22oRcwul6JYpO23YHB2Q/D60aUPoFOLu2v/Ghog6iHoRpME8CaT6dfNyVojlzG/1RblyVFxw+w5Q7UaeP8gnEozB3UBysjBxL2Giak3U+RZBVxkL71ycJSD4mwM7ieGv4/LRKiDIZi259aDY3PJ5i2zMDXchSXLVWkine/xKxurEMgVLLwlUAvMleEnagGpoftnTTRP79IynGu2iaCrOGhf2OGlac+T5dX/ogGGSZZSQeV2jN",
+      "domain": "booksandculture.substack.com",
+      "path": "/",
+      "expires": 1778633318.199212,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "X8yBfGEgaK3VB++guTqz1kSWI7JWnAmsOCwW4ySiRykC8w0Kj5NB+04zKN0AeFUwxygQdFJBLJAGSWPIY6S78SD0QFM9zbterT7tUNGrybP9IWMrKwZP3QS6XRqPQ9qEQulWZb3Pcn00CKanB2l1IyA5yGc+BIDye1hI3AUrBb8C",
+      "domain": "api.substack.com",
+      "path": "/",
+      "expires": 1778633323.124151,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%22845aa1c394cab5a363d33e22894f60ea%22",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1809564588.197157,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.441575196.1778028525",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1812588588.096444,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.1656509946.1778028525",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1785804525,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "pv+esyYjC7M4Hkj7ebnB+4Ljd7WepGnLsGtnnDQq36G31eK4nmcIUjYtKHRM8/y5Iz+RWYDvGr9oW5xi/zGWdkpCmwZi/PlMeS/DDpX1Qn1TA5F3lNzD98++0N207D2lgBOqXOpG3YAI5T7+ntl6iOigE7k+ZwElCpmYANye/ZyaTQlpn1ersBisyldIBXbdJNBBDgtcS8phJ9aTUSDVU1cE+G+kGa8KDlt/tNe5vmaUb0CLCDWYugLCnejzwcyR",
+      "domain": "writersonline.substack.com",
+      "path": "/",
+      "expires": 1778633325.508307,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "pv+esyYjC7M4Hkj7ebnB+4Ljd7WepGnLsGtnnDQq36G31eK4nmcIUjYtKHRM8/y5Iz+RWYDvGr9oW5xi/zGWdkpCmwZi/PlMeS/DDpX1Qn1TA5F3lNzD98++0N207D2lgBOqXOpG3YAI5T7+ntl6iOigE7k+ZwElCpmYANye/ZyaTQlpn1ersBisyldIBXbdJNBBDgtcS8phJ9aTUSDVU1cE+G+kGa8KDlt/tNe5vmaUb0CLCDWYugLCnejzwcyR",
+      "domain": "writersonline.substack.com",
+      "path": "/",
+      "expires": 1778633325.508371,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "//JMXJDunvuRSEZYbw6TDxnLq904GYpqInvjRn7QdKdS/Db+yYet15M0emKIl/Byy8gTK5GVL6nQe1LncIfwYj4c9LcnSylBwJ3XHiMLnsr8KUASjF/04MRXgwzY3+Qh2mZfGtwhqnVs4PrJv+JowNE+9RSbyxZhDca33UhhXDdh0mi0Bo4Rsh3jtMb3o9JGw+F45D6Up1gRn6RuUPwDUpXkSVqFdmG94+0VhhuCes3WbZwXP1im9cExCn27n34Q",
+      "domain": "rhalyn.substack.com",
+      "path": "/",
+      "expires": 1778633362.251192,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "//JMXJDunvuRSEZYbw6TDxnLq904GYpqInvjRn7QdKdS/Db+yYet15M0emKIl/Byy8gTK5GVL6nQe1LncIfwYj4c9LcnSylBwJ3XHiMLnsr8KUASjF/04MRXgwzY3+Qh2mZfGtwhqnVs4PrJv+JowNE+9RSbyxZhDca33UhhXDdh0mi0Bo4Rsh3jtMb3o9JGw+F45D6Up1gRn6RuUPwDUpXkSVqFdmG94+0VhhuCes3WbZwXP1im9cExCn27n34Q",
+      "domain": "rhalyn.substack.com",
+      "path": "/",
+      "expires": 1778633362.251255,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "VCv0jZLIRflPjnjRfpu7Ny2GImBVyeIaevI/OxWLLkdDlVkYrB/R8J3MAkXNMPgFbK60d6Sl3zyXCfQ1WcBIg2OvrXjjcwRmRhWsErl2Ffz5kuiJ7HWIn9HINkuuMkd/9ApwwxPLrO8KuOwvXFiTo2WLSqft/lDRb8SXxcpJGUOx",
+      "domain": "lyricsandfire.substack.com",
+      "path": "/",
+      "expires": 1778633368.835863,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "VCv0jZLIRflPjnjRfpu7Ny2GImBVyeIaevI/OxWLLkdDlVkYrB/R8J3MAkXNMPgFbK60d6Sl3zyXCfQ1WcBIg2OvrXjjcwRmRhWsErl2Ffz5kuiJ7HWIn9HINkuuMkd/9ApwwxPLrO8KuOwvXFiTo2WLSqft/lDRb8SXxcpJGUOx",
+      "domain": "lyricsandfire.substack.com",
+      "path": "/",
+      "expires": 1778633368.835955,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "lkh+fzyrEXNq3BWaVaMIPuRyOhK6C11GV+tQqCp7x3wqQI358wkbyYZAC9zRTSE5W115HnlsFx7K+xzBeA+AJpS/GNjWHJlpFsZmtGD2jW2oJ/pQt0+v0BmF/rDpPjv2so74iFN6H4yoZelYUQjWJQS0hD3x3fj+JezytM4Jwhiv2Z/NpwpEQv/pcdZ7XvPHQ4cef9WrjX5n9LmJpP9ZYBWgFE0m4n4LP+mp6AiXpV4tBZuLHkAptpwKAALsdale",
+      "domain": "ifloz.substack.com",
+      "path": "/",
+      "expires": 1778633375.466088,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "lkh+fzyrEXNq3BWaVaMIPuRyOhK6C11GV+tQqCp7x3wqQI358wkbyYZAC9zRTSE5W115HnlsFx7K+xzBeA+AJpS/GNjWHJlpFsZmtGD2jW2oJ/pQt0+v0BmF/rDpPjv2so74iFN6H4yoZelYUQjWJQS0hD3x3fj+JezytM4Jwhiv2Z/NpwpEQv/pcdZ7XvPHQ4cef9WrjX5n9LmJpP9ZYBWgFE0m4n4LP+mp6AiXpV4tBZuLHkAptpwKAALsdale",
+      "domain": "ifloz.substack.com",
+      "path": "/",
+      "expires": 1778633375.466158,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "j55xAlcGAFcu/G/qaKRkioz6C2RzvesWdNPcKJT4XPYqJxTXjWkFIru76aUcWtnFvqvWS1xmqFBmSFYdBKc2KdZmlY9kmf0c49qnJ1X6xjXjjw3PeQIo1ujYN9/4ka7hMsL5xcsi+imLzDo/FH8nQMYqCcdXjlzcH9rIkSJ6D9fw",
+      "domain": "geezerwise.substack.com",
+      "path": "/",
+      "expires": 1778633380.055793,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "j55xAlcGAFcu/G/qaKRkioz6C2RzvesWdNPcKJT4XPYqJxTXjWkFIru76aUcWtnFvqvWS1xmqFBmSFYdBKc2KdZmlY9kmf0c49qnJ1X6xjXjjw3PeQIo1ujYN9/4ka7hMsL5xcsi+imLzDo/FH8nQMYqCcdXjlzcH9rIkSJ6D9fw",
+      "domain": "geezerwise.substack.com",
+      "path": "/",
+      "expires": 1778633380.055857,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "substack.lli",
+      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQ2MTk3NDAsImlhdCI6MTc3ODAyODU4NywiZXhwIjoxNzgwNjIwNTg3LCJhdWQiOiJsaWtlbHktbG9nZ2VkLWluIn0.s7EU28gh8RF0hAEq8CFbKBhWWme_2bQv5g81GzJxEhs",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1785804587.365051,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_ga_TLW0DF6G5V",
+      "value": "GS2.1.s1778028524$o1$g1$t1778028588$j60$l0$h0",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1812588588.095914,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cf_clearance",
+      "value": "J9QOCQdo6e40_vlGtnECsSQQZcgIfGhVMk8d54VJE4A-1778028588-1.2.1.1-P8dQ.vqZCo1OBNtz_equ33A58MQrdmw_3aTOsoIkPO4dcGXvzWtd4OWNsnscSKWwGfWEJCvm6YFFz2_yg4HBNe3g5Jk2khqfUKEhvyJKv4vNWZ_qeZxFV9IiqiDwkhWi25wgscS1xwCXdz5l01Omud7tGC5RGU8ez.vZkpV1a7O60Ab0LbIA_L6Wo4pMypBU4Cmt28_oHBnaeXJNRU7df4G79mTU.VioRV3jeoVS9juuQmdOMOiC50HE8qIXn1KSauGLjex5DNQ0D3lcJv4iktDFZEiz_2Icn8xwt6xhu3IOWrQ70iq0eufSCGIIfxk7DaW.hSeRFoFKlFZIWRXwag",
+      "domain": ".substack.com",
+      "path": "/",
+      "expires": 1809564588.114164,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None",
+      "partitionKey": "https://substack.com",
+      "_crHasCrossSiteAncestor": false
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "zdKeYESG1n9T7ghPz88i9BUv6U3iKlRzzVxcpEnB80828/gliV+HOQKI1aT0Ub39dz2B8XZZTJjS6AgxtXLfKgwYBIy8GUOrEETXKh2RkhmB3n9WiDQA6IIorzsikg3K8O1aHSylvBcvEGPFUbmL/ugMQJL1PaO0wFGQSUYhJotci1/BY0tXQRzXICiZEP6EFeJ1M8H1GSDAC80F00eTdLwAWOtfUMTellqnNXKCHr6bZRha3ZQkQCyWA0Xwrp/Q",
+      "domain": "hiddenmusing.substack.com",
+      "path": "/",
+      "expires": 1778633388.440055,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "zdKeYESG1n9T7ghPz88i9BUv6U3iKlRzzVxcpEnB80828/gliV+HOQKI1aT0Ub39dz2B8XZZTJjS6AgxtXLfKgwYBIy8GUOrEETXKh2RkhmB3n9WiDQA6IIorzsikg3K8O1aHSylvBcvEGPFUbmL/ugMQJL1PaO0wFGQSUYhJotci1/BY0tXQRzXICiZEP6EFeJ1M8H1GSDAC80F00eTdLwAWOtfUMTellqnNXKCHr6bZRha3ZQkQCyWA0Xwrp/Q",
+      "domain": "hiddenmusing.substack.com",
+      "path": "/",
+      "expires": 1778633388.440156,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "AoIvVdwd0fFjHDdtxkZRdPO1pJrvotfqiZaCIFr64o/Hy5e3l2+iQKlAIwze/6HiwpB3Zj8vQCYNl5Hrg7p8NADRwFpaBn+mTRynkN5WaohwO8ZRWo/Xx2crYDRBUlzLS6Qo5mQvrYVbBvOkVjnHOIjSDOxKZX+4t/92Q8DbOLKdiXIWyuy1boiOVdtVzfmx0jDeQSzD6BPShDjIj8GPIl9SSqd2onc2imIXuBUd7Ax/cI8SYBApX+Wldi1P9stW",
+      "domain": "substack.com",
+      "path": "/",
+      "expires": 1778633388.526456,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "AoIvVdwd0fFjHDdtxkZRdPO1pJrvotfqiZaCIFr64o/Hy5e3l2+iQKlAIwze/6HiwpB3Zj8vQCYNl5Hrg7p8NADRwFpaBn+mTRynkN5WaohwO8ZRWo/Xx2crYDRBUlzLS6Qo5mQvrYVbBvOkVjnHOIjSDOxKZX+4t/92Q8DbOLKdiXIWyuy1boiOVdtVzfmx0jDeQSzD6BPShDjIj8GPIl9SSqd2onc2imIXuBUd7Ax/cI8SYBApX+Wldi1P9stW",
+      "domain": "substack.com",
+      "path": "/",
+      "expires": 1778633388.526504,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "sYeTprUCgylrRcQlUbMO4nIQMm3ZKlwFMtQRLQPTzUDv2Xt53kKlMGOZag33oc2W/NG99/HDjC6R40qBj3tauVo5ChM+YxFdVuTCG1xAgXOE4AG9dIh53S6GPSk6OCXQauW26uG6Xz2UGQ4Tzlyv/aNjcnPFRy18Tst9h2P/ZVOe",
+      "domain": "commonreader.substack.com",
+      "path": "/",
+      "expires": 1778633393.857586,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "sYeTprUCgylrRcQlUbMO4nIQMm3ZKlwFMtQRLQPTzUDv2Xt53kKlMGOZag33oc2W/NG99/HDjC6R40qBj3tauVo5ChM+YxFdVuTCG1xAgXOE4AG9dIh53S6GPSk6OCXQauW26uG6Xz2UGQ4Tzlyv/aNjcnPFRy18Tst9h2P/ZVOe",
+      "domain": "commonreader.substack.com",
+      "path": "/",
+      "expires": 1778633393.857669,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "k4tN7YYbs8QFHVssOHTr4+aPW2lMQtvHfwsPy/LBgPdhhGEha25RZrJNMDwas2UeTbJg1O/yfPTAn3yfPowEDxNrj6aXhz18rJ9tJLG/lzW/WwojoKPKeqPYjL2nRdVFDMCWVjIe4OGsNhNOABFR1wuY0FIho91R5FGnCAwWS/Jv",
+      "domain": "www.commonreader.co.uk",
+      "path": "/",
+      "expires": 1778633394.284153,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "k4tN7YYbs8QFHVssOHTr4+aPW2lMQtvHfwsPy/LBgPdhhGEha25RZrJNMDwas2UeTbJg1O/yfPTAn3yfPowEDxNrj6aXhz18rJ9tJLG/lzW/WwojoKPKeqPYjL2nRdVFDMCWVjIe4OGsNhNOABFR1wuY0FIho91R5FGnCAwWS/Jv",
+      "domain": "www.commonreader.co.uk",
+      "path": "/",
+      "expires": 1778633394.284283,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": []
+}
