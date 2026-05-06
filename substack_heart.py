@@ -58,7 +58,7 @@ def get_chromium_executable() -> str | None:
         )
     else:
         pattern = os.path.expanduser(
-            "~/.cache/ms-playwright/chromium-*/chrome-linux/chrome"
+            "~/.cache/ms-playwright/chromium-*/chrome-linux*/chrome"
         )
     matches = sorted(glob.glob(pattern))
     return matches[-1] if matches else None
@@ -187,6 +187,11 @@ def check_substack_login(p, exe: str | None) -> bool:
 
 
 def interactive_login(p, exe: str | None) -> None:
+    if not os.environ.get("DISPLAY") and sys.platform != "darwin":
+        raise RuntimeError(
+            "No DISPLAY available — cannot open a browser for interactive login. "
+            "Re-copy playwright_profile from a machine with a display."
+        )
     log.info("Opening browser for Substack login...")
     ctx = _launch(p, exe, headless=False)
     try:
