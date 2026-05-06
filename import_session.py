@@ -33,22 +33,34 @@ if not exe:
     print("Error: Playwright Chromium not found. Run: playwright install chromium")
     sys.exit(1)
 
-if os.path.exists(profile):
-    shutil.rmtree(profile)
-    print(f"Cleared existing profile at {profile}")
-
 with open(state_file) as f:
     state = json.load(f)
 
-with sync_playwright() as p:
-    ctx = p.chromium.launch_persistent_context(
-        profile,
-        headless=True,
-        executable_path=exe,
-        args=["--password-store=basic"],
-    )
-    ctx.add_cookies(state["cookies"])
-    ctx.close()
+backup = profile + ".bak"
+if os.path.exists(profile):
+    os.rename(profile, backup)
+    print(f"Backed up existing profile to {backup}")
+
+try:
+    with sync_playwright() as p:
+        ctx = p.chromium.launch_persistent_context(
+            profile,
+            headless=True,
+            executable_path=exe,
+            args=["--password-store=basic"],
+        )
+        ctx.add_cookies(state["cookies"])
+        ctx.close()
+except Exception:
+    if os.path.exists(backup):
+        if os.path.exists(profile):
+            shutil.rmtree(profile)
+        os.rename(backup, profile)
+        print("Import failed — restored original profile from backup.")
+    raise
+
+if os.path.exists(backup):
+    shutil.rmtree(backup)
 
 n = len(state["cookies"])
 print(f"Profile created with {n} cookies at {profile}")
