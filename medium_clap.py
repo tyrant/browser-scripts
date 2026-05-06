@@ -14,6 +14,7 @@ use the saved session headlessly.
 import glob
 import json
 import os
+import sys
 import re
 import base64
 import time
@@ -50,11 +51,16 @@ log = logging.getLogger(__name__)
 # ── Chromium ──────────────────────────────────────────────────────────────────
 
 def get_chromium_executable() -> str | None:
-    pattern = os.path.expanduser(
-        "~/Library/Caches/ms-playwright/chromium-*/"
-        "chrome-mac-*/Google Chrome for Testing.app/"
-        "Contents/MacOS/Google Chrome for Testing"
-    )
+    if sys.platform == "darwin":
+        pattern = os.path.expanduser(
+            "~/Library/Caches/ms-playwright/chromium-*/"
+            "chrome-mac-*/Google Chrome for Testing.app/"
+            "Contents/MacOS/Google Chrome for Testing"
+        )
+    else:
+        pattern = os.path.expanduser(
+            "~/.cache/ms-playwright/chromium-*/chrome-linux/chrome"
+        )
     matches = sorted(glob.glob(pattern))
     return matches[-1] if matches else None
 
@@ -384,7 +390,7 @@ def _main(run_log):
 
     exe = get_chromium_executable()
     if not exe:
-        log.warning("Full Chromium not found; falling back to Playwright default (may fail on macOS).")
+        log.warning("Full Chromium not found; falling back to Playwright default.")
 
     with sync_playwright() as p:
         if not check_medium_login(p, exe):
