@@ -45,35 +45,15 @@ On first run (or if the saved session has expired), the script opens a visible C
 
 If you're ever prompted to log in again, the session has expired. Re-run the script manually and log in again.
 
-## Daily job (launchd)
+## Scheduling
 
-The script runs automatically every day at noon via a launchd agent:
+The script runs on the mikeyclarke.co.nz server at 00:05 UTC (12:05 NZST) via cron. See [README.md](README.md) for deployment and session management.
 
-```
-~/Library/LaunchAgents/local.medium_clap.plist
-```
-
-### Useful commands
+A launchd agent (`~/Library/LaunchAgents/local.medium_clap.plist`) exists for local scheduling but is currently disabled. To re-enable it:
 
 ```bash
-# Check the job is registered and see last exit code
-launchctl list | grep medium_clap
-
-# Run it right now (without waiting for noon)
-launchctl start local.medium_clap
-
-# Watch the log live
-tail -f ~/Work/scripts/medium_clap.log
-
-# Remove the job (stops scheduling)
-launchctl unload ~/Library/LaunchAgents/local.medium_clap.plist
-
-# Re-register after editing the plist
-launchctl unload ~/Library/LaunchAgents/local.medium_clap.plist
-launchctl load   ~/Library/LaunchAgents/local.medium_clap.plist
+launchctl load ~/Library/LaunchAgents/local.medium_clap.plist
 ```
-
-In `launchctl list` output, a `-` in the PID column means it's not currently running (correct when idle). The second column is the last exit code — `0` means success.
 
 ## Behaviour details
 
@@ -89,7 +69,9 @@ In `launchctl list` output, a `-` in the PID column means it's not currently run
 Medium detects headless browsers via `navigator.webdriver`. The script disables this with `--disable-blink-features=AutomationControlled` and sets a realistic user agent. If Medium presents a CAPTCHA loop during login, delete `medium_playwright_profile/` and re-run — the stale detected session is the cause.
 
 ### macOS cookie encryption
-The script pins to the full Chromium binary (`Google Chrome for Testing.app`) rather than Playwright's headless-shell, for the same reason as `substack_heart.py`: the headless-shell uses a different cookie encryption path on macOS. The `--password-store=basic` flag bypasses Keychain-based encryption for consistency.
+The script pins to the full Chromium binary (`Google Chrome for Testing.app`) rather than Playwright's headless-shell, for the same reason as `substack_heart.py`: the headless-shell uses a different cookie encryption path on macOS. The `--password-store=basic` flag bypasses Keychain-based password storage for consistency.
+
+When deploying to Linux, macOS-encrypted cookies cannot be read directly. Use `export_session.py` / `import_session.py` to transfer the session — see [README.md](README.md).
 
 ### Session expiry
 The Medium Playwright session is persistent but not permanent. If the session cookie expires, the script will open a visible browser for interactive login. Run it manually to complete the login flow.

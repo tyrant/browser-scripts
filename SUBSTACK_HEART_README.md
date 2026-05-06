@@ -43,35 +43,15 @@ On first run (or if the saved session has expired), the script opens a visible C
 
 If you're ever prompted to log in again, the session cookie (`substack.sid`) has expired. Just re-run the script manually and log in again.
 
-## Daily job (launchd)
+## Scheduling
 
-The script runs automatically every day at noon via a launchd agent:
+The script runs on the mikeyclarke.co.nz server at 00:00 UTC (noon NZST) via cron. See [README.md](README.md) for deployment and session management.
 
-```
-~/Library/LaunchAgents/local.substack_heart.plist
-```
-
-### Useful commands
+A launchd agent (`~/Library/LaunchAgents/local.substack_heart.plist`) exists for local scheduling but is currently disabled. To re-enable it:
 
 ```bash
-# Check the job is registered and see last exit code
-launchctl list | grep substack_heart
-
-# Run it right now (without waiting for noon)
-launchctl start local.substack_heart
-
-# Watch the log live
-tail -f ~/Work/scripts/substack_heart.log
-
-# Remove the job (stops scheduling)
-launchctl unload ~/Library/LaunchAgents/local.substack_heart.plist
-
-# Re-register after editing the plist
-launchctl unload ~/Library/LaunchAgents/local.substack_heart.plist
-launchctl load   ~/Library/LaunchAgents/local.substack_heart.plist
+launchctl load ~/Library/LaunchAgents/local.substack_heart.plist
 ```
-
-In `launchctl list` output, a `-` in the PID column means it's not currently running (correct when idle). The second column is the last exit code — `0` means success.
 
 ## Behaviour details
 
@@ -89,7 +69,9 @@ Some Substack publications use a custom domain (e.g. `geezerwise.substack.com` �
 Substack limits how many posts you can like in quick succession. On days with many new emails, you may see several 429 responses. The script handles these gracefully (30s wait, then continues). The affected posts are left unread and will be picked up again the next day if the notification emails are still within the 24-hour window — which they won't be. Consider this acceptable attrition.
 
 ### macOS cookie encryption
-The script pins to the full Chromium binary (`Google Chrome for Testing.app`) rather than Playwright's headless-shell, because the headless-shell uses a different cookie encryption path on macOS and can't read session cookies saved by the full browser. The `--password-store=basic` flag bypasses Keychain-based encryption entirely for consistency.
+The script pins to the full Chromium binary (`Google Chrome for Testing.app`) rather than Playwright's headless-shell, because the headless-shell uses a different cookie encryption path on macOS and can't read session cookies saved by the full browser. The `--password-store=basic` flag bypasses Keychain-based password storage for consistency.
+
+When deploying to Linux, macOS-encrypted cookies cannot be read directly. Use `export_session.py` / `import_session.py` to transfer the session — see [README.md](README.md).
 
 ### Session expiry
 The Playwright session is persistent but not immortal. If the `substack.sid` cookie expires (typically after several weeks of inactivity), the script will log "Still not logged in after interactive login" or similar. Run it manually to trigger the interactive login flow.
