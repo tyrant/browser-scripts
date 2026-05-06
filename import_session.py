@@ -12,6 +12,7 @@ Example:
   python import_session.py substack_session.json playwright_profile
 """
 import glob
+import json
 import os
 import shutil
 import sys
@@ -36,16 +37,18 @@ if os.path.exists(profile):
     shutil.rmtree(profile)
     print(f"Cleared existing profile at {profile}")
 
+with open(state_file) as f:
+    state = json.load(f)
+
 with sync_playwright() as p:
     ctx = p.chromium.launch_persistent_context(
         profile,
         headless=True,
         executable_path=exe,
-        storage_state=state_file,
         args=["--password-store=basic"],
     )
-    all_cookies = ctx.cookies()
+    ctx.add_cookies(state["cookies"])
     ctx.close()
 
-n = len(all_cookies)
+n = len(state["cookies"])
 print(f"Profile created with {n} cookies at {profile}")
