@@ -72,7 +72,16 @@ def get_gmail_service():
         creds = Credentials.from_authorized_user_file(TOKEN_FILE, SCOPES)
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
+            try:
+                creds.refresh(Request())
+            except Exception as e:
+                if "invalid_grant" in str(e):
+                    raise RuntimeError(
+                        "Gmail token revoked. Delete gmail_token.json, re-run locally to "
+                        "re-auth, then rsync the new token to the server. "
+                        "See SUBSTACK_HEART_README.md."
+                    ) from e
+                raise
         else:
             flow = InstalledAppFlow.from_client_secrets_file(CREDENTIALS_FILE, SCOPES)
             creds = flow.run_local_server(port=0)

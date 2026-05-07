@@ -37,6 +37,23 @@ On first run (or if `gmail_token.json` is missing/expired), a browser window ope
 
 The token needs `gmail.modify` scope (not `gmail.readonly`) to mark emails as read.
 
+### Refreshing an expired Gmail token
+
+Google periodically revokes refresh tokens. When this happens the script crashes with `invalid_grant: Token has been expired or revoked`. To fix:
+
+```bash
+# 1. Delete the expired token
+rm ~/Work/scripts/gmail_token.json
+
+# 2. Re-auth on the Mac (opens a browser window)
+python3 ~/Work/scripts/substack_heart.py
+
+# 3. Push the new token to the server
+rsync -av ~/Work/scripts/gmail_token.json noob@119.9.131.4:/home/noob/scripts/
+```
+
+Use `rsync` directly — `deploy.sh` skips token files that already exist on the server.
+
 ### First-time Substack login
 
 On first run (or if the saved session has expired), the script opens a visible Chromium window and navigates to `substack.com/sign-in`. Log in manually, then press Enter in the terminal. The session is saved in `playwright_profile/` and all subsequent runs are headless.
