@@ -55,7 +55,7 @@ ENDSSH
 echo "==> Updating crontab"
 ssh "$SERVER" bash <<ENDSSH
   set -euo pipefail
-  (crontab -l 2>/dev/null | grep -v 'substack_heart\|medium_clap'; cat <<'CRON'
+  (crontab -l 2>/dev/null | grep -v 'substack_heart\|medium_clap\|MONITOR_API_KEY'; cat <<'CRON'
 MONITOR_API_KEY=159d88522491bc377504514f98f4f7a7d6f2eee747a4b4d15c0250938716d560
 0 0 * * * /home/noob/scripts/venv/bin/python /home/noob/scripts/substack_heart.py >> /home/noob/scripts/substack_heart.log 2>&1
 5 0 * * * /home/noob/scripts/venv/bin/python /home/noob/scripts/medium_clap.py >> /home/noob/scripts/medium_clap.log 2>&1
