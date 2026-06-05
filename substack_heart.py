@@ -212,7 +212,7 @@ def interactive_login(p, exe: str | None) -> None:
     log.info("Login session saved.")
 
 
-def like_post(page, post_url: str) -> bool:
+def like_post(page, post_url: str) -> bool | None:
     """Navigate to a post and click the Like button. Returns True on success."""
     try:
         page.goto(post_url, wait_until="domcontentloaded", timeout=30000)
@@ -224,6 +224,11 @@ def like_post(page, post_url: str) -> bool:
     if "sign-in" in page.url:
         log.warning(f"  Redirected to sign-in (paywalled?), skipping: {post_url}")
         return False
+
+    # Detect age verification redirect — cannot complete headlessly, skip permanently.
+    if "age-verification-required" in page.url:
+        log.info(f"  Age-gated, skipping: {post_url}")
+        return None
 
     # Detect custom-domain redirect — substack.sid cookie is scoped to *.substack.com
     # and won't transfer, so likes on custom domains silently fail.
@@ -290,18 +295,18 @@ def heart_all(
     exe: str | None,
     items: list[tuple[str, str, str]],
     gmail,
-) -> tuple[int, int, list[tuple[str, str, str]]]:
+) -> tuple[int, int, int, list[tuple[str, str, str]]]:
     """
     Click Like on each post and mark the email read immediately on success.
 
     items is a list of (msg_id, post_url, label) triples.
-    Returns (hearted_count, failed_count, failed_items) where failed_items
-    is the subset of items that failed and are eligible for retry.
+    Returns (hearted_count, failed_count, age_skipped_count, failed_items) where
+    failed_items is the subset of items that failed and are eligible for retry.
 
     A fresh page is created per post to prevent browser state accumulation
     from causing JS rendering failures across a long session.
     """
-    hearted = failed = 0
+    hearted = failed = age_skipped = 0
     failed_items: list[tuple[str, str, str]] = []
     ctx = _launch(p, exe, headless=True)
     try:
@@ -316,6 +321,10 @@ def heart_all(
                 mark_as_read(gmail, msg_id)
                 log.info(f"  Hearted + marked read: {label!r}")
                 hearted += 1
+            elif success is None:
+                mark_as_read(gmail, msg_id)
+                log.info(f"  Age-gated, marked read: {label!r}")
+                age_skipped += 1
             else:
                 log.warning(f"  Heart failed, leaving unread: {label!r}")
                 failed += 1
@@ -323,7 +332,7 @@ def heart_all(
             time.sleep(5)
     finally:
         ctx.close()
-    return hearted, failed, failed_items
+    return hearted, failed, age_skipped, failed_items
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -409,7 +418,8 @@ def _main(run_log):
                 return
 
         items = [(msg_id, post_url, subject) for msg_id, subject, post_url in to_heart]
-        hearted, failed, failed_items = heart_all(p, exe, items, gmail)
+        hearted, failed, age_skipped, failed_items = heart_all(p, exe, items, gmail)
+        skipped += age_skipped
 
         if failed_items:
             log.info(
@@ -418,8 +428,9 @@ def _main(run_log):
             )
             time.sleep(RETRY_DELAY_SECS)
             log.info("Retrying failed posts...")
-            retry_hearted, failed, _ = heart_all(p, exe, failed_items, gmail)
+            retry_hearted, failed, retry_age_skipped, _ = heart_all(p, exe, failed_items, gmail)
             hearted += retry_hearted
+            skipped += retry_age_skipped
             if retry_hearted:
                 log.info(f"  Retry recovered {retry_hearted} post(s).")
 
