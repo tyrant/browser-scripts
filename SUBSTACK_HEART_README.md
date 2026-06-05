@@ -49,7 +49,7 @@ rm ~/Work/scripts/gmail_token.json
 python3 ~/Work/scripts/substack_heart.py
 
 # 3. Push the new token to the server
-rsync -av ~/Work/scripts/gmail_token.json noob@119.9.131.4:/home/noob/scripts/
+rsync -av ~/Work/scripts/gmail_token.json noob@168.144.167.177:/home/noob/scripts/
 ```
 
 Use `rsync` directly — `deploy.sh` skips token files that already exist on the server.
@@ -59,6 +59,36 @@ Use `rsync` directly — `deploy.sh` skips token files that already exist on the
 On first run (or if the saved session has expired), the script opens a visible Chromium window and navigates to `substack.com/sign-in`. Log in manually, then press Enter in the terminal. The session is saved in `playwright_profile/` and all subsequent runs are headless.
 
 If you're ever prompted to log in again, the session cookie (`substack.sid`) has expired. Just re-run the script manually and log in again.
+
+## Tests
+
+Tests live in `tests/test_substack_heart.py` and cover all functions via mocks — no real Gmail API or Playwright browser needed.
+
+### Running
+
+```bash
+cd ~/Work/scripts
+python3 -m venv venv
+venv/bin/pip install -r requirements.txt
+venv/bin/pytest tests/ -v
+```
+
+### Coverage
+
+| Area | What's tested |
+|------|---------------|
+| `is_subscriber_notification` | subscriber sender, no-reply, non-Substack |
+| `get_email_body_html` | flat HTML payload, nested multipart, missing body |
+| `find_heart_link` | submitLike link, app-link with Like text, no link |
+| `find_post_url` | constructs native URL, no open.substack.com link |
+| `get_gmail_service` | valid cached token, expired+refreshable, revoked token (RuntimeError), no token file (runs OAuth flow) |
+| `iter_messages` | single page, multi-page pagination, empty result |
+| `mark_as_read` | success, OSError retries with fresh service |
+| `like_post` | sign-in redirect, age-verification redirect (skip/None), custom domain skip, Like button not found, already liked, successful like, 429 rate limit, no /reaction API captured |
+| `check_substack_login` | cookie present, cookie absent |
+| `heart_all` | all success, all failure, all age-gated, mixed outcomes |
+| `main` | success path, exception reports crashed and reraises |
+| `_main` | no emails, emails present with outcome reported, failed items trigger retry with aggregated counts |
 
 ## Scheduling
 
