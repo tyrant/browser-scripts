@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SERVER="noob@119.9.131.4"
+SERVER="noob@168.144.167.177"
 REMOTE="/home/noob/scripts"
 LOCAL="$(cd "$(dirname "$0")" && pwd)"
 
@@ -11,6 +11,8 @@ rsync -av \
   --exclude='__pycache__' \
   --exclude='*.pyc' \
   --exclude='*.log' \
+  --exclude='venv' \
+  --exclude='tests' \
   --exclude='playwright_profile' \
   --exclude='medium_playwright_profile' \
   --exclude='gmail_token.json' \
@@ -53,10 +55,11 @@ ssh "$SERVER" bash <<'ENDSSH'
 ENDSSH
 
 echo "==> Updating crontab"
-ssh "$SERVER" bash <<ENDSSH
+ssh "$SERVER" bash <<'ENDSSH'
   set -euo pipefail
-  (crontab -l 2>/dev/null | grep -v 'substack_heart\|medium_clap\|MONITOR_API_KEY'; cat <<'CRON'
-MONITOR_API_KEY=159d88522491bc377504514f98f4f7a7d6f2eee747a4b4d15c0250938716d560
+  MONITOR_KEY=$(grep '^MONITOR_API_KEY=' /home/noob/monitor/.env | head -1)
+  (crontab -l 2>/dev/null | grep -v 'substack_heart\|medium_clap\|MONITOR_API_KEY'; cat <<CRON
+$MONITOR_KEY
 0 0 * * * /home/noob/scripts/venv/bin/python /home/noob/scripts/substack_heart.py >> /home/noob/scripts/substack_heart.log 2>&1
 5 0 * * * /home/noob/scripts/venv/bin/python /home/noob/scripts/medium_clap.py >> /home/noob/scripts/medium_clap.log 2>&1
 CRON
