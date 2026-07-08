@@ -37,6 +37,9 @@ CREDENTIALS_FILE = os.path.join(SCRIPT_DIR, "gmail_credentials.json")
 TOKEN_FILE = os.path.join(SCRIPT_DIR, "gmail_token.json")
 PLAYWRIGHT_PROFILE = os.path.join(SCRIPT_DIR, "playwright_profile")
 RETRY_DELAY_SECS = 60  # wait before retrying failed likes (clears Substack 429 limits)
+POST_DELAY_SECS = 12  # base delay between posts to stay under Substack's reaction rate limit
+REACTION_BACKOFFS = [30, 60, 120]  # in-place waits after a 429 before re-trying the same post
+REACTION_BODY = '{"reaction":"❤"}'  # exact body the Like button POSTs
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
@@ -77,9 +80,9 @@ def get_gmail_service():
             except Exception as e:
                 if "invalid_grant" in str(e):
                     raise RuntimeError(
-                        "Gmail token revoked. Delete gmail_token.json, re-run locally to "
-                        "re-auth, then rsync the new token to the server. "
-                        "See SUBSTACK_HEART_README.md."
+                        "Gmail token revoked. Re-auth with "
+                        "'python3 substack_heart.py --reauth', then rsync the new "
+                        "token to the server. See SUBSTACK_HEART_README.md."
                     ) from e
                 raise
         else:
@@ -212,6 +215,48 @@ def interactive_login(p, exe: str | None) -> None:
     log.info("Login session saved.")
 
 
+def heart_via_api(page, post_url: str) -> bool:
+    """Heart a post through the reaction API, for custom-domain pubs whose page
+    redirects off *.substack.com and drops the session cookie.
+
+    Resolves the post id from the public posts API on the {pub}.substack.com
+    subdomain (the id is public, so it works even though that request itself
+    redirects to the custom domain), then POSTs the reaction to the apex
+    substack.com host, where the substack.sid cookie is valid and no redirect
+    occurs. Like (POST) and unlike (DELETE) are separate verbs, so this POST is
+    idempotent — re-running on a duplicate email never unlikes.
+    """
+    m = re.match(r"https://([^.]+)\.substack\.com/p/([^/?]+)", post_url)
+    if not m:
+        log.warning(f"  Cannot parse pub/slug for API heart: {post_url}")
+        return False
+    pub, slug = m.group(1), m.group(2)
+    try:
+        resp = page.request.get(f"https://{pub}.substack.com/api/v1/posts/{slug}", timeout=20000)
+        if resp.status != 200:
+            log.warning(f"  Post lookup failed ({resp.status}) for {pub}/{slug}")
+            return False
+        post_id = resp.json().get("id")
+    except Exception as e:
+        log.warning(f"  Post lookup error for {pub}/{slug}: {e}")
+        return False
+    if not post_id:
+        log.warning(f"  No post id in lookup for {pub}/{slug}")
+        return False
+    try:
+        r = page.request.post(
+            f"https://substack.com/api/v1/post/{post_id}/reaction",
+            data=REACTION_BODY,
+            headers={"content-type": "application/json"},
+            timeout=20000,
+        )
+        log.info(f"  Reaction API (custom domain): {r.status}")
+        return 200 <= r.status < 400
+    except Exception as e:
+        log.warning(f"  Reaction POST error for post {post_id}: {e}")
+        return False
+
+
 def like_post(page, post_url: str) -> bool | None:
     """Navigate to a post and click the Like button. Returns True on success."""
     try:
@@ -231,11 +276,11 @@ def like_post(page, post_url: str) -> bool | None:
         return None
 
     # Detect custom-domain redirect — substack.sid cookie is scoped to *.substack.com
-    # and won't transfer, so likes on custom domains silently fail.
+    # and won't transfer, so the button can't be clicked; heart via the reaction API instead.
     landed_host = urlparse(page.url).hostname or ""
     if not (landed_host.endswith(".substack.com") or landed_host == "substack.com"):
-        log.info(f"  Custom domain ({landed_host}), skipping — session cookie not transferable.")
-        return False
+        log.info(f"  Custom domain ({landed_host}), hearting via reaction API.")
+        return heart_via_api(page, post_url)
 
     # Wait for the Like button to appear in the DOM.
     # Use state='attached' rather than default 'visible' — some Substack pages render
@@ -262,32 +307,38 @@ def like_post(page, post_url: str) -> bool | None:
     # Scroll the button into view before clicking
     like_btn.scroll_into_view_if_needed()
 
-    # Click and wait for the POST /reaction API call
-    try:
-        with page.expect_response(
-            lambda r: r.request.method == "POST" and "/reaction" in r.url,
-            timeout=8000,
-        ) as resp_info:
-            like_btn.click()
-        status = resp_info.value.status
-        log.info(f"  Reaction API: {status}")
-        if status == 429:
-            log.warning("  Rate limited (429). Waiting 30s before next post.")
-            time.sleep(30)
-            return False
-        return 200 <= status < 400
-    except Exception:
-        # No POST /reaction observed — check if the like registered anyway (different endpoint?)
+    # Click and wait for the POST /reaction call, retrying this post in place on a
+    # 429 with exponential backoff — a 429 means we're going too fast, not that the
+    # post is unlikeable, so failing it outright wastes a recoverable like.
+    for backoff in [0] + REACTION_BACKOFFS:
+        if backoff:
+            log.warning(f"  Rate limited (429). Backing off {backoff}s before retrying this post.")
+            time.sleep(backoff)
         try:
-            pressed = like_btn.get_attribute("aria-pressed")
-            current_url = page.url
+            with page.expect_response(
+                lambda r: r.request.method == "POST" and "/reaction" in r.url,
+                timeout=8000,
+            ) as resp_info:
+                like_btn.click()
+            status = resp_info.value.status
+            log.info(f"  Reaction API: {status}")
+            if status == 429:
+                continue
+            return 200 <= status < 400
         except Exception:
-            pressed, current_url = None, "unknown"
-        log.warning(
-            f"  No /reaction API captured — aria-pressed={pressed!r} url={current_url!r}"
-        )
-        # If the button flipped to pressed=true, the like registered via a different path
-        return pressed == "true"
+            # No POST /reaction observed — check if the like registered anyway (different endpoint?)
+            try:
+                pressed = like_btn.get_attribute("aria-pressed")
+                current_url = page.url
+            except Exception:
+                pressed, current_url = None, "unknown"
+            log.warning(
+                f"  No /reaction API captured — aria-pressed={pressed!r} url={current_url!r}"
+            )
+            # If the button flipped to pressed=true, the like registered via a different path
+            return pressed == "true"
+    log.warning("  Still rate limited after all backoffs; giving up on this post.")
+    return False
 
 
 def heart_all(
@@ -329,7 +380,7 @@ def heart_all(
                 log.warning(f"  Heart failed, leaving unread: {label!r}")
                 failed += 1
                 failed_items.append((msg_id, post_url, label))
-            time.sleep(5)
+            time.sleep(POST_DELAY_SECS)
     finally:
         ctx.close()
     return hearted, failed, age_skipped, failed_items
@@ -438,5 +489,15 @@ def _main(run_log):
     report_run("substack_heart", "success", hearted, failed, skipped, run_log.messages)
 
 
+def reauth():
+    if os.path.exists(TOKEN_FILE):
+        os.remove(TOKEN_FILE)
+    get_gmail_service()
+    log.info(f"New token written to {TOKEN_FILE}. Copy it to the server now.")
+
+
 if __name__ == "__main__":
-    main()
+    if "--reauth" in sys.argv:
+        reauth()
+    else:
+        main()

@@ -5,6 +5,9 @@ from unittest.mock import MagicMock, mock_open, patch
 import pytest
 
 from substack_heart import (
+    REACTION_BACKOFFS,
+    REACTION_BODY,
+    TOKEN_FILE,
     _main,
     check_substack_login,
     find_heart_link,
@@ -12,11 +15,13 @@ from substack_heart import (
     get_email_body_html,
     get_gmail_service,
     heart_all,
+    heart_via_api,
     is_subscriber_notification,
     iter_messages,
     like_post,
     main,
     mark_as_read,
+    reauth,
 )
 
 
@@ -50,17 +55,21 @@ def _subscriber_html(pub="author", slug="my-post"):
     )
 
 
+def _resp_ctx(status=200):
+    ctx = MagicMock()
+    ctx.__enter__ = MagicMock(return_value=ctx)
+    ctx.__exit__ = MagicMock(return_value=False)
+    ctx.value.status = status
+    return ctx
+
+
 def _make_page(url="https://author.substack.com/p/post", first_aria_pressed="false"):
     page = MagicMock()
     page.url = url
     like_btn = MagicMock()
     like_btn.get_attribute.return_value = first_aria_pressed
     page.locator.return_value.first = like_btn
-    resp_ctx = MagicMock()
-    resp_ctx.__enter__ = MagicMock(return_value=resp_ctx)
-    resp_ctx.__exit__ = MagicMock(return_value=False)
-    resp_ctx.value.status = 200
-    page.expect_response.return_value = resp_ctx
+    page.expect_response.return_value = _resp_ctx(200)
     return page
 
 
@@ -221,9 +230,12 @@ class TestLikePost:
         page = _make_page(url="https://substack.com/age-verification-required?redirect_url=...")
         assert like_post(page, "https://author.substack.com/p/post") is None
 
-    def test_custom_domain_returns_false(self):
+    def test_custom_domain_hearts_via_api(self):
         page = _make_page(url="https://customdomain.com/p/post")
-        assert like_post(page, "https://author.substack.com/p/post") is False
+        page.request.get.return_value = MagicMock(status=200, json=lambda: {"id": 123})
+        page.request.post.return_value = MagicMock(status=200)
+        assert like_post(page, "https://author.substack.com/p/post") is True
+        page.request.post.assert_called_once()
 
     def test_like_button_not_found_returns_false(self):
         page = _make_page()
@@ -238,10 +250,21 @@ class TestLikePost:
         page = _make_page()
         assert like_post(page, "https://author.substack.com/p/post") is True
 
-    def test_rate_limited_returns_false(self):
+    @patch("substack_heart.time.sleep")
+    def test_rate_limited_every_attempt_returns_false(self, mock_sleep):
         page = _make_page()
         page.expect_response.return_value.value.status = 429
         assert like_post(page, "https://author.substack.com/p/post") is False
+        # one click per attempt: initial + len(REACTION_BACKOFFS) retries
+        assert page.locator.return_value.first.click.call_count == 1 + len(REACTION_BACKOFFS)
+
+    @patch("substack_heart.time.sleep")
+    def test_rate_limited_then_success_recovers(self, mock_sleep):
+        page = _make_page()
+        ctx_429 = _resp_ctx(429)
+        ctx_200 = _resp_ctx(200)
+        page.expect_response.side_effect = [ctx_429, ctx_200]
+        assert like_post(page, "https://author.substack.com/p/post") is True
 
     def test_no_reaction_api_but_aria_pressed_true_returns_true(self):
         page = _make_page()
@@ -254,6 +277,38 @@ class TestLikePost:
         page.expect_response.side_effect = Exception("no response captured")
         page.locator.return_value.first.get_attribute.side_effect = ["false", "false"]
         assert like_post(page, "https://author.substack.com/p/post") is False
+
+
+class TestHeartViaApi:
+    def _page(self, get_status=200, get_json=None, post_status=200):
+        page = MagicMock()
+        page.request.get.return_value = MagicMock(
+            status=get_status, json=lambda: (get_json if get_json is not None else {"id": 999})
+        )
+        page.request.post.return_value = MagicMock(status=post_status)
+        return page
+
+    def test_success_returns_true(self):
+        assert heart_via_api(self._page(), "https://pub.substack.com/p/slug") is True
+
+    def test_unparseable_url_returns_false(self):
+        assert heart_via_api(MagicMock(), "https://example.com/weird") is False
+
+    def test_lookup_non_200_returns_false(self):
+        assert heart_via_api(self._page(get_status=429), "https://pub.substack.com/p/slug") is False
+
+    def test_no_post_id_returns_false(self):
+        assert heart_via_api(self._page(get_json={}), "https://pub.substack.com/p/slug") is False
+
+    def test_reaction_non_2xx_returns_false(self):
+        assert heart_via_api(self._page(post_status=429), "https://pub.substack.com/p/slug") is False
+
+    def test_posts_reaction_body_to_apex_host(self):
+        page = self._page()
+        heart_via_api(page, "https://pub.substack.com/p/slug")
+        args, kwargs = page.request.post.call_args
+        assert args[0] == "https://substack.com/api/v1/post/999/reaction"
+        assert kwargs["data"] == REACTION_BODY
 
 
 class TestCheckSubstackLogin:
@@ -332,6 +387,24 @@ class TestMain:
             main()
         args = mock_report.call_args[0]
         assert args[0] == "substack_heart" and args[1] == "crashed"
+
+
+class TestReauth:
+    @patch("substack_heart.get_gmail_service")
+    @patch("os.remove")
+    @patch("os.path.exists", return_value=True)
+    def test_deletes_existing_token_then_reauths(self, _exists, mock_remove, mock_get_svc):
+        reauth()
+        mock_remove.assert_called_once_with(TOKEN_FILE)
+        mock_get_svc.assert_called_once()
+
+    @patch("substack_heart.get_gmail_service")
+    @patch("os.remove")
+    @patch("os.path.exists", return_value=False)
+    def test_skips_delete_when_no_token(self, _exists, mock_remove, mock_get_svc):
+        reauth()
+        mock_remove.assert_not_called()
+        mock_get_svc.assert_called_once()
 
 
 class TestInnerMain:
