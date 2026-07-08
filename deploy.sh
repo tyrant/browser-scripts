@@ -58,10 +58,15 @@ echo "==> Updating crontab"
 ssh "$SERVER" bash <<'ENDSSH'
   set -euo pipefail
   MONITOR_KEY=$(grep '^MONITOR_API_KEY=' /home/noob/monitor/.env | head -1)
-  (crontab -l 2>/dev/null | grep -v 'substack_heart\|medium_clap\|MONITOR_API_KEY'; cat <<CRON
+  # Browser jobs run inside a memory/CPU-capped systemd scope + a flock (no
+  # overlapping runs), so a runaway Chromium is OOM-killed in its own cgroup
+  # rather than taking the box down. Staggered an hour apart to avoid concurrency.
+  # The reaper kills any leaked automation Chromium older than 10 min.
+  (crontab -l 2>/dev/null | grep -v 'substack_heart\|medium_clap\|MONITOR_API_KEY\|reap-stale-chrome'; cat <<CRON
 $MONITOR_KEY
-0 0 * * * /home/noob/scripts/venv/bin/python /home/noob/scripts/substack_heart.py >> /home/noob/scripts/substack_heart.log 2>&1
-5 0 * * * /home/noob/scripts/venv/bin/python /home/noob/scripts/medium_clap.py >> /home/noob/scripts/medium_clap.log 2>&1
+*/5 * * * * /home/noob/bin/reap-stale-chrome.sh 10 >> /home/noob/log/chrome-reaper.log 2>&1
+0 0 * * * XDG_RUNTIME_DIR=/run/user/1000 /usr/bin/flock -n /tmp/substack_heart.lock /usr/bin/systemd-run --user --scope -p MemoryMax=1G -p MemorySwapMax=512M -p CPUQuota=80% /home/noob/scripts/venv/bin/python /home/noob/scripts/substack_heart.py >> /home/noob/scripts/substack_heart.log 2>&1
+0 1 * * * XDG_RUNTIME_DIR=/run/user/1000 /usr/bin/flock -n /tmp/medium_clap.lock /usr/bin/systemd-run --user --scope -p MemoryMax=1G -p MemorySwapMax=512M -p CPUQuota=80% /home/noob/scripts/venv/bin/python /home/noob/scripts/medium_clap.py >> /home/noob/scripts/medium_clap.log 2>&1
 CRON
   ) | crontab -
   echo "Crontab updated:"
@@ -69,7 +74,7 @@ CRON
 ENDSSH
 
 echo ""
-echo "==> Done. Scripts will run daily at 00:00 and 00:05 UTC (noon and 12:05 NZST)."
+echo "==> Done. Scripts run daily (memory-capped) at 00:00 and 01:00 UTC (noon and 1pm NZST)."
 echo ""
 echo "    To disable the local launchd agents now:"
 echo "      launchctl unload ~/Library/LaunchAgents/local.substack_heart.plist"
