@@ -28,7 +28,7 @@ See [SUBSTACK_HEART_README.md](SUBSTACK_HEART_README.md), [MEDIUM_CLAP_README.md
 
 ## Server deployment
 
-Scripts run on the server at `119.9.131.4` via cron. `deploy.sh` syncs code on subsequent deploys; first-time setup is handled by the same script if the venv doesn't exist yet.
+Scripts run on the server at `168.144.167.177` via cron. `deploy.sh` syncs code on subsequent deploys; first-time setup is handled by the same script if the venv doesn't exist yet.
 
 ```bash
 bash deploy.sh
@@ -52,7 +52,7 @@ MONITOR_API_KEY=...
 ### Server logs
 
 ```bash
-ssh noob@119.9.131.4
+ssh noob@168.144.167.177
 tail -f /home/noob/scripts/substack_heart.log
 tail -f /home/noob/scripts/medium_clap.log
 tail -f /home/noob/scripts/gmail_substack_archive.log
@@ -74,13 +74,13 @@ python3 export_session.py playwright_profile substack_session.json
 Transfer to server:
 
 ```bash
-rsync -av medium_session.json substack_session.json noob@119.9.131.4:/home/noob/scripts/
+rsync -av medium_session.json substack_session.json noob@168.144.167.177:/home/noob/scripts/
 ```
 
 Import on server:
 
 ```bash
-ssh noob@119.9.131.4
+ssh noob@168.144.167.177
 cd /home/noob/scripts
 venv/bin/python import_session.py medium_session.json medium_playwright_profile
 venv/bin/python import_session.py substack_session.json playwright_profile
