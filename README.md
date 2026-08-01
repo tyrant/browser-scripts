@@ -8,16 +8,18 @@ Daily automation scripts that run on the mikeyclarke.co.nz server and report res
 |---|---|
 | `substack_heart.py` | Hearts Substack subscriber notification emails received in the last 24 hours |
 | `medium_clap.py` | Claps Medium subscriber notification emails received in the last 24 hours |
+| `gmail_substack_archive.py` | Labels ('Substack') and archives `@substack.com` emails in the epicschnozz@gmail.com inbox from the last 24 hours |
 
-See [SUBSTACK_HEART_README.md](SUBSTACK_HEART_README.md) and [MEDIUM_CLAP_README.md](MEDIUM_CLAP_README.md) for full detail on each script's behaviour, edge cases, and Gmail setup.
+See [SUBSTACK_HEART_README.md](SUBSTACK_HEART_README.md), [MEDIUM_CLAP_README.md](MEDIUM_CLAP_README.md), and [GMAIL_SUBSTACK_ARCHIVE_README.md](GMAIL_SUBSTACK_ARCHIVE_README.md) for full detail on each script's behaviour, edge cases, and Gmail setup.
 
 ## Shared files
 
 | File | Purpose |
 |---|---|
-| `gmail_credentials.json` | OAuth client credentials from Google Cloud Console — shared by both scripts |
+| `gmail_credentials.json` | OAuth client credentials from Google Cloud Console — shared by all Gmail scripts |
 | `gmail_token.json` | OAuth token for `substack_heart.py` — do not commit |
 | `medium_gmail_token.json` | OAuth token for `medium_clap.py` — do not commit |
+| `epicschnozz_gmail_token.json` | OAuth token for `gmail_substack_archive.py` (epicschnozz@gmail.com) — do not commit |
 | `playwright_profile/` | Substack browser session — do not commit |
 | `medium_playwright_profile/` | Medium browser session — do not commit |
 | `medium_clapped_urls.json` | Already-clapped post URLs — do not commit |
@@ -36,13 +38,16 @@ This rsyncs Python files to `/home/noob/scripts/`, installs dependencies, and up
 
 ### Cron schedule
 
-Both scripts run at midnight UTC (noon NZST):
+The scripts run daily, staggered (times UTC):
 
 ```
 MONITOR_API_KEY=...
-0 0 * * * /home/noob/scripts/venv/bin/python /home/noob/scripts/substack_heart.py >> /home/noob/scripts/substack_heart.log 2>&1
-5 0 * * * /home/noob/scripts/venv/bin/python /home/noob/scripts/medium_clap.py >> /home/noob/scripts/medium_clap.log 2>&1
+0 0 * * * .../substack_heart.py >> .../substack_heart.log 2>&1          # midnight — browser, memory-capped
+0 1 * * * .../medium_clap.py >> .../medium_clap.log 2>&1                # 01:00 — browser, memory-capped
+0 2 * * * .../gmail_substack_archive.py >> .../gmail_substack_archive.log 2>&1   # 02:00 — Gmail API only, lightweight
 ```
+
+`gmail_substack_archive.py` is a pure Gmail-API job (no browser), so it runs without the systemd memory scope the two Playwright scripts use.
 
 ### Server logs
 
@@ -50,6 +55,7 @@ MONITOR_API_KEY=...
 ssh noob@119.9.131.4
 tail -f /home/noob/scripts/substack_heart.log
 tail -f /home/noob/scripts/medium_clap.log
+tail -f /home/noob/scripts/gmail_substack_archive.log
 ```
 
 ## Session management

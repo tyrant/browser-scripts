@@ -2,6 +2,7 @@
 gmail_credentials.json
 gmail_token.json
 medium_gmail_token.json
+epicschnozz_gmail_token.json
 
 # Playwright browser profiles (contain session cookies)
 playwright_profile/

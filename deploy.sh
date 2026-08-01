@@ -17,6 +17,7 @@ rsync -av \
   --exclude='medium_playwright_profile' \
   --exclude='gmail_token.json' \
   --exclude='medium_gmail_token.json' \
+  --exclude='epicschnozz_gmail_token.json' \
   --exclude='medium_clapped_urls.json' \
   "$LOCAL/" "$SERVER:$REMOTE/"
 
@@ -24,6 +25,7 @@ echo "==> Syncing session data (first deploy only — skips existing files)"
 rsync -av --ignore-existing \
   "$LOCAL/gmail_token.json" \
   "$LOCAL/medium_gmail_token.json" \
+  "$LOCAL/epicschnozz_gmail_token.json" \
   "$SERVER:$REMOTE/" 2>/dev/null || true
 
 if [ -f "$LOCAL/medium_clapped_urls.json" ]; then
@@ -62,11 +64,12 @@ ssh "$SERVER" bash <<'ENDSSH'
   # overlapping runs), so a runaway Chromium is OOM-killed in its own cgroup
   # rather than taking the box down. Staggered an hour apart to avoid concurrency.
   # The reaper kills any leaked automation Chromium older than 10 min.
-  (crontab -l 2>/dev/null | grep -v 'substack_heart\|medium_clap\|MONITOR_API_KEY\|reap-stale-chrome'; cat <<CRON
+  (crontab -l 2>/dev/null | grep -v 'substack_heart\|medium_clap\|gmail_substack_archive\|MONITOR_API_KEY\|reap-stale-chrome'; cat <<CRON
 $MONITOR_KEY
 */5 * * * * /home/noob/bin/reap-stale-chrome.sh 10 >> /home/noob/log/chrome-reaper.log 2>&1
 0 0 * * * XDG_RUNTIME_DIR=/run/user/1000 /usr/bin/flock -n /tmp/substack_heart.lock /usr/bin/systemd-run --user --scope -p MemoryMax=1G -p MemorySwapMax=512M -p CPUQuota=80% /home/noob/scripts/venv/bin/python /home/noob/scripts/substack_heart.py >> /home/noob/scripts/substack_heart.log 2>&1
 0 1 * * * XDG_RUNTIME_DIR=/run/user/1000 /usr/bin/flock -n /tmp/medium_clap.lock /usr/bin/systemd-run --user --scope -p MemoryMax=1G -p MemorySwapMax=512M -p CPUQuota=80% /home/noob/scripts/venv/bin/python /home/noob/scripts/medium_clap.py >> /home/noob/scripts/medium_clap.log 2>&1
+0 2 * * * /usr/bin/flock -n /tmp/gmail_substack_archive.lock /home/noob/scripts/venv/bin/python /home/noob/scripts/gmail_substack_archive.py >> /home/noob/scripts/gmail_substack_archive.log 2>&1
 CRON
   ) | crontab -
   echo "Crontab updated:"
@@ -74,7 +77,7 @@ CRON
 ENDSSH
 
 echo ""
-echo "==> Done. Scripts run daily (memory-capped) at 00:00 and 01:00 UTC (noon and 1pm NZST)."
+echo "==> Done. Scripts run daily at 00:00, 01:00 (browser, memory-capped) and 02:00 (Gmail API) UTC."
 echo ""
 echo "    To disable the local launchd agents now:"
 echo "      launchctl unload ~/Library/LaunchAgents/local.substack_heart.plist"
