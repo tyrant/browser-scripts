@@ -188,10 +188,30 @@ def _launch(p, exe: str | None, headless: bool):
 
 
 def check_substack_login(p, exe: str | None) -> bool:
+    """Confirm the saved session is actually authenticated.
+
+    Checking only that the substack.sid cookie exists is a false positive: an
+    expired session keeps the cookie but every reaction POST 401s, silently
+    failing the whole run. So we hit an auth-gated endpoint and require a 200.
+    """
     ctx = _launch(p, exe, headless=True)
     try:
         cookies = ctx.cookies(["https://substack.com"])
-        return any(c["name"] == "substack.sid" for c in cookies)
+        if not any(c["name"] == "substack.sid" for c in cookies):
+            return False
+        page = ctx.new_page()
+        try:
+            # page.goto (real browser) clears Cloudflare, which now 400s bare
+            # page.request API calls; the in-page fetch then carries the session
+            # cookie same-origin on the apex host where substack.sid is scoped.
+            page.goto("https://substack.com/", wait_until="domcontentloaded", timeout=30000)
+            status = page.evaluate(
+                "async () => (await fetch('/api/v1/subscriptions?tvOnly=false', "
+                "{headers: {accept: 'application/json'}, credentials: 'include'})).status"
+            )
+            return status == 200
+        finally:
+            page.close()
     except Exception:
         return False
     finally:

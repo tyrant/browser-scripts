@@ -312,20 +312,34 @@ class TestHeartViaApi:
 
 
 class TestCheckSubstackLogin:
-    @patch("substack_heart._launch")
-    def test_returns_true_when_sid_cookie_present(self, mock_launch):
+    def _ctx(self, cookies, auth_status=200):
         ctx = MagicMock()
-        ctx.cookies.return_value = [{"name": "substack.sid", "value": "abc"}]
+        ctx.cookies.return_value = cookies
+        page = ctx.new_page.return_value
+        page.evaluate.return_value = auth_status
+        return ctx
+
+    @patch("substack_heart._launch")
+    def test_returns_true_when_session_authenticated(self, mock_launch):
+        ctx = self._ctx([{"name": "substack.sid", "value": "abc"}], auth_status=200)
         mock_launch.return_value = ctx
         assert check_substack_login(MagicMock(), None) is True
         ctx.close.assert_called_once()
 
     @patch("substack_heart._launch")
-    def test_returns_false_when_sid_cookie_absent(self, mock_launch):
-        ctx = MagicMock()
-        ctx.cookies.return_value = [{"name": "other", "value": "xyz"}]
+    def test_returns_false_when_sid_cookie_present_but_session_stale(self, mock_launch):
+        ctx = self._ctx([{"name": "substack.sid", "value": "abc"}], auth_status=401)
         mock_launch.return_value = ctx
         assert check_substack_login(MagicMock(), None) is False
+        ctx.new_page.return_value.close.assert_called_once()
+        ctx.close.assert_called_once()
+
+    @patch("substack_heart._launch")
+    def test_returns_false_when_sid_cookie_absent(self, mock_launch):
+        ctx = self._ctx([{"name": "other", "value": "xyz"}])
+        mock_launch.return_value = ctx
+        assert check_substack_login(MagicMock(), None) is False
+        ctx.new_page.assert_not_called()
         ctx.close.assert_called_once()
 
 
