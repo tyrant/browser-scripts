@@ -34,9 +34,9 @@ if [ -f "$LOCAL/medium_clapped_urls.json" ]; then
     "$SERVER:$REMOTE/" 2>/dev/null || true
 fi
 
-rsync -av --ignore-existing \
-  "$LOCAL/playwright_profile/" \
-  "$SERVER:$REMOTE/playwright_profile/" 2>/dev/null || true
+# playwright_profile is NOT synced: macOS encrypts its cookies with a Keychain
+# key Linux can't read, so a copied session decrypts to nothing on the server.
+# Re-auth the Substack session with: python3 reauth_server.py
 
 rsync -av --ignore-existing \
   "$LOCAL/medium_playwright_profile/" \
@@ -78,6 +78,9 @@ ENDSSH
 
 echo ""
 echo "==> Done. Scripts run daily at 00:00, 01:00 (browser, memory-capped) and 02:00 (Gmail API) UTC."
+echo ""
+echo "    If the Substack session has expired (heart run reports crashed):"
+echo "      python3 reauth_server.py"
 echo ""
 echo "    To disable the local launchd agents now:"
 echo "      launchctl unload ~/Library/LaunchAgents/local.substack_heart.plist"
