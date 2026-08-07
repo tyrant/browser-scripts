@@ -324,8 +324,12 @@ def like_post(page, post_url: str) -> bool | None:
     except Exception:
         pass  # button detached mid-render; proceed to click
 
-    # Scroll the button into view before clicking
-    like_btn.scroll_into_view_if_needed()
+    # Scroll the button into view before clicking (best-effort: the button can
+    # detach on a React re-render, and click() auto-scrolls anyway).
+    try:
+        like_btn.scroll_into_view_if_needed(timeout=5000)
+    except Exception:
+        pass
 
     # Click and wait for the POST /reaction call, retrying this post in place on a
     # 429 with exponential backoff — a 429 means we're going too fast, not that the
@@ -386,6 +390,11 @@ def heart_all(
             page = ctx.new_page()
             try:
                 success = like_post(page, post_url)
+            except Exception as e:
+                # A single post's Playwright error must never crash the whole run;
+                # treat it as a failure so it's retried and left unread.
+                log.warning(f"  Unexpected error, leaving unread: {label!r} ({e})")
+                success = False
             finally:
                 page.close()
             if success:

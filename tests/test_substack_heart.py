@@ -250,6 +250,13 @@ class TestLikePost:
         page = _make_page()
         assert like_post(page, "https://author.substack.com/p/post") is True
 
+    def test_scroll_detached_is_swallowed_and_click_still_succeeds(self):
+        page = _make_page()
+        page.locator.return_value.first.scroll_into_view_if_needed.side_effect = Exception(
+            "Element is not attached to the DOM"
+        )
+        assert like_post(page, "https://author.substack.com/p/post") is True
+
     @patch("substack_heart.time.sleep")
     def test_rate_limited_every_attempt_returns_false(self, mock_sleep):
         page = _make_page()
@@ -368,6 +375,18 @@ class TestHeartAll:
         (hearted, failed, age_skipped, failed_items), gmail = self._run(None)
         assert hearted == 0 and failed == 0 and age_skipped == 1 and failed_items == []
         gmail.users.return_value.messages.return_value.modify.assert_called_once()
+
+    def test_like_post_exception_contained_as_failure(self):
+        items = [("msg1", "https://author.substack.com/p/post", "Post 1")]
+        ctx = MagicMock()
+        gmail = MagicMock()
+        with patch("substack_heart._launch", return_value=ctx):
+            with patch("substack_heart.like_post", side_effect=Exception("detached")):
+                hearted, failed, age_skipped, failed_items = heart_all(MagicMock(), None, items, gmail)
+        assert hearted == 0 and failed == 1 and age_skipped == 0
+        assert len(failed_items) == 1
+        ctx.new_page.return_value.close.assert_called_once()
+        gmail.users.return_value.messages.return_value.modify.assert_not_called()
 
     def test_mixed_outcomes_tallied_correctly(self):
         items = [
