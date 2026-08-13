@@ -1,0 +1,21 @@
+# logrotate config for the daily browser-automation script logs on the DO box.
+# Install to /etc/logrotate.d/noob-scripts (must be root-owned, mode 644, or
+# logrotate skips it). The system logrotate timer picks it up automatically —
+# no cron entry needed.
+#
+# copytruncate is used because the cron jobs append with `>>` and hold the log
+# open; it truncates the file in place so the running process keeps its handle,
+# rather than writing to a renamed/deleted inode.
+
+/home/noob/scripts/substack_heart.log
+/home/noob/scripts/medium_clap.log
+/home/noob/scripts/gmail_substack_archive.log {
+    weekly
+    rotate 8
+    maxsize 10M
+    compress
+    delaycompress
+    missingok
+    notifempty
+    copytruncate
+}
