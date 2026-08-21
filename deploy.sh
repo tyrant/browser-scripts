@@ -69,7 +69,7 @@ $MONITOR_KEY
 */5 * * * * /home/noob/bin/reap-stale-chrome.sh 10 >> /home/noob/log/chrome-reaper.log 2>&1
 0 0 * * * XDG_RUNTIME_DIR=/run/user/1000 /usr/bin/flock -n /tmp/substack_heart.lock /usr/bin/systemd-run --user --scope -p MemoryMax=1G -p MemorySwapMax=512M -p CPUQuota=80% /home/noob/scripts/venv/bin/python /home/noob/scripts/substack_heart.py >> /home/noob/scripts/substack_heart.log 2>&1
 0 1 * * * XDG_RUNTIME_DIR=/run/user/1000 /usr/bin/flock -n /tmp/medium_clap.lock /usr/bin/systemd-run --user --scope -p MemoryMax=1G -p MemorySwapMax=512M -p CPUQuota=80% /home/noob/scripts/venv/bin/python /home/noob/scripts/medium_clap.py >> /home/noob/scripts/medium_clap.log 2>&1
-0 2 * * * /usr/bin/flock -n /tmp/gmail_substack_archive.lock /home/noob/scripts/venv/bin/python /home/noob/scripts/gmail_substack_archive.py >> /home/noob/scripts/gmail_substack_archive.log 2>&1
+15 * * * * /usr/bin/flock -n /tmp/gmail_substack_archive.lock /home/noob/scripts/venv/bin/python /home/noob/scripts/gmail_substack_archive.py >> /home/noob/scripts/gmail_substack_archive.log 2>&1
 CRON
   ) | crontab -
   echo "Crontab updated:"
@@ -77,7 +77,7 @@ CRON
 ENDSSH
 
 echo ""
-echo "==> Done. Scripts run daily at 00:00, 01:00 (browser, memory-capped) and 02:00 (Gmail API) UTC."
+echo "==> Done. Browser scripts run daily at 00:00, 01:00 UTC (memory-capped); Gmail archive runs hourly at :15."
 echo ""
 echo "    If the Substack session has expired (heart run reports crashed):"
 echo "      python3 reauth_server.py"

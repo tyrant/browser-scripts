@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-gmail_substack_archive.py — Daily script to file away Substack emails.
+gmail_substack_archive.py — Hourly script to file away Substack emails.
 
 Connects to the epicschnozz@gmail.com Gmail account, finds inbox emails received
 in the last 24 hours whose sender address ends in '@substack.com', applies the

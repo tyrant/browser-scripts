@@ -1,11 +1,11 @@
 # Gmail Substack Archive
 
-`gmail_substack_archive.py` — a daily Gmail-API job (no browser) that tidies the
+`gmail_substack_archive.py` — an hourly Gmail-API job (no browser) that tidies the
 **epicschnozz@gmail.com** inbox.
 
 ## What it does
 
-Once a day it queries Gmail for inbox messages received in the last 24 hours,
+Every hour it queries Gmail for inbox messages received in the last 24 hours,
 keeps those whose sender address ends in `@substack.com`, applies the **Substack**
 label to each, and archives it (removes it from the inbox). Label + archive happen
 in a single `messages.modify` call, which is idempotent — re-running never doubles
@@ -75,8 +75,9 @@ reporting. The Gmail service is mocked — no live API calls.
 
 ## Scheduling
 
-Runs at **02:00 UTC** daily via cron (see `deploy.sh`), staggered after the two
-Playwright scripts. Being a pure API job it runs without their systemd memory scope.
+Runs hourly at **:15 UTC** via cron (see `deploy.sh`), off the top-of-hour when
+the two Playwright scripts start. Being a pure API job it runs without their
+systemd memory scope.
 Results report to the monitor dashboard as `gmail_substack_archive`.
 
 ## Behaviour details
