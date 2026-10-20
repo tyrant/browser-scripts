@@ -67,8 +67,8 @@ ssh "$SERVER" bash <<'ENDSSH'
   (crontab -l 2>/dev/null | grep -v 'substack_heart\|medium_clap\|gmail_substack_archive\|MONITOR_API_KEY\|reap-stale-chrome'; cat <<CRON
 $MONITOR_KEY
 */5 * * * * /home/noob/bin/reap-stale-chrome.sh 10 >> /home/noob/log/chrome-reaper.log 2>&1
-0 0 * * * XDG_RUNTIME_DIR=/run/user/1000 /usr/bin/flock -n /tmp/substack_heart.lock /usr/bin/systemd-run --user --scope -p MemoryMax=1G -p MemorySwapMax=512M -p CPUQuota=80% /home/noob/scripts/venv/bin/python /home/noob/scripts/substack_heart.py >> /home/noob/scripts/substack_heart.log 2>&1
-0 1 * * * XDG_RUNTIME_DIR=/run/user/1000 /usr/bin/flock -n /tmp/medium_clap.lock /usr/bin/systemd-run --user --scope -p MemoryMax=1G -p MemorySwapMax=512M -p CPUQuota=80% /home/noob/scripts/venv/bin/python /home/noob/scripts/medium_clap.py >> /home/noob/scripts/medium_clap.log 2>&1
+0 0 * * * XDG_RUNTIME_DIR=/run/user/1000 /usr/bin/flock -n /tmp/substack_heart.lock /usr/bin/systemd-run --user --scope -p MemoryMax=1G -p MemorySwapMax=512M -p CPUQuota=80\% /home/noob/scripts/venv/bin/python /home/noob/scripts/substack_heart.py >> /home/noob/scripts/substack_heart.log 2>&1
+0 1 * * * XDG_RUNTIME_DIR=/run/user/1000 /usr/bin/flock -n /tmp/medium_clap.lock /usr/bin/systemd-run --user --scope -p MemoryMax=1G -p MemorySwapMax=512M -p CPUQuota=80\% /home/noob/scripts/venv/bin/python /home/noob/scripts/medium_clap.py >> /home/noob/scripts/medium_clap.log 2>&1
 15 * * * * /usr/bin/flock -n /tmp/gmail_substack_archive.lock /home/noob/scripts/venv/bin/python /home/noob/scripts/gmail_substack_archive.py >> /home/noob/scripts/gmail_substack_archive.log 2>&1
 CRON
   ) | crontab -
