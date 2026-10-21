@@ -31,7 +31,7 @@ from googleapiclient.discovery import build
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
-from monitor_client import RunLogger, report_run
+from monitor_client import RunLogger, raise_on_sigterm, report_run
 
 SCOPES = ["https://www.googleapis.com/auth/gmail.modify"]
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -330,6 +330,7 @@ def clap_all(
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
+    raise_on_sigterm()
     run_log = RunLogger()
     log.addHandler(run_log)
     clapped = failed = 0

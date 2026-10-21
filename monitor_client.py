@@ -2,6 +2,7 @@
 import json
 import logging
 import os
+import signal
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
@@ -9,6 +10,19 @@ from datetime import datetime, timezone
 MONITOR_URL = "https://monitor.mikeyclarke.co.nz/api/run"
 
 log = logging.getLogger(__name__)
+
+
+class Terminated(Exception):
+    pass
+
+
+def raise_on_sigterm():
+    """Turn SIGTERM into an exception so the run's crash handler still reports."""
+    # systemd stops the whole scope with SIGTERM after an OOM kill inside it;
+    # Python's default handler would exit silently, leaving no monitor record.
+    def handler(signum, frame):
+        raise Terminated(f"Killed by signal {signum} (systemd stopping the scope, often after an OOM kill)")
+    signal.signal(signal.SIGTERM, handler)
 
 
 class RunLogger(logging.Handler):

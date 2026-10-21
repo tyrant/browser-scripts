@@ -412,6 +412,12 @@ class TestMain:
         main()
         mock__main.assert_called_once()
 
+    @patch("substack_heart.raise_on_sigterm")
+    @patch("substack_heart._main")
+    def test_installs_sigterm_handler(self, _main, mock_raise_on_sigterm):
+        main()
+        mock_raise_on_sigterm.assert_called_once()
+
     @patch("substack_heart.report_run")
     @patch("substack_heart._main")
     def test_exception_reports_crashed_and_reraises(self, mock__main, mock_report):
