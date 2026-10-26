@@ -177,8 +177,11 @@ def check_medium_login(p, exe: str | None) -> bool:
     ctx = _launch(p, exe, headless=True)
     try:
         cookies = ctx.cookies(["https://medium.com"])
-        # 'uid' is present for any signed-in Medium session.
-        return any(c["name"] == "uid" for c in cookies)
+        # Logged-out visitors also get a 'uid', prefixed "lo_".
+        return any(
+            c["name"] == "uid" and not c["value"].startswith("lo_")
+            for c in cookies
+        )
     except Exception:
         return False
     finally:

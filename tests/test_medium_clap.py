@@ -1,8 +1,8 @@
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 import pytest
 
-from medium_clap import main
+from medium_clap import check_medium_login, main
 from monitor_client import Terminated
 
 
@@ -20,3 +20,26 @@ class TestMain:
         with pytest.raises(Terminated):
             main()
         assert mock_report.call_args[0][:2] == ("medium_clap", "crashed")
+
+
+class TestCheckMediumLogin:
+    def _check(self, cookies):
+        ctx = MagicMock()
+        ctx.cookies.return_value = cookies
+        with patch("medium_clap._launch", return_value=ctx):
+            return check_medium_login(MagicMock(), "/chrome")
+
+    def test_signed_in_uid_is_logged_in(self):
+        assert self._check([{"name": "uid", "value": "6fcc2408f5dd"}]) is True
+
+    def test_logged_out_uid_is_not_logged_in(self):
+        assert self._check([{"name": "uid", "value": "lo_446805f24"}]) is False
+
+    def test_missing_uid_is_not_logged_in(self):
+        assert self._check([{"name": "sid", "value": "abc"}]) is False
+
+    def test_cookie_read_error_is_not_logged_in(self):
+        ctx = MagicMock()
+        ctx.cookies.side_effect = RuntimeError("boom")
+        with patch("medium_clap._launch", return_value=ctx):
+            assert check_medium_login(MagicMock(), "/chrome") is False
