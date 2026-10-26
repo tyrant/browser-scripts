@@ -3,6 +3,7 @@ import json
 import logging
 import os
 import signal
+import sys
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
@@ -36,6 +37,10 @@ class RunLogger(logging.Handler):
         self.messages.append(self.format(record))
 
 
+def run_host() -> str:
+    return "Mac" if sys.platform == "darwin" else "Prod"
+
+
 def report_run(script, status, processed=0, failed=0, skipped=0, errors=None):
     api_key = os.environ.get("MONITOR_API_KEY", "")
     if not api_key:
@@ -50,6 +55,7 @@ def report_run(script, status, processed=0, failed=0, skipped=0, errors=None):
         "skipped": skipped,
         "errors": errors or [],
         "ran_at": datetime.now(timezone.utc).isoformat(),
+        "host": run_host(),
     }).encode()
 
     req = urllib.request.Request(
