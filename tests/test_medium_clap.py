@@ -2,7 +2,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from medium_clap import check_medium_login, main
+from medium_clap import check_medium_login, clap_post, main
 from monitor_client import Terminated
 
 
@@ -43,3 +43,14 @@ class TestCheckMediumLogin:
         ctx.cookies.side_effect = RuntimeError("boom")
         with patch("medium_clap._launch", return_value=ctx):
             assert check_medium_login(MagicMock(), "/chrome") is False
+
+
+class TestClapPost:
+    @patch("medium_clap.time.sleep")
+    def test_missing_button_warning_includes_page_title(self, _sleep, caplog):
+        page = MagicMock()
+        page.url = "https://medium.com/p/abc?__cf_chl_rt_tk=x"
+        page.title.return_value = "Just a moment..."
+        page.wait_for_selector.side_effect = TimeoutError("not found")
+        assert clap_post(page, "https://medium.com/p/abc") is False
+        assert "(page title: 'Just a moment...')" in caplog.text

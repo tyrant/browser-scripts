@@ -47,12 +47,13 @@ If you're ever prompted to log in again, the session has expired. Re-run the scr
 
 ## Scheduling
 
-The script runs on the mikeyclarke.co.nz server at 00:05 UTC (12:05 NZST) via cron. See [README.md](README.md) for deployment and session management.
+The script runs on the Mac via a launchd agent (`~/Library/LaunchAgents/local.medium_clap.plist`) daily at 12:00 local time, logging to `medium_clap.log`. It moved back from the server on 2026-10-27: Cloudflare serves a "Just a moment..." bot challenge (HTTP 403) to Medium requests from the server's datacenter IP, so every post failed with "Clap button not found". That warning now includes the page title, so a challenge page shows up on the monitor.
 
-A launchd agent (`~/Library/LaunchAgents/local.medium_clap.plist`) exists for local scheduling but is currently disabled. To re-enable it:
+If the Mac is asleep at 12:00, launchd runs the job when it wakes; if it is shut down, that day's emails fall outside the next run's 24-hour window and go unclapped.
 
 ```bash
-launchctl load ~/Library/LaunchAgents/local.medium_clap.plist
+launchctl load -w ~/Library/LaunchAgents/local.medium_clap.plist    # enable
+launchctl unload -w ~/Library/LaunchAgents/local.medium_clap.plist  # disable
 ```
 
 ## Behaviour details

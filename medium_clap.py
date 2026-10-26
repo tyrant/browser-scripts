@@ -266,7 +266,7 @@ def clap_post(page, post_url: str) -> bool:
             continue
 
     if clap_btn is None:
-        log.warning(f"  Clap button not found on {page.url}")
+        log.warning(f"  Clap button not found on {page.url} (page title: {page.title()!r})")
         return False
 
     log.info(f"  Found clap button via {matched_selector!r}")

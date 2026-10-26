@@ -43,7 +43,6 @@ The scripts run daily, staggered (times UTC):
 ```
 MONITOR_API_KEY=...
 0 0 * * * .../substack_heart.py >> .../substack_heart.log 2>&1          # midnight — browser, memory-capped
-0 1 * * * .../medium_clap.py >> .../medium_clap.log 2>&1                # 01:00 — browser, memory-capped
 0 2 * * * .../gmail_substack_archive.py >> .../gmail_substack_archive.log 2>&1   # 02:00 — Gmail API only, lightweight
 ```
 
@@ -54,7 +53,6 @@ MONITOR_API_KEY=...
 ```bash
 ssh noob@168.144.167.177
 tail -f /home/noob/scripts/substack_heart.log
-tail -f /home/noob/scripts/medium_clap.log
 tail -f /home/noob/scripts/gmail_substack_archive.log
 ```
 
@@ -96,7 +94,7 @@ The monitor can also trigger a run on demand via the **Run now** button on the d
 
 ## Local dev
 
-The launchd agents (`local.substack_heart` and `local.medium_clap`) are currently disabled — scripts run on the server. To run a script locally for testing:
+`medium_clap.py` runs on the Mac via the `local.medium_clap` launchd agent (daily at 12:00 local): Cloudflare serves a bot challenge to Medium requests from the server's datacenter IP. `local.substack_heart` is disabled — Heart runs on the server. To run a script locally for testing:
 
 ```bash
 cd ~/Work/scripts
@@ -104,9 +102,9 @@ venv/bin/python substack_heart.py
 venv/bin/python medium_clap.py
 ```
 
-To re-enable launchd scheduling (e.g. when working locally):
+To enable or disable a launchd agent persistently:
 
 ```bash
-launchctl load ~/Library/LaunchAgents/local.substack_heart.plist
-launchctl load ~/Library/LaunchAgents/local.medium_clap.plist
+launchctl load -w ~/Library/LaunchAgents/local.medium_clap.plist
+launchctl unload -w ~/Library/LaunchAgents/local.substack_heart.plist
 ```

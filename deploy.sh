@@ -62,14 +62,13 @@ ssh "$SERVER" bash <<'ENDSSH'
   MONITOR_KEY=$(grep '^MONITOR_API_KEY=' /home/noob/monitor/.env | head -1)
   # Browser jobs run inside a memory/CPU-capped systemd scope + a flock (no
   # overlapping runs), so a runaway Chromium is OOM-killed in its own cgroup
-  # rather than taking the box down. Clap starts at 04:00 because Heart's
-  # ~3h run overlapping it OOM'd the 2 GB box on 2026-10-21.
+  # rather than taking the box down. medium_clap runs on the Mac via launchd:
+  # Cloudflare challenges Medium requests from this datacenter IP.
   # The reaper kills any leaked automation Chromium older than 10 min.
   (crontab -l 2>/dev/null | grep -v 'substack_heart\|medium_clap\|gmail_substack_archive\|MONITOR_API_KEY\|reap-stale-chrome'; cat <<CRON
 $MONITOR_KEY
 */5 * * * * /home/noob/bin/reap-stale-chrome.sh 10 >> /home/noob/log/chrome-reaper.log 2>&1
 0 0 * * * XDG_RUNTIME_DIR=/run/user/1000 /usr/bin/flock -n /tmp/substack_heart.lock /usr/bin/systemd-run --user --scope -p MemoryMax=1G -p MemorySwapMax=512M -p CPUQuota=80\% /home/noob/scripts/venv/bin/python /home/noob/scripts/substack_heart.py >> /home/noob/scripts/substack_heart.log 2>&1
-0 4 * * * XDG_RUNTIME_DIR=/run/user/1000 /usr/bin/flock -n /tmp/medium_clap.lock /usr/bin/systemd-run --user --scope -p MemoryMax=1G -p MemorySwapMax=512M -p CPUQuota=80\% /home/noob/scripts/venv/bin/python /home/noob/scripts/medium_clap.py >> /home/noob/scripts/medium_clap.log 2>&1
 15 * * * * /usr/bin/flock -n /tmp/gmail_substack_archive.lock /home/noob/scripts/venv/bin/python /home/noob/scripts/gmail_substack_archive.py >> /home/noob/scripts/gmail_substack_archive.log 2>&1
 CRON
   ) | crontab -
@@ -78,13 +77,10 @@ CRON
 ENDSSH
 
 echo ""
-echo "==> Done. Browser scripts run daily at 00:00 (heart), 04:00 (clap) UTC (memory-capped); Gmail archive runs hourly at :15."
+echo "==> Done. Heart runs daily at 00:00 UTC (memory-capped); Gmail archive runs hourly at :15. Clap runs on the Mac (launchd)."
 echo ""
 echo "    If the Substack session has expired (heart run reports crashed):"
 echo "      venv/bin/python reauth_server.py"
-echo "    If the Medium session has expired (clap run reports crashed):"
-echo "      venv/bin/python reauth_server.py medium"
 echo ""
-echo "    To disable the local launchd agents now:"
-echo "      launchctl unload ~/Library/LaunchAgents/local.substack_heart.plist"
-echo "      launchctl unload ~/Library/LaunchAgents/local.medium_clap.plist"
+echo "    To disable the local Heart launchd agent:"
+echo "      launchctl unload -w ~/Library/LaunchAgents/local.substack_heart.plist"
