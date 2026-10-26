@@ -2,11 +2,11 @@
 """Export a Playwright browser session to plain JSON for transfer to another machine.
 
 Usage:
-  python export_session.py <profile_dir> <output.json>
+  venv/bin/python export_session.py <profile_dir> <output.json>
 
 Example:
-  python export_session.py medium_playwright_profile medium_session.json
-  python export_session.py playwright_profile substack_session.json
+  venv/bin/python export_session.py medium_playwright_profile medium_session.json
+  venv/bin/python export_session.py playwright_profile substack_session.json
 """
 import glob
 import json

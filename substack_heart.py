@@ -81,7 +81,7 @@ def get_gmail_service():
                 if "invalid_grant" in str(e):
                     raise RuntimeError(
                         "Gmail token revoked. Re-auth with "
-                        "'python3 substack_heart.py --reauth', then rsync the new "
+                        "'venv/bin/python substack_heart.py --reauth', then rsync the new "
                         "token to the server. See SUBSTACK_HEART_README.md."
                     ) from e
                 raise

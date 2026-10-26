@@ -71,10 +71,10 @@ Medium detects headless browsers via `navigator.webdriver`. The script disables 
 ### macOS cookie encryption
 The script pins to the full Chromium binary (`Google Chrome for Testing.app`) rather than Playwright's headless-shell, for the same reason as `substack_heart.py`: the headless-shell uses a different cookie encryption path on macOS. The `--password-store=basic` flag bypasses Keychain-based password storage for consistency.
 
-When deploying to Linux, macOS-encrypted cookies cannot be read directly. Re-auth the server's Medium session from the Mac with `python3 reauth_server.py medium`, which injects the decrypted session cookies into the server profile.
+When deploying to Linux, macOS-encrypted cookies cannot be read directly. Re-auth the server's Medium session from the Mac with `venv/bin/python reauth_server.py medium`, which injects the decrypted session cookies into the server profile.
 
 ### Session expiry
-The Medium Playwright session is persistent but not permanent. If the session cookie expires, the script will open a visible browser for interactive login. Run it manually to complete the login flow. On the server (no display) the run reports crashed instead; re-auth with `python3 reauth_server.py medium`. Note Medium gives logged-out visitors a `uid` cookie prefixed `lo_`, which the login check treats as signed out.
+The Medium Playwright session is persistent but not permanent. If the session cookie expires, the script will open a visible browser for interactive login. Run it manually to complete the login flow. On the server (no display) the run reports crashed instead; re-auth with `venv/bin/python reauth_server.py medium`. Note Medium gives logged-out visitors a `uid` cookie prefixed `lo_`, which the login check treats as signed out.
 
 ### Clap button selector
 The script finds the clap button via `button[data-testid*="clap" i]`, with fallbacks for `aria-label`-based selectors. If Medium updates their markup and the button is no longer found, the post is logged as failed and left unread.

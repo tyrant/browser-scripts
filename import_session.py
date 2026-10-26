@@ -5,11 +5,11 @@ Clears the existing profile first to remove any macOS-encrypted cookies,
 then creates a fresh profile seeded with the exported session.
 
 Usage:
-  python import_session.py <session.json> <profile_dir>
+  venv/bin/python import_session.py <session.json> <profile_dir>
 
 Example:
-  python import_session.py medium_session.json medium_playwright_profile
-  python import_session.py substack_session.json playwright_profile
+  venv/bin/python import_session.py medium_session.json medium_playwright_profile
+  venv/bin/python import_session.py substack_session.json playwright_profile
 """
 import glob
 import json

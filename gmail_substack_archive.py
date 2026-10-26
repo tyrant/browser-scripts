@@ -58,7 +58,7 @@ def get_gmail_service():
                 if "invalid_grant" in str(e):
                     raise RuntimeError(
                         f"Gmail token for {ACCOUNT} revoked. Re-auth with "
-                        "'python3 gmail_substack_archive.py --reauth', then rsync the new "
+                        "'venv/bin/python gmail_substack_archive.py --reauth', then rsync the new "
                         "token to the server. See GMAIL_SUBSTACK_ARCHIVE_README.md."
                     ) from e
                 raise

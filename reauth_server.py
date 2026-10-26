@@ -6,7 +6,7 @@ rsyncing the macOS one — macOS encrypts cookies with a Keychain key Linux can'
 read — so we read the decrypted session cookies locally and inject them into the
 server's profile, where Linux re-encrypts them with its own key.
 
-Usage: python3 reauth_server.py [substack|medium]
+Usage: venv/bin/python reauth_server.py [substack|medium]
 """
 
 import base64

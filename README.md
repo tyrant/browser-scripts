@@ -67,8 +67,8 @@ Playwright browser sessions are stored in the profile directories. Because macOS
 Run on Mac:
 
 ```bash
-python3 export_session.py medium_playwright_profile medium_session.json
-python3 export_session.py playwright_profile substack_session.json
+venv/bin/python export_session.py medium_playwright_profile medium_session.json
+venv/bin/python export_session.py playwright_profile substack_session.json
 ```
 
 Transfer to server:
@@ -100,8 +100,8 @@ The launchd agents (`local.substack_heart` and `local.medium_clap`) are currentl
 
 ```bash
 cd ~/Work/scripts
-python3 substack_heart.py
-python3 medium_clap.py
+venv/bin/python substack_heart.py
+venv/bin/python medium_clap.py
 ```
 
 To re-enable launchd scheduling (e.g. when working locally):
