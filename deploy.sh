@@ -36,7 +36,7 @@ fi
 
 # playwright_profile is NOT synced: macOS encrypts its cookies with a Keychain
 # key Linux can't read, so a copied session decrypts to nothing on the server.
-# Re-auth the Substack session with: python3 reauth_server.py
+# Re-auth with: python3 reauth_server.py [substack|medium]
 
 rsync -av --ignore-existing \
   "$LOCAL/medium_playwright_profile/" \
@@ -82,6 +82,8 @@ echo "==> Done. Browser scripts run daily at 00:00 (heart), 04:00 (clap) UTC (me
 echo ""
 echo "    If the Substack session has expired (heart run reports crashed):"
 echo "      python3 reauth_server.py"
+echo "    If the Medium session has expired (clap run reports crashed):"
+echo "      python3 reauth_server.py medium"
 echo ""
 echo "    To disable the local launchd agents now:"
 echo "      launchctl unload ~/Library/LaunchAgents/local.substack_heart.plist"
