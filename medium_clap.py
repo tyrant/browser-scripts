@@ -44,6 +44,9 @@ CLAPPED_URLS_FILE = os.path.join(SCRIPT_DIR, "medium_clapped_urls.json")
 CLAPS_MIN = 10
 CLAPS_MAX = 30
 
+# Medium has no clap button on your own posts.
+MY_MEDIUM_USERNAME = "mikey-clarke"
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
 
@@ -224,26 +227,46 @@ def record_clapped_url(url: str) -> None:
         json.dump(data, f, indent=2)
 
 
-def clap_post(page, post_url: str) -> bool:
+def is_own_author_url(author_url: str | None) -> bool:
+    if not author_url:
+        return False
+    parsed = urlparse(author_url)
+    return (
+        parsed.hostname == f"{MY_MEDIUM_USERNAME}.medium.com"
+        or parsed.path.rstrip("/") == f"/@{MY_MEDIUM_USERNAME}"
+    )
+
+
+def post_author_url(page) -> str | None:
+    byline = page.locator('[data-testid="authorName"]').first
+    if not byline.count():
+        return None
+    return byline.evaluate("e => (e.closest('a') || e.querySelector('a') || {}).href || null")
+
+
+def clap_post(page, post_url: str) -> str:
     """Navigate to a post and click the Clap button a random number of times.
 
-    Returns True if at least one clap was successfully registered, or if the
-    post was already clapped (skipped cleanly).
+    Returns "clapped", "own" (your own post, nothing to clap) or "failed".
     """
     try:
         page.goto(post_url, wait_until="domcontentloaded", timeout=30000)
     except Exception as e:
         log.error(f"  Navigation failed: {e}")
-        return False
+        return "failed"
 
     # Detect sign-in redirect
     if "/m/signin" in page.url or "/signin" in page.url:
         log.warning(f"  Redirected to sign-in, skipping: {post_url}")
-        return False
+        return "failed"
 
     # Medium is a React SPA — wait for the article to hydrate beyond domcontentloaded.
     # The clap button lives in the article footer, which renders after the above event.
     time.sleep(3)
+
+    if is_own_author_url(post_author_url(page)):
+        log.info(f"  Own post, nothing to clap: {page.url}")
+        return "own"
 
     # Try multiple selectors for the clap button — Medium's markup has changed over time.
     # We prefer the in-article footer button over any floating/header variant.
@@ -267,7 +290,7 @@ def clap_post(page, post_url: str) -> bool:
 
     if clap_btn is None:
         log.warning(f"  Clap button not found on {page.url} (page title: {page.title()!r})")
-        return False
+        return "failed"
 
     log.info(f"  Found clap button via {matched_selector!r}")
     clap_btn.scroll_into_view_if_needed()
@@ -286,12 +309,12 @@ def clap_post(page, post_url: str) -> bool:
             break
 
     if clapped == 0:
-        return False
+        return "failed"
 
     # Give the API a moment to register the last clap before we navigate away.
     time.sleep(1)
     log.info(f"  Clapped {clapped} times.")
-    return True
+    return "clapped"
 
 
 def clap_all(
@@ -299,35 +322,41 @@ def clap_all(
     exe: str | None,
     items: list[tuple[str, str, str]],
     gmail,
-) -> tuple[int, int]:
+) -> tuple[int, int, int]:
     """Clap each post and mark the email read immediately on success.
 
     items is a list of (msg_id, post_url, label) triples.
-    Returns (clapped_count, failed_count).
+    Returns (clapped_count, failed_count, own_count).
     Fresh page per post to avoid browser state accumulation.
     """
-    clapped = failed = 0
+    clapped = failed = own = 0
     ctx = _launch(p, exe, headless=True)
     try:
         for msg_id, post_url, label in items:
             log.info(f"Processing: {label!r}")
             page = ctx.new_page()
             try:
-                success = clap_post(page, post_url)
+                result = clap_post(page, post_url)
             finally:
                 page.close()
-            if success:
+            if result == "clapped":
                 mark_as_read(gmail, msg_id)
                 record_clapped_url(post_url)
                 log.info(f"  Clapped + marked read: {label!r}")
                 clapped += 1
+            elif result == "own":
+                mark_as_read(gmail, msg_id)
+                # Recorded so later runs in the 24h window skip it without a page load.
+                record_clapped_url(post_url)
+                log.info(f"  Own post, marked read: {label!r}")
+                own += 1
             else:
                 log.warning(f"  Clap failed, leaving unread: {label!r}")
                 failed += 1
             time.sleep(5)
     finally:
         ctx.close()
-    return clapped, failed
+    return clapped, failed, own
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -410,7 +439,8 @@ def _main(run_log):
                 return
 
         items = [(msg_id, post_url, subject) for msg_id, subject, post_url in to_clap]
-        clapped, failed = clap_all(p, exe, items, gmail)
+        clapped, failed, own = clap_all(p, exe, items, gmail)
+        skipped += own
 
     log.info(f"Done. Clapped: {clapped}, Failed: {failed}, Skipped: {skipped}")
     report_run("medium_clap", "success", clapped, failed, skipped, run_log.messages)

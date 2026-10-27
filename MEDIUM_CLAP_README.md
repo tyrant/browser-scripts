@@ -60,6 +60,7 @@ launchctl unload -w ~/Library/LaunchAgents/local.medium_clap.plist  # disable
 
 - **Window**: searches emails from the last 24 hours. Re-running the same day will re-check all recent emails, but those already clapped will be skipped via `medium_clapped_urls.json`, and those already marked read will not appear in the search.
 - **Clap count**: each post receives a random number of claps between 10 and 30, chosen independently per post.
+- **Own posts**: Medium has no clap button on your own posts, so when the byline links to `MY_MEDIUM_USERNAME` the email is marked read, the URL recorded, and the post counted as skipped.
 - **Already clapped**: before opening the browser for a post, the script checks `medium_clapped_urls.json`. If the URL is present, the post is skipped and the email marked read without launching Playwright.
 - **Inline mark-as-read**: emails are marked read and URLs recorded immediately after each successful clap, inside the browser session. A crash mid-run does not lose progress on posts already processed.
 - **Fresh page per post**: a new browser tab is opened for each post and closed afterwards, preventing accumulated browser state from causing failures across a long session.
